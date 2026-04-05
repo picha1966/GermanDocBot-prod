@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fill German Documents Correctly — Anmeldung, Bürgergeld, Kindergeld | GermanDocAssist</title>
+  <meta name="description" content="Free help filling German documents: Anmeldung, Bürgergeld, Kindergeld, Wohngeld. Get a filled example PDF and find Termin at Bürgeramt Berlin.">
+  <meta name="keywords" content="anmeldung form example, how to fill anmeldung germany, bürgergeld application help, kindergeld antrag, termin bürgeramt berlin">
+  <meta property="og:title" content="German Document Assistant — Fill forms correctly">
+  <meta property="og:description" content="Telegram bot helps immigrants fill Anmeldung, Bürgergeld, Kindergeld and find Termin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://germandocassist.com/">
+  <meta property="og:image" content="https://germandocassist.com/og-image.png">
+  <meta property="og:site_name" content="GermanDocAssist">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://germandocassist.com/">
+  <link rel="alternate" hreflang="en" href="https://germandocassist.com/?lang=en">
+  <link rel="alternate" hreflang="de" href="https://germandocassist.com/?lang=de">
+  <link rel="alternate" hreflang="uk" href="https://germandocassist.com/?lang=uk">
+  <link rel="alternate" hreflang="pl" href="https://germandocassist.com/?lang=pl">
+  <link rel="alternate" hreflang="tr" href="https://germandocassist.com/?lang=tr">
+  <link rel="alternate" hreflang="ar" href="https://germandocassist.com/?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://germandocassist.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Germany Document Assistant",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Telegram",
+    "description": "PDF tool that generates pre-filled examples of German documents like Anmeldung, Bürgergeld, Kindergeld. Not legal advice.",
+    "url": "https://germandocassist.com/",
+    "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "EUR" },
+    "inLanguage": ["en", "de", "uk", "pl", "tr", "ar"]
+  }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/lang-switch.js"></script>
+  <script>
+    // Legacy stub — translations are now fully in lang-switch.js
+    window.PAGE_TRANSLATIONS = {
+      en: {
+        hero_title: "Prepare German documents correctly — <span style='color:#93c5fd'>first time.</span>",
+        hero_sub: "Guided assistant for Anmeldung, Bürgergeld, Kindergeld and Bürgeramt appointments. In your language.",
+        hero_trust: "Used by immigrants across Germany",
+        cta_open: "Open Telegram Assistant",
+        cta_how: "How it works",
+        how_title: "How it works",
+        how_sub: "Four simple steps — no German required.",
+        step1_h: "Choose document", step1_p: "Select from 15+ German documents",
+        step2_h: "Fill simple form", step2_p: "Answer guided questions in your language",
+        step3_h: "Get filled PDF", step3_p: "Download a completed example instantly",
+        step4_h: "Termin monitoring", step4_p: "Optional: 24/7 slot finder for Bürgeramt",
+        docs_title: "Supported documents",
+        docs_sub: "Click any document to learn more and get a filled example.",
+        why_title: "Why immigrants use this assistant",
+        why_sub: "German bureaucracy is complex. We make it manageable.",
+        why1_h: "Avoid document rejection", why1_p: "Common errors caught before you submit.",
+        why2_h: "Understand complex forms", why2_p: "Plain-language explanation of every field.",
+        why3_h: "Prepare before your appointment", why3_p: "Arrive at Bürgeramt with everything ready.",
+        why4_h: "Save time finding Termin", why4_p: "24/7 monitoring — get notified in seconds.",
+        trust_title: "Thousands of immigrants trust this assistant",
+        trust_sub: "Prepare documents correctly and save hours of confusion.",
+        trust_stat1: "Documents", trust_stat2: "Languages", trust_stat3: "Found Termins",
+        cta_title: "Ready to get started?",
+        cta_sub: "Open the Telegram bot — free to try.",
+        nav_home: "Home", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "Termin Berlin",
+        nav_faq: "FAQ", nav_about: "About",
+        nav_docs: "Documents", nav_termin_menu: "Termin",
+        footer_copy: "© 2026 GermanDocAssist. All rights reserved.",
+        footer_disclaimer: "Filled examples are for reference only and are not official government documents.",
+        footer_docs: "Documents", footer_termin: "Termin", footer_legal: "Legal",
+        // NEW SECTIONS
+        what_title: "What is the Telegram Document Assistant?",
+        what_text: "This assistant helps immigrants in Germany correctly prepare official documents before visiting authorities. No German language skills required.",
+        what_li1: "Shows correctly filled example forms",
+        what_li2: "Explains which documents you need to bring",
+        what_li3: "Guides you step-by-step through each form",
+        what_li4: "Helps you prepare before visiting the Bürgeramt",
+        what_li5: "Works in 6 languages — your language",
+        what_cta_h: "Try it now — free",
+        what_cta_p: "Open the assistant in Telegram and ask about any German document.",
+        feat_title: "What the assistant can do",
+        feat_sub: "One tool for all your German paperwork.",
+        feat1_h: "Anmeldung example", feat1_p: "Get a correctly filled address registration form.",
+        feat2_h: "Bürgergeld application", feat2_p: "Understand and fill the social benefit form.",
+        feat3_h: "Kindergeld forms", feat3_p: "Step-by-step child benefit application guide.",
+        feat4_h: "Document checklist", feat4_p: "Know exactly what to bring to each appointment.",
+        feat5_h: "Termin monitoring", feat5_p: "24/7 automated Bürgeramt slot notifications.",
+        feat6_h: "Multilingual support", feat6_p: "Works in Ukrainian, German, English, Polish, Turkish, Arabic.",
+        price_title: "Pricing",
+        price_sub: "Pay only for what you need. Start for free.",
+        price1_name: "Document PDF Example",
+        price1_desc: "Filled example form for any supported document",
+        price1_amount: "€4.99",
+        price1_note: "per document",
+        price1_f1: "Correctly filled example",
+        price1_f2: "Downloadable PDF",
+        price1_f3: "In your language",
+        price1_f4: "Instant delivery",
+        price2_name: "Termin Monitoring",
+        price2_desc: "24/7 automatic Bürgeramt appointment monitoring",
+        price2_badge: "Popular",
+        price2_amount: "€4.99",
+        price2_note: "per 24 hours",
+        price2_f1: "Checks every 30 seconds",
+        price2_f2: "Instant Telegram notification",
+        price2_f3: "Direct booking link",
+        price2_f4: "7-day plan from €14.99",
+        price3_name: "Bundle",
+        price3_desc: "Document PDF + 24h Termin monitoring together",
+        price3_amount: "€7.99",
+        price3_note: "best value · +€3 Termin add-on",
+        price3_f1: "PDF example included",
+        price3_f2: "24h monitoring included",
+        price3_f3: "Save vs. buying separately",
+        price_cta: "Start in Telegram",
+        tg_title: "Open the assistant in Telegram",
+        tg_sub: "Don't have Telegram? Download it free on any device.",
+        tg_android: "Android",
+        tg_ios: "iPhone",
+        tg_windows: "Windows",
+        tg_mac: "macOS",
+        tg_web: "Web",
+        tg_note: "After installing Telegram, tap \"Open Telegram Assistant\" to start.",
+        notice_text: "<strong>Transparency notice:</strong> This service provides guidance and filled example documents to help immigrants understand German forms. It is not an official government service. You must submit official forms from the relevant government website.",
+        doc_anmeldung_sub: "Address registration",
+        doc_ummeldung_sub: "Re-registration",
+        doc_buergergeld_sub: "Social benefits",
+        doc_kindergeld_sub: "Child benefit",
+        doc_wohngeld_sub: "Housing benefit",
+        doc_aufenthaltstitel_sub: "Residence permit",
+        doc_familienkasse_sub: "Family benefits office",
+        doc_termin_sub: "Bürgeramt slot finder",
+        cta_find_termin: "Find Termin →",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "No Telegram yet? Install it:",
+      },
+      de: {
+        hero_title: "Deutsche Dokumente richtig ausfüllen — <span style='color:#93c5fd'>beim ersten Mal.</span>",
+        hero_sub: "Geführter Assistent für Anmeldung, Bürgergeld, Kindergeld und Bürgeramt-Termine. In Ihrer Sprache.",
+        hero_trust: "Von Einwanderern in ganz Deutschland genutzt",
+        cta_open: "Telegram-Assistent öffnen",
+        cta_how: "So funktioniert es",
+        how_title: "So funktioniert es",
+        how_sub: "Vier einfache Schritte — kein Deutsch erforderlich.",
+        step1_h: "Dokument wählen", step1_p: "Aus 15+ deutschen Dokumenten wählen",
+        step2_h: "Formular ausfüllen", step2_p: "Fragen in Ihrer Sprache beantworten",
+        step3_h: "PDF erhalten", step3_p: "Ausgefülltes Beispiel sofort herunterladen",
+        step4_h: "Termin-Monitoring", step4_p: "Optional: 24/7 Terminsuche beim Bürgeramt",
+        docs_title: "Unterstützte Dokumente",
+        docs_sub: "Klicken Sie auf ein Dokument, um mehr zu erfahren.",
+        why_title: "Warum Einwanderer diesen Assistenten nutzen",
+        why_sub: "Deutsche Bürokratie ist komplex. Wir machen sie handhabbar.",
+        why1_h: "Ablehnung vermeiden", why1_p: "Häufige Fehler vor der Einreichung erkennen.",
+        why2_h: "Komplexe Formulare verstehen", why2_p: "Klare Erklärung jedes Feldes.",
+        why3_h: "Vorbereitung vor dem Termin", why3_p: "Kommen Sie mit allem Nötigen zum Amt.",
+        why4_h: "Zeit sparen bei der Terminsuche", why4_p: "24/7-Überwachung — sofortige Benachrichtigung.",
+        trust_title: "Tausende Einwanderer vertrauen diesem Assistenten",
+        trust_sub: "Dokumente korrekt vorbereiten und stundenlange Verwirrung vermeiden.",
+        trust_stat1: "Dokumente", trust_stat2: "Sprachen", trust_stat3: "Gefundene Termine",
+        cta_title: "Bereit loszulegen?",
+        cta_sub: "Telegram-Bot öffnen — kostenlos testen.",
+        nav_home: "Start", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "Termin Berlin",
+        nav_faq: "FAQ", nav_about: "Über uns",
+        nav_docs: "Dokumente", nav_termin_menu: "Termin",
+        footer_copy: "© 2026 GermanDocAssist. Alle Rechte vorbehalten.",
+        footer_disclaimer: "Ausgefüllte Beispiele dienen nur als Referenz und sind keine offiziellen Behördendokumente.",
+        footer_docs: "Dokumente", footer_termin: "Termin", footer_legal: "Rechtliches",
+        what_title: "Was ist der Telegram-Dokument-Assistent?",
+        what_text: "Dieser Assistent hilft Einwanderern in Deutschland, offizielle Dokumente korrekt vorzubereiten — bevor sie zur Behörde gehen. Keine Deutschkenntnisse erforderlich.",
+        what_li1: "Zeigt korrekt ausgefüllte Beispielformulare",
+        what_li2: "Erklärt, welche Unterlagen Sie mitbringen müssen",
+        what_li3: "Führt Sie Schritt für Schritt durch jedes Formular",
+        what_li4: "Hilft bei der Vorbereitung vor dem Bürgeramt-Besuch",
+        what_li5: "Funktioniert in 6 Sprachen — Ihrer Sprache",
+        what_cta_h: "Jetzt kostenlos ausprobieren",
+        what_cta_p: "Öffnen Sie den Assistenten in Telegram und fragen Sie nach jedem deutschen Dokument.",
+        feat_title: "Was der Assistent kann",
+        feat_sub: "Ein Werkzeug für den gesamten deutschen Papierkram.",
+        feat1_h: "Anmeldung-Beispiel", feat1_p: "Korrekt ausgefülltes Anmeldeformular erhalten.",
+        feat2_h: "Bürgergeld-Antrag", feat2_p: "Sozialleistungsformular verstehen und ausfüllen.",
+        feat3_h: "Kindergeld-Formulare", feat3_p: "Schritt-für-Schritt-Anleitung für den Antrag.",
+        feat4_h: "Dokumentencheckliste", feat4_p: "Genau wissen, was Sie zum Termin mitbringen.",
+        feat5_h: "Termin-Monitoring", feat5_p: "Automatische Benachrichtigung bei freien Terminen.",
+        feat6_h: "Mehrsprachiger Support", feat6_p: "Ukrainisch, Deutsch, Englisch, Polnisch, Türkisch, Arabisch.",
+        price_title: "Preise",
+        price_sub: "Zahlen Sie nur, was Sie brauchen. Kostenlos starten.",
+        price1_name: "Dokument PDF-Beispiel",
+        price1_desc: "Ausgefülltes Beispielformular für jedes unterstützte Dokument",
+        price1_amount: "€4.99",
+        price1_note: "pro Dokument",
+        price1_f1: "Korrekt ausgefülltes Beispiel",
+        price1_f2: "Herunterladbares PDF",
+        price1_f3: "In Ihrer Sprache",
+        price1_f4: "Sofortige Lieferung",
+        price2_name: "Termin-Monitoring",
+        price2_desc: "24/7 automatische Bürgeramt-Terminüberwachung",
+        price2_badge: "Beliebt",
+        price2_amount: "€4.99",
+        price2_note: "pro 24 Stunden",
+        price2_f1: "Prüft alle 30 Sekunden",
+        price2_f2: "Sofortige Telegram-Benachrichtigung",
+        price2_f3: "Direkter Buchungslink",
+        price2_f4: "7-Tage-Plan ab €14.99",
+        price3_name: "Bundle",
+        price3_desc: "Dokument PDF + 24h Termin-Monitoring zusammen",
+        price3_amount: "€7.99",
+        price3_note: "bestes Preis-Leistung · +€3 Termin",
+        price3_f1: "PDF-Beispiel inklusive",
+        price3_f2: "24h-Monitoring inklusive",
+        price3_f3: "Günstiger als Einzelkauf",
+        price_cta: "In Telegram starten",
+        tg_title: "Assistenten in Telegram öffnen",
+        tg_sub: "Telegram noch nicht installiert? Kostenlos auf jedem Gerät.",
+        tg_android: "Android",
+        tg_ios: "iPhone",
+        tg_windows: "Windows",
+        tg_mac: "macOS",
+        tg_web: "Web",
+        tg_note: "Nach der Installation tippen Sie auf „Telegram-Assistenten öffnen".",
+        notice_text: "<strong>Transparenzhinweis:</strong> Dieser Dienst bietet Anleitungen und ausgefüllte Beispieldokumente, um Einwanderern beim Verständnis deutscher Formulare zu helfen. Es handelt sich nicht um einen offiziellen Behördendienst.",
+        doc_anmeldung_sub: "Adressanmeldung",
+        doc_ummeldung_sub: "Ummeldung",
+        doc_buergergeld_sub: "Sozialleistungen",
+        doc_kindergeld_sub: "Kindergeld",
+        doc_wohngeld_sub: "Wohngeld",
+        doc_aufenthaltstitel_sub: "Aufenthaltstitel",
+        doc_familienkasse_sub: "Familienkasse",
+        doc_termin_sub: "Terminsuche Bürgeramt",
+        cta_find_termin: "Termin finden →",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "Telegram noch nicht? Jetzt installieren:",
+      },
+      ua: {
+        hero_title: "Заповнюй німецькі документи правильно — <span style='color:#93c5fd'>з першого разу.</span>",
+        hero_sub: "Покроковий помічник для Anmeldung, Bürgergeld, Kindergeld та запису у Bürgeramt. Твоєю мовою.",
+        hero_trust: "Використовують іммігранти по всій Німеччині",
+        cta_open: "Відкрити Telegram-асистент",
+        cta_how: "Як це працює",
+        how_title: "Як це працює",
+        how_sub: "Чотири прості кроки — без знання німецької.",
+        step1_h: "Обери документ", step1_p: "Вибір з 15+ німецьких документів",
+        step2_h: "Заповни форму", step2_p: "Відповідай на запитання своєю мовою",
+        step3_h: "Отримай PDF", step3_p: "Завантаж заповнений приклад миттєво",
+        step4_h: "Моніторинг Termin", step4_p: "Опціонально: пошук слотів 24/7",
+        docs_title: "Підтримувані документи",
+        docs_sub: "Натисни на документ, щоб дізнатися більше.",
+        why_title: "Чому іммігранти обирають цей асистент",
+        why_sub: "Німецька бюрократія складна. Ми робимо її зрозумілою.",
+        why1_h: "Уникнути відмови", why1_p: "Поширені помилки виявляються до подачі.",
+        why2_h: "Зрозуміти складні форми", why2_p: "Простими словами — що і куди вписувати.",
+        why3_h: "Підготуватись до запису", why3_p: "Приходь у Bürgeramt з усім готовим.",
+        why4_h: "Заощадити час на Termin", why4_p: "Моніторинг 24/7 — миттєве сповіщення.",
+        trust_title: "Тисячі іммігрантів довіряють цьому асистенту",
+        trust_sub: "Правильно підготуй документи та заощадь години плутанини.",
+        trust_stat1: "Документів", trust_stat2: "Мов", trust_stat3: "Знайдено Termin",
+        cta_title: "Готовий почати?",
+        cta_sub: "Відкрий Telegram-бот — безкоштовно.",
+        nav_home: "Головна", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "Termin Berlin",
+        nav_faq: "FAQ", nav_about: "Про нас",
+        nav_docs: "Документи", nav_termin_menu: "Termin",
+        footer_copy: "© 2026 GermanDocAssist. Усі права захищені.",
+        footer_disclaimer: "Заповнені приклади є лише довідковими матеріалами і не є офіційними документами.",
+        footer_docs: "Документи", footer_termin: "Termin", footer_legal: "Правова інформація",
+        what_title: "Що таке Telegram-асистент для документів?",
+        what_text: "Цей асистент допомагає іммігрантам у Німеччині правильно підготувати офіційні документи перед відвідуванням органів влади. Знання німецької не потрібне.",
+        what_li1: "Показує правильно заповнені зразки форм",
+        what_li2: "Пояснює, які документи потрібно принести",
+        what_li3: "Покроково проводить через кожну форму",
+        what_li4: "Допомагає підготуватись до Bürgeramt",
+        what_li5: "Працює у 6 мовах — твоєю мовою",
+        what_cta_h: "Спробуй зараз — безкоштовно",
+        what_cta_p: "Відкрий асистент у Telegram і запитай про будь-який німецький документ.",
+        feat_title: "Що вміє асистент",
+        feat_sub: "Один інструмент для всіх паперів у Німеччині.",
+        feat1_h: "Зразок Anmeldung", feat1_p: "Отримай правильно заповнену форму реєстрації.",
+        feat2_h: "Заявка Bürgergeld", feat2_p: "Зрозумій і заповни форму соціальної допомоги.",
+        feat3_h: "Форми Kindergeld", feat3_p: "Покрокова інструкція для заявки на дитячу виплату.",
+        feat4_h: "Список документів", feat4_p: "Знай точно, що взяти на кожен запис.",
+        feat5_h: "Моніторинг Termin", feat5_p: "Автоматичні сповіщення про вільні слоти 24/7.",
+        feat6_h: "Підтримка 6 мов", feat6_p: "Українська, Німецька, Англійська, Польська, Турецька, Арабська.",
+        price_title: "Ціни",
+        price_sub: "Платіть лише за те, що потрібно. Починайте безкоштовно.",
+        price1_name: "PDF-приклад документа",
+        price1_desc: "Заповнений зразок форми для будь-якого підтримуваного документа",
+        price1_amount: "€4.99",
+        price1_note: "за документ",
+        price1_f1: "Правильно заповнений зразок",
+        price1_f2: "Завантажуваний PDF",
+        price1_f3: "Твоєю мовою",
+        price1_f4: "Миттєва доставка",
+        price2_name: "Моніторинг Termin",
+        price2_desc: "Автоматичний пошук вільних місць у Bürgeramt 24/7",
+        price2_badge: "Популярне",
+        price2_amount: "€4.99",
+        price2_note: "за 24 години",
+        price2_f1: "Перевірка кожні 30 секунд",
+        price2_f2: "Миттєве сповіщення в Telegram",
+        price2_f3: "Пряме посилання на бронювання",
+        price2_f4: "7-денний план від €14.99",
+        price3_name: "Комплект",
+        price3_desc: "PDF-документ + 24 год моніторинг разом",
+        price3_amount: "€7.99",
+        price3_note: "найкраща ціна · +€3 Termin",
+        price3_f1: "PDF-зразок включено",
+        price3_f2: "24 год моніторинг включено",
+        price3_f3: "Вигідніше ніж окремо",
+        price_cta: "Почати в Telegram",
+        tg_title: "Відкрити асистент у Telegram",
+        tg_sub: "Немає Telegram? Завантажте безкоштовно на будь-який пристрій.",
+        tg_android: "Android",
+        tg_ios: "iPhone",
+        tg_windows: "Windows",
+        tg_mac: "macOS",
+        tg_web: "Веб",
+        tg_note: "Після встановлення Telegram натисни «Відкрити Telegram-асистент».",
+        notice_text: "<strong>Прозорість:</strong> Цей сервіс надає рекомендації та заповнені зразки документів, щоб допомогти іммігрантам зрозуміти німецькі форми. Це не офіційний державний сервіс. Офіційні форми потрібно подавати через відповідні державні сайти.",
+        doc_anmeldung_sub: "Реєстрація адреси",
+        doc_ummeldung_sub: "Перереєстрація",
+        doc_buergergeld_sub: "Соціальна допомога",
+        doc_kindergeld_sub: "Дитячі виплати",
+        doc_wohngeld_sub: "Житлова субсидія",
+        doc_aufenthaltstitel_sub: "Посвідка на проживання",
+        doc_familienkasse_sub: "Сімейні виплати",
+        doc_termin_sub: "Пошук запису у Bürgeramt",
+        cta_find_termin: "Знайти Termin →",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "Ще немає Telegram? Встановіть:",
+      },
+      pl: {
+        hero_title: "Wypełniaj niemieckie dokumenty poprawnie — <span style='color:#93c5fd'>za pierwszym razem.</span>",
+        hero_sub: "Asystent krok po kroku dla Anmeldung, Bürgergeld, Kindergeld i wizyt w Bürgeramt. W Twoim języku.",
+        hero_trust: "Używany przez imigrantów w całych Niemczech",
+        cta_open: "Otwórz asystenta Telegram",
+        cta_how: "Jak to działa",
+        how_title: "Jak to działa",
+        how_sub: "Cztery proste kroki — bez znajomości niemieckiego.",
+        step1_h: "Wybierz dokument", step1_p: "Spośród 15+ niemieckich dokumentów",
+        step2_h: "Wypełnij formularz", step2_p: "Odpowiadaj na pytania w swoim języku",
+        step3_h: "Otrzymaj PDF", step3_p: "Pobierz wypełniony przykład od razu",
+        step4_h: "Monitoring Termin", step4_p: "Opcjonalnie: szukanie terminów 24/7",
+        docs_title: "Obsługiwane dokumenty",
+        docs_sub: "Kliknij dokument, aby dowiedzieć się więcej.",
+        why_title: "Dlaczego imigranci korzystają z tego asystenta",
+        why_sub: "Niemiecka biurokracja jest skomplikowana. Sprawiamy, że jest łatwiejsza.",
+        why1_h: "Unikaj odrzucenia", why1_p: "Najczęstsze błędy wykryte przed złożeniem.",
+        why2_h: "Zrozum złożone formularze", why2_p: "Proste wyjaśnienie każdego pola.",
+        why3_h: "Przygotuj się przed wizytą", why3_p: "Przyjdź do Bürgeramt w pełni gotowy.",
+        why4_h: "Oszczędź czas na Termin", why4_p: "Monitoring 24/7 — natychmiastowe powiadomienie.",
+        trust_title: "Tysiące imigrantów ufa temu asystentowi",
+        trust_sub: "Przygotuj dokumenty poprawnie i oszczędź godziny zamieszania.",
+        trust_stat1: "Dokumenty", trust_stat2: "Języki", trust_stat3: "Znalezione terminy",
+        cta_title: "Gotowy na start?",
+        cta_sub: "Otwórz bota Telegram — bezpłatnie.",
+        nav_home: "Strona główna", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "Termin Berlin",
+        nav_faq: "FAQ", nav_about: "O nas",
+        nav_docs: "Dokumenty", nav_termin_menu: "Termin",
+        footer_copy: "© 2026 GermanDocAssist. Wszelkie prawa zastrzeżone.",
+        footer_disclaimer: "Wypełnione przykłady służą wyłącznie jako materiał referencyjny i nie są oficjalnymi dokumentami.",
+        footer_docs: "Dokumenty", footer_termin: "Termin", footer_legal: "Informacje prawne",
+        what_title: "Czym jest asystent dokumentów Telegram?",
+        what_text: "Ten asystent pomaga imigrantom w Niemczech poprawnie przygotować oficjalne dokumenty przed wizytą w urzędzie. Znajomość języka niemieckiego nie jest wymagana.",
+        what_li1: "Pokazuje poprawnie wypełnione przykładowe formularze",
+        what_li2: "Wyjaśnia, jakie dokumenty należy zabrać",
+        what_li3: "Prowadzi krok po kroku przez każdy formularz",
+        what_li4: "Pomaga przygotować się przed wizytą w Bürgeramt",
+        what_li5: "Działa w 6 językach — Twoim języku",
+        what_cta_h: "Wypróbuj teraz — za darmo",
+        what_cta_p: "Otwórz asystenta w Telegramie i zapytaj o dowolny dokument.",
+        feat_title: "Co potrafi asystent",
+        feat_sub: "Jedno narzędzie do całej papierkowej roboty w Niemczech.",
+        feat1_h: "Przykład Anmeldung", feat1_p: "Otrzymaj poprawnie wypełniony formularz rejestracji.",
+        feat2_h: "Wniosek Bürgergeld", feat2_p: "Zrozum i wypełnij formularz świadczeń socjalnych.",
+        feat3_h: "Formularze Kindergeld", feat3_p: "Przewodnik krok po kroku dla wniosku o zasiłek.",
+        feat4_h: "Lista dokumentów", feat4_p: "Wiedz dokładnie, co zabrać na każdą wizytę.",
+        feat5_h: "Monitoring Termin", feat5_p: "Automatyczne powiadomienia o wolnych slotach 24/7.",
+        feat6_h: "Wsparcie wielojęzyczne", feat6_p: "Ukraiński, Niemiecki, Angielski, Polski, Turecki, Arabski.",
+        price_title: "Cennik",
+        price_sub: "Płać tylko za to, czego potrzebujesz. Zacznij bezpłatnie.",
+        price1_name: "Przykład PDF dokumentu",
+        price1_desc: "Wypełniony przykładowy formularz dla każdego obsługiwanego dokumentu",
+        price1_amount: "€4.99",
+        price1_note: "za dokument",
+        price1_f1: "Poprawnie wypełniony przykład",
+        price1_f2: "Plik PDF do pobrania",
+        price1_f3: "W Twoim języku",
+        price1_f4: "Natychmiastowa dostawa",
+        price2_name: "Monitoring Termin",
+        price2_desc: "Automatyczny monitoring wizyt w Bürgeramt 24/7",
+        price2_badge: "Popularne",
+        price2_amount: "€4.99",
+        price2_note: "za 24 godziny",
+        price2_f1: "Sprawdza co 30 sekund",
+        price2_f2: "Natychmiastowe powiadomienie",
+        price2_f3: "Bezpośredni link do rezerwacji",
+        price2_f4: "Plan 7-dniowy od €14.99",
+        price3_name: "Pakiet",
+        price3_desc: "PDF dokumentu + 24h monitoring razem",
+        price3_amount: "€7.99",
+        price3_note: "najlepsza cena · +€3 Termin",
+        price3_f1: "Przykład PDF w zestawie",
+        price3_f2: "Monitoring 24h w zestawie",
+        price3_f3: "Taniej niż oddzielnie",
+        price_cta: "Zacznij w Telegramie",
+        tg_title: "Otwórz asystenta w Telegramie",
+        tg_sub: "Nie masz Telegrama? Pobierz bezpłatnie na dowolne urządzenie.",
+        tg_android: "Android",
+        tg_ios: "iPhone",
+        tg_windows: "Windows",
+        tg_mac: "macOS",
+        tg_web: "Web",
+        tg_note: "Po zainstalowaniu Telegrama kliknij „Otwórz asystenta Telegram".",
+        notice_text: "<strong>Informacja:</strong> Usługa ta dostarcza wskazówek i wypełnionych przykładowych dokumentów, aby pomóc imigrantom zrozumieć niemieckie formularze. Nie jest to oficjalna usługa rządowa.",
+        doc_anmeldung_sub: "Rejestracja adresu",
+        doc_ummeldung_sub: "Zmiana adresu",
+        doc_buergergeld_sub: "Świadczenia socjalne",
+        doc_kindergeld_sub: "Zasiłek na dziecko",
+        doc_wohngeld_sub: "Dofinansowanie mieszkania",
+        doc_aufenthaltstitel_sub: "Zezwolenie na pobyt",
+        doc_familienkasse_sub: "Urząd ds. rodziny",
+        doc_termin_sub: "Wyszukiwarka terminów",
+        cta_find_termin: "Znajdź Termin →",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "Nie masz Telegrama? Zainstaluj:",
+      },
+      tr: {
+        hero_title: "Alman belgelerini doğru doldurun — <span style='color:#93c5fd'>ilk seferinde.</span>",
+        hero_sub: "Anmeldung, Bürgergeld, Kindergeld ve Bürgeramt randevuları için adım adım asistan. Kendi dilinizde.",
+        hero_trust: "Almanya genelinde göçmenler tarafından kullanılıyor",
+        cta_open: "Telegram Asistanını Aç",
+        cta_how: "Nasıl çalışır",
+        how_title: "Nasıl çalışır",
+        how_sub: "Dört basit adım — Almanca bilgisi gerekmez.",
+        step1_h: "Belge seçin", step1_p: "15'ten fazla Alman belgesi arasından",
+        step2_h: "Formu doldurun", step2_p: "Kendi dilinizde sorulara yanıt verin",
+        step3_h: "PDF alın", step3_p: "Doldurulmuş örneği anında indirin",
+        step4_h: "Termin takibi", step4_p: "İsteğe bağlı: 7/24 randevu takibi",
+        docs_title: "Desteklenen belgeler",
+        docs_sub: "Daha fazla bilgi için bir belgeye tıklayın.",
+        why_title: "Göçmenler neden bu asistanı kullanıyor",
+        why_sub: "Alman bürokrasisi karmaşıktır. Biz onu yönetilebilir hale getiriyoruz.",
+        why1_h: "Ret kararından kaçının", why1_p: "Yaygın hatalar başvurmadan önce yakalanır.",
+        why2_h: "Karmaşık formları anlayın", why2_p: "Her alan için sade dilde açıklama.",
+        why3_h: "Randevudan önce hazırlanın", why3_p: "Her şey hazır Bürgeramt'a gelin.",
+        why4_h: "Termin aramaktan zaman kazanın", why4_p: "7/24 izleme — saniyeler içinde bildirim.",
+        trust_title: "Binlerce göçmen bu asistana güveniyor",
+        trust_sub: "Belgeleri doğru hazırlayın ve saatlerce kafa karışıklığından kurtulun.",
+        trust_stat1: "Belgeler", trust_stat2: "Diller", trust_stat3: "Bulunan randevular",
+        cta_title: "Başlamaya hazır mısınız?",
+        cta_sub: "Telegram botunu açın — ücretsiz deneyin.",
+        nav_home: "Ana Sayfa", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "Termin Berlin",
+        nav_faq: "SSS", nav_about: "Hakkında",
+        nav_docs: "Belgeler", nav_termin_menu: "Termin",
+        footer_copy: "© 2026 GermanDocAssist. Tüm hakları saklıdır.",
+        footer_disclaimer: "Doldurulmuş örnekler yalnızca referans amaçlıdır ve resmi hükümet belgeleri değildir.",
+        footer_docs: "Belgeler", footer_termin: "Termin", footer_legal: "Yasal Bilgiler",
+        what_title: "Telegram Belge Asistanı Nedir?",
+        what_text: "Bu asistan, Almanya'daki göçmenlerin yetkililere başvurmadan önce resmi belgeleri doğru şekilde hazırlamasına yardımcı olur. Almanca bilgisi gerekmez.",
+        what_li1: "Doğru doldurulmuş örnek formları gösterir",
+        what_li2: "Hangi belgeleri getirmeniz gerektiğini açıklar",
+        what_li3: "Her formda sizi adım adım yönlendirir",
+        what_li4: "Bürgeramt ziyareti öncesinde hazırlanmanıza yardımcı olur",
+        what_li5: "6 dilde çalışır — kendi dilinizde",
+        what_cta_h: "Şimdi deneyin — ücretsiz",
+        what_cta_p: "Telegram'da asistanı açın ve herhangi bir Alman belgesi hakkında sorun.",
+        feat_title: "Asistan neler yapabilir",
+        feat_sub: "Tüm Alman evrak işlemleri için tek araç.",
+        feat1_h: "Anmeldung örneği", feat1_p: "Doğru doldurulmuş adres kayıt formu alın.",
+        feat2_h: "Bürgergeld başvurusu", feat2_p: "Sosyal yardım formunu anlayın ve doldurun.",
+        feat3_h: "Kindergeld formları", feat3_p: "Çocuk yardımı başvurusu için adım adım rehber.",
+        feat4_h: "Belge kontrol listesi", feat4_p: "Her randevuya ne getirmeniz gerektiğini bilin.",
+        feat5_h: "Termin takibi", feat5_p: "Boş slot için 7/24 otomatik bildirim.",
+        feat6_h: "Çok dilli destek", feat6_p: "Ukraynaca, Almanca, İngilizce, Lehçe, Türkçe, Arapça.",
+        price_title: "Fiyatlandırma",
+        price_sub: "Yalnızca ihtiyacınız olan için ödeyin. Ücretsiz başlayın.",
+        price1_name: "Belge PDF Örneği",
+        price1_desc: "Desteklenen her belge için doldurulmuş örnek form",
+        price1_amount: "€4.99",
+        price1_note: "belge başına",
+        price1_f1: "Doğru doldurulmuş örnek",
+        price1_f2: "İndirilebilir PDF",
+        price1_f3: "Kendi dilinizde",
+        price1_f4: "Anında teslimat",
+        price2_name: "Termin Takibi",
+        price2_desc: "7/24 otomatik Bürgeramt randevu izleme",
+        price2_badge: "Popüler",
+        price2_amount: "€4.99",
+        price2_note: "24 saat başına",
+        price2_f1: "Her 30 saniyede kontrol",
+        price2_f2: "Anlık Telegram bildirimi",
+        price2_f3: "Doğrudan rezervasyon bağlantısı",
+        price2_f4: "7 günlük plan €14.99'dan",
+        price3_name: "Paket",
+        price3_desc: "Belge PDF + 24s Termin takibi birlikte",
+        price3_amount: "€7.99",
+        price3_note: "en iyi değer · +€3 Termin",
+        price3_f1: "PDF örneği dahil",
+        price3_f2: "24s takip dahil",
+        price3_f3: "Ayrı satın almaktan ucuz",
+        price_cta: "Telegram'da Başla",
+        tg_title: "Asistanı Telegram'da açın",
+        tg_sub: "Telegram yok mu? Herhangi bir cihaza ücretsiz indirin.",
+        tg_android: "Android",
+        tg_ios: "iPhone",
+        tg_windows: "Windows",
+        tg_mac: "macOS",
+        tg_web: "Web",
+        tg_note: "Telegram'ı yükledikten sonra \"Telegram Asistanını Aç\" düğmesine dokunun.",
+        notice_text: "<strong>Şeffaflık bildirimi:</strong> Bu hizmet, göçmenlerin Alman formlarını anlamalarına yardımcı olmak için rehberlik ve doldurulmuş örnek belgeler sağlar. Resmi bir devlet hizmeti değildir.",
+        doc_anmeldung_sub: "Adres kaydı",
+        doc_ummeldung_sub: "Adres değişikliği",
+        doc_buergergeld_sub: "Sosyal yardım",
+        doc_kindergeld_sub: "Çocuk yardımı",
+        doc_wohngeld_sub: "Konut yardımı",
+        doc_aufenthaltstitel_sub: "Oturma izni",
+        doc_familienkasse_sub: "Aile yardımları",
+        doc_termin_sub: "Bürgeramt randevu arama",
+        cta_find_termin: "Termin Bul →",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "Telegram yok mu? Yükleyin:",
+      },
+      ar: {
+        hero_title: "أعدّ المستندات الألمانية بشكل صحيح — <span style='color:#93c5fd'>من المرة الأولى.</span>",
+        hero_sub: "مساعد موجَّه لـ Anmeldung وBürgergeld وKindergeld ومواعيد Bürgeramt. بلغتك.",
+        hero_trust: "يستخدمه المهاجرون في جميع أنحاء ألمانيا",
+        cta_open: "فتح مساعد تيليجرام",
+        cta_how: "كيف يعمل",
+        how_title: "كيف يعمل",
+        how_sub: "أربع خطوات بسيطة — لا يلزم معرفة الألمانية.",
+        step1_h: "اختر المستند", step1_p: "من أكثر من 15 مستندًا ألمانيًا",
+        step2_h: "أجب على الأسئلة", step2_p: "بلغتك الخاصة",
+        step3_h: "احصل على PDF", step3_p: "حمّل المثال المملوء فورًا",
+        step4_h: "مراقبة المواعيد", step4_p: "اختياري: مراقبة المواعيد على مدار الساعة",
+        docs_title: "المستندات المدعومة",
+        docs_sub: "انقر على أي مستند للمزيد من المعلومات.",
+        why_title: "لماذا يستخدم المهاجرون هذا المساعد",
+        why_sub: "البيروقراطية الألمانية معقدة. نجعلها قابلة للإدارة.",
+        why1_h: "تجنب رفض المستند", why1_p: "الأخطاء الشائعة تُكتشف قبل التقديم.",
+        why2_h: "فهم النماذج المعقدة", why2_p: "شرح بسيط لكل حقل.",
+        why3_h: "الاستعداد قبل الموعد", why3_p: "تعال إلى Bürgeramt وكل شيء جاهز.",
+        why4_h: "توفير الوقت في البحث عن موعد", why4_p: "مراقبة على مدار الساعة — إشعار فوري.",
+        trust_title: "آلاف المهاجرين يثقون بهذا المساعد",
+        trust_sub: "أعدّ المستندات بشكل صحيح ووفّر ساعات من الارتباك.",
+        trust_stat1: "مستندات", trust_stat2: "لغات", trust_stat3: "مواعيد وُجدت",
+        cta_title: "هل أنت مستعد للبدء؟",
+        cta_sub: "افتح بوت تيليجرام — مجانًا.",
+        nav_home: "الرئيسية", nav_anmeldung: "Anmeldung", nav_buergergeld: "Bürgergeld",
+        nav_kindergeld: "Kindergeld", nav_termin: "موعد برلين",
+        nav_faq: "الأسئلة الشائعة", nav_about: "عن الخدمة",
+        nav_docs: "المستندات", nav_termin_menu: "المواعيد",
+        footer_copy: "© 2026 GermanDocAssist. جميع الحقوق محفوظة.",
+        footer_disclaimer: "الأمثلة المملوءة للرجوع إليها فقط وليست وثائق حكومية رسمية.",
+        footer_docs: "المستندات", footer_termin: "المواعيد", footer_legal: "معلومات قانونية",
+        what_title: "ما هو مساعد وثائق تيليجرام؟",
+        what_text: "يساعد هذا المساعد المهاجرين في ألمانيا على إعداد الوثائق الرسمية بشكل صحيح قبل زيارة الجهات المختصة. لا حاجة لمعرفة اللغة الألمانية.",
+        what_li1: "يعرض نماذج مملوءة بشكل صحيح",
+        what_li2: "يشرح المستندات المطلوبة لكل موعد",
+        what_li3: "يرشدك خطوة بخطوة خلال كل نموذج",
+        what_li4: "يساعدك على الاستعداد قبل زيارة Bürgeramt",
+        what_li5: "يعمل بـ 6 لغات — لغتك الخاصة",
+        what_cta_h: "جرّبه الآن — مجانًا",
+        what_cta_p: "افتح المساعد في تيليجرام واسأله عن أي وثيقة ألمانية.",
+        feat_title: "ما يمكن للمساعد فعله",
+        feat_sub: "أداة واحدة لجميع الأوراق الألمانية.",
+        feat1_h: "نموذج Anmeldung", feat1_p: "احصل على نموذج تسجيل العنوان مملوءًا بشكل صحيح.",
+        feat2_h: "طلب Bürgergeld", feat2_p: "افهم واملأ نموذج الإعانة الاجتماعية.",
+        feat3_h: "نماذج Kindergeld", feat3_p: "دليل خطوة بخطوة لطلب مخصص الأطفال.",
+        feat4_h: "قائمة المستندات", feat4_p: "اعرف ما تحتاج إحضاره لكل موعد.",
+        feat5_h: "مراقبة المواعيد", feat5_p: "إشعارات تلقائية بالمواعيد المتاحة على مدار الساعة.",
+        feat6_h: "دعم متعدد اللغات", feat6_p: "أوكراني، ألماني، إنجليزي، بولندي، تركي، عربي.",
+        price_title: "الأسعار",
+        price_sub: "ادفع فقط لما تحتاجه. ابدأ مجانًا.",
+        price1_name: "مثال PDF للوثيقة",
+        price1_desc: "نموذج مملوء لأي وثيقة مدعومة",
+        price1_amount: "€4.99",
+        price1_note: "لكل وثيقة",
+        price1_f1: "نموذج مملوء بشكل صحيح",
+        price1_f2: "PDF قابل للتنزيل",
+        price1_f3: "بلغتك الخاصة",
+        price1_f4: "تسليم فوري",
+        price2_name: "مراقبة المواعيد",
+        price2_desc: "مراقبة تلقائية لمواعيد Bürgeramt على مدار الساعة",
+        price2_badge: "الأكثر شعبية",
+        price2_amount: "€4.99",
+        price2_note: "لكل 24 ساعة",
+        price2_f1: "يفحص كل 30 ثانية",
+        price2_f2: "إشعار فوري عبر تيليجرام",
+        price2_f3: "رابط حجز مباشر",
+        price2_f4: "خطة 7 أيام من €14.99",
+        price3_name: "الحزمة",
+        price3_desc: "PDF الوثيقة + مراقبة 24 ساعة معًا",
+        price3_amount: "€7.99",
+        price3_note: "أفضل قيمة · +€3 Termin",
+        price3_f1: "مثال PDF مضمّن",
+        price3_f2: "مراقبة 24 ساعة مضمّنة",
+        price3_f3: "أوفر من الشراء المنفصل",
+        price_cta: "ابدأ في تيليجرام",
+        tg_title: "افتح المساعد في تيليجرام",
+        tg_sub: "لا تملك تيليجرام؟ حمّله مجانًا على أي جهاز.",
+        tg_android: "أندرويد",
+        tg_ios: "آيفون",
+        tg_windows: "ويندوز",
+        tg_mac: "macOS",
+        tg_web: "الويب",
+        tg_note: "بعد تثبيت تيليجرام، انقر على «فتح مساعد تيليجرام».",
+        notice_text: "<strong>إشعار الشفافية:</strong> تقدم هذه الخدمة إرشادات ونماذج وثائق مملوءة لمساعدة المهاجرين على فهم النماذج الألمانية. إنها ليست خدمة حكومية رسمية.",
+        doc_anmeldung_sub: "تسجيل العنوان",
+        doc_ummeldung_sub: "تغيير العنوان",
+        doc_buergergeld_sub: "الإعانات الاجتماعية",
+        doc_kindergeld_sub: "مخصصات الأطفال",
+        doc_wohngeld_sub: "إعانة السكن",
+        doc_aufenthaltstitel_sub: "تصريح الإقامة",
+        doc_familienkasse_sub: "مكتب شؤون الأسرة",
+        doc_termin_sub: "حجز موعد في Bürgeramt",
+        cta_find_termin: "← ابحث عن موعد",
+        price1_amount: "€4.99",
+        price2_amount: "€4.99",
+        price3_amount: "€7.99",
+        install_hint: "ليس لديك تيليجرام؟ ثبّته:",
+      },
+    };
+  </script>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="de">DE</button>
+  <button class="lang-btn" data-lang="ua">UA</button>
+  <button class="lang-btn" data-lang="pl">PL</button>
+  <button class="lang-btn" data-lang="tr">TR</button>
+  <button class="lang-btn" data-lang="ar">AR</button>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">🇩🇪 GermanDocAssist</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li>
+      <a href="#" class="has-dropdown" data-i18n="nav_docs">Documents</a>
+      <div class="nav-dropdown">
+        <a href="anmeldung.html">🏠 Anmeldung</a>
+        <a href="ummeldung.html">📦 Ummeldung</a>
+        <a href="buergergeld.html">💶 Bürgergeld</a>
+        <a href="kindergeld.html">👶 Kindergeld</a>
+        <a href="wohngeld.html">🏘 Wohngeld</a>
+        <a href="aufenthaltstitel.html">🛂 Aufenthaltstitel</a>
+        <a href="familienkasse.html">👨‍👩‍👧 Familienkasse</a>
+        <div class="dropdown-divider"></div>
+        <a href="https://t.me/DE_PDF_Assistant_bot">📋 All documents →</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" class="has-dropdown" data-i18n="nav_termin_menu">Termin</a>
+      <div class="nav-dropdown">
+        <a href="termin-berlin.html">🏙 Berlin</a>
+        <a href="termin-berlin.html">🏙 Hamburg</a>
+        <a href="termin-berlin.html">🏙 Frankfurt</a>
+        <a href="termin-berlin.html">🏙 Düsseldorf</a>
+        <a href="termin-berlin.html">🏙 München</a>
+      </div>
+    </li>
+    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+    <li><a href="about.html" data-i18n="nav_about">About</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="nav-toggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge" data-i18n="hero_trust">Trusted by immigrants across Germany</div>
+  <h1 data-i18n="hero_title">Prepare German documents correctly — <span style="color:#93c5fd">first time.</span></h1>
+  <p data-i18n="hero_sub">Guided assistant for Anmeldung, Bürgergeld, Kindergeld and Bürgeramt appointments. In your language.</p>
+  <div class="btn-group">
+    <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn large" data-i18n="cta_open">Open Telegram Assistant</a>
+    <a href="#how-it-works" class="cta-btn large outline" data-i18n="cta_how">How it works</a>
+  </div>
+  <div class="hero-steps">
+    <span data-i18n="hero_step1">1️⃣ Telegram bot opens</span>
+    <span class="hero-steps-sep">→</span>
+    <span data-i18n="hero_step2">2️⃣ Answer a few questions</span>
+    <span class="hero-steps-sep">→</span>
+    <span data-i18n="hero_step3">3️⃣ Get a ready document</span>
+  </div>
+  <div class="tg-inline-install">
+    <span data-i18n="install_hint">No Telegram yet? Install it:</span>
+    <div class="tg-inline-links">
+      <a href="https://telegram.org/dl/android" target="_blank" rel="noopener">🤖 Android</a>
+      <a href="https://telegram.org/dl/ios" target="_blank" rel="noopener">🍎 iPhone</a>
+      <a href="https://telegram.org/dl/desktop/win" target="_blank" rel="noopener">🖥 Windows</a>
+      <a href="https://telegram.org/dl/macos" target="_blank" rel="noopener">💻 macOS</a>
+      <a href="https://web.telegram.org" target="_blank" rel="noopener">🌐 Web</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><strong>15+</strong><span data-i18n="trust_stat1">Documents</span></div>
+  <div class="stat-item"><strong>6</strong><span data-i18n="trust_stat2">Languages</span></div>
+  <div class="stat-item"><strong>2 400+</strong><span data-i18n="trust_stat3">Found Termins</span></div>
+</div>
+
+<!-- WHAT IS THIS SERVICE -->
+<section class="what-is-section">
+  <div class="what-is-inner">
+    <div class="what-is-text">
+      <h2 data-i18n="what_title">What is the Telegram Document Assistant?</h2>
+      <p data-i18n="what_text">This assistant helps immigrants in Germany correctly prepare official documents before visiting authorities.</p>
+      <ul class="what-is-list">
+        <li data-i18n="what_li1">Shows correctly filled example forms</li>
+        <li data-i18n="what_li2">Explains which documents you need to bring</li>
+        <li data-i18n="what_li3">Guides you step-by-step through each form</li>
+        <li data-i18n="what_li4">Helps you prepare before visiting the Bürgeramt</li>
+        <li data-i18n="what_li5">Works in 6 languages — your language</li>
+      </ul>
+    </div>
+    <div class="what-is-cta">
+      <h3 data-i18n="what_cta_h">Try it now — free</h3>
+      <p data-i18n="what_cta_p">Open the assistant in Telegram and ask about any German document.</p>
+      <a href="https://t.me/DE_PDF_Assistant_bot" class="tg-badge" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.13.58-.47.72-.95.45l-2.6-1.92-1.26 1.21c-.14.14-.26.26-.52.26l.18-2.63 4.73-4.27c.21-.18-.04-.28-.32-.1l-5.84 3.67-2.52-.79c-.55-.17-.56-.55.11-.81l9.84-3.8c.46-.17.86.11.85.71z" fill="white"/></svg>
+        <span data-i18n="cta_open">Open Telegram Assistant</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES GRID -->
+<section class="alt-bg">
+  <div class="container">
+    <h2 class="section-title" data-i18n="feat_title">What the assistant can do</h2>
+    <p class="section-sub" data-i18n="feat_sub">One tool for all your German paperwork.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <div>
+          <h3 data-i18n="feat1_h">Anmeldung example</h3>
+          <p data-i18n="feat1_p">Get a correctly filled address registration form.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💶</div>
+        <div>
+          <h3 data-i18n="feat2_h">Bürgergeld application</h3>
+          <p data-i18n="feat2_p">Understand and fill the social benefit form.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👶</div>
+        <div>
+          <h3 data-i18n="feat3_h">Kindergeld forms</h3>
+          <p data-i18n="feat3_p">Step-by-step child benefit application guide.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div>
+          <h3 data-i18n="feat4_h">Document checklist</h3>
+          <p data-i18n="feat4_p">Know exactly what to bring to each appointment.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div>
+          <h3 data-i18n="feat5_h">Termin monitoring</h3>
+          <p data-i18n="feat5_p">24/7 automated Bürgeramt slot notifications.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <div>
+          <h3 data-i18n="feat6_h">Multilingual support</h3>
+          <p data-i18n="feat6_p">Works in Ukrainian, German, English, Polish, Turkish, Arabic.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title" data-i18n="how_title">How it works</h2>
+    <p class="section-sub" data-i18n="how_sub">Four simple steps — no German required.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📄</div>
+        <div class="step-num">1</div>
+        <h3 data-i18n="step1_h">Choose document</h3>
+        <p data-i18n="step1_p">Select from 15+ German documents</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">✏️</div>
+        <div class="step-num">2</div>
+        <h3 data-i18n="step2_h">Fill simple form</h3>
+        <p data-i18n="step2_p">Answer guided questions in your language</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">📥</div>
+        <div class="step-num">3</div>
+        <h3 data-i18n="step3_h">Get filled PDF</h3>
+        <p data-i18n="step3_p">Download a completed example instantly</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🔔</div>
+        <div class="step-num">4</div>
+        <h3 data-i18n="step4_h">Termin monitoring</h3>
+        <p data-i18n="step4_p">Optional: 24/7 slot finder for Bürgeramt</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section>
+  <div class="container">
+    <h2 class="section-title" data-i18n="docs_title">Supported documents</h2>
+    <p class="section-sub" data-i18n="docs_sub">Click any document to learn more and get a filled example.</p>
+    <div class="docs-grid">
+      <a href="anmeldung.html" class="doc-card">
+        <div class="doc-icon">🏠</div>
+        <h3>Anmeldung</h3>
+        <p data-i18n="doc_anmeldung_sub">Address registration</p>
+      </a>
+      <a href="ummeldung.html" class="doc-card">
+        <div class="doc-icon">📦</div>
+        <h3>Ummeldung</h3>
+        <p data-i18n="doc_ummeldung_sub">Re-registration</p>
+      </a>
+      <a href="buergergeld.html" class="doc-card">
+        <div class="doc-icon">💶</div>
+        <h3>Bürgergeld</h3>
+        <p data-i18n="doc_buergergeld_sub">Social benefits</p>
+      </a>
+      <a href="kindergeld.html" class="doc-card">
+        <div class="doc-icon">👶</div>
+        <h3>Kindergeld</h3>
+        <p data-i18n="doc_kindergeld_sub">Child benefit</p>
+      </a>
+      <a href="wohngeld.html" class="doc-card">
+        <div class="doc-icon">🏘</div>
+        <h3>Wohngeld</h3>
+        <p data-i18n="doc_wohngeld_sub">Housing benefit</p>
+      </a>
+      <a href="aufenthaltstitel.html" class="doc-card">
+        <div class="doc-icon">🛂</div>
+        <h3>Aufenthaltstitel</h3>
+        <p data-i18n="doc_aufenthaltstitel_sub">Residence permit</p>
+      </a>
+      <a href="familienkasse.html" class="doc-card">
+        <div class="doc-icon">👨‍👩‍👧</div>
+        <h3>Familienkasse</h3>
+        <p data-i18n="doc_familienkasse_sub">Family benefits office</p>
+      </a>
+      <a href="termin-berlin.html" class="doc-card">
+        <div class="doc-icon">📅</div>
+        <h3>Termin Berlin</h3>
+        <p data-i18n="doc_termin_sub">Bürgeramt slot finder</p>
+      </a>
+    </div>
+    <div style="text-align:center">
+      <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn" data-i18n="cta_open">Open Telegram Assistant</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY USE THIS -->
+<section class="alt-bg">
+  <div class="container">
+    <h2 class="section-title" data-i18n="why_title">Why immigrants use this assistant</h2>
+    <p class="section-sub" data-i18n="why_sub">German bureaucracy is complex. We make it manageable.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <div>
+          <h3 data-i18n="why1_h">Avoid document rejection</h3>
+          <p data-i18n="why1_p">Common errors caught before you submit.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📖</div>
+        <div>
+          <h3 data-i18n="why2_h">Understand complex forms</h3>
+          <p data-i18n="why2_p">Plain-language explanation of every field.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div>
+          <h3 data-i18n="why3_h">Prepare before your appointment</h3>
+          <p data-i18n="why3_p">Arrive at Bürgeramt with everything ready.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⏰</div>
+        <div>
+          <h3 data-i18n="why4_h">Save time finding Termin</h3>
+          <p data-i18n="why4_p">24/7 monitoring — get notified in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <h2 class="section-title" data-i18n="price_title">Pricing</h2>
+    <p class="section-sub" data-i18n="price_sub">Pay only for what you need. Start for free.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-icon">📄</div>
+        <h3 data-i18n="price1_name">Document PDF Example</h3>
+        <p class="pricing-desc" data-i18n="price1_desc">Filled example form for any supported document</p>
+        <div class="pricing-amount" data-i18n="price1_amount">€4.99</div>
+        <p class="pricing-note" data-i18n="price1_note">per document</p>
+        <ul class="pricing-features">
+          <li data-i18n="price1_f1">Correctly filled example</li>
+          <li data-i18n="price1_f2">Downloadable PDF</li>
+          <li data-i18n="price1_f3">In your language</li>
+          <li data-i18n="price1_f4">Instant delivery</li>
+        </ul>
+        <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn" data-i18n="price_cta">Start in Telegram</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge" data-i18n="price2_badge">Popular</div>
+        <div class="pricing-icon">📅</div>
+        <h3 data-i18n="price2_name">Termin Monitoring</h3>
+        <p class="pricing-desc" data-i18n="price2_desc">24/7 automatic Bürgeramt appointment monitoring</p>
+        <div class="pricing-amount" data-i18n="price2_amount">€4.99</div>
+        <p class="pricing-note" data-i18n="price2_note">per 24 hours</p>
+        <ul class="pricing-features">
+          <li data-i18n="price2_f1">Checks every 30 seconds</li>
+          <li data-i18n="price2_f2">Instant Telegram notification</li>
+          <li data-i18n="price2_f3">Direct booking link</li>
+          <li data-i18n="price2_f4">7-day plan from €14.99</li>
+        </ul>
+        <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn" data-i18n="price_cta">Start in Telegram</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-icon">🎯</div>
+        <h3 data-i18n="price3_name">Bundle</h3>
+        <p class="pricing-desc" data-i18n="price3_desc">Document PDF + 24h Termin monitoring together</p>
+        <div class="pricing-amount" data-i18n="price3_amount">€7.99</div>
+        <p class="pricing-note" data-i18n="price3_note">best value · +€3 Termin add-on</p>
+        <ul class="pricing-features">
+          <li data-i18n="price3_f1">PDF example included</li>
+          <li data-i18n="price3_f2">24h monitoring included</li>
+          <li data-i18n="price3_f3">Save vs. buying separately</li>
+        </ul>
+        <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn" data-i18n="price_cta">Start in Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELEGRAM INSTALL -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="tg-install-section">
+      <h3 data-i18n="tg_title">Open the assistant in Telegram</h3>
+      <p data-i18n="tg_sub">Don't have Telegram? Download it free on any device.</p>
+      <div class="tg-platforms">
+        <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" class="tg-platform-btn" target="_blank" rel="noopener">
+          🤖 <span data-i18n="tg_android">Android</span>
+        </a>
+        <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="tg-platform-btn" target="_blank" rel="noopener">
+          🍎 <span data-i18n="tg_ios">iPhone</span>
+        </a>
+        <a href="https://desktop.telegram.org" class="tg-platform-btn" target="_blank" rel="noopener">
+          🖥 <span data-i18n="tg_windows">Windows</span>
+        </a>
+        <a href="https://desktop.telegram.org" class="tg-platform-btn" target="_blank" rel="noopener">
+          💻 <span data-i18n="tg_mac">macOS</span>
+        </a>
+        <a href="https://web.telegram.org" class="tg-platform-btn" target="_blank" rel="noopener">
+          🌐 <span data-i18n="tg_web">Web</span>
+        </a>
+      </div>
+      <p class="tg-install-note" data-i18n="tg_note">After installing Telegram, click "Open Telegram Assistant".</p>
+      <a href="https://t.me/DE_PDF_Assistant_bot" class="tg-badge" target="_blank" rel="noopener" style="margin-top:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.13.58-.47.72-.95.45l-2.6-1.92-1.26 1.21c-.14.14-.26.26-.52.26l.18-2.63 4.73-4.27c.21-.18-.04-.28-.32-.1l-5.84 3.67-2.52-.79c-.55-.17-.56-.55.11-.81l9.84-3.8c.46-.17.86.11.85.71z" fill="white"/></svg>
+        <span data-i18n="cta_open">Open Telegram Assistant</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST NOTICE -->
+<section>
+  <div class="container">
+    <div class="trust-notice">
+      <div class="trust-notice-icon">ℹ️</div>
+      <p data-i18n="notice_text"><strong>Transparency notice:</strong> This service provides guidance and filled example documents to help immigrants understand German forms. It is not an official government service. You must submit official forms from the relevant government website.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2 data-i18n="cta_title">Ready to get started?</h2>
+  <p data-i18n="cta_sub">Open the Telegram bot — it's free to try.</p>
+  <div class="btn-group">
+    <a href="https://t.me/DE_PDF_Assistant_bot" class="cta-btn" data-i18n="cta_open">Open Telegram Assistant</a>
+    <a href="termin-berlin.html" class="cta-btn outline" data-i18n="cta_find_termin">Find Termin →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">🇩🇪 GermanDocAssist</a>
+      <p style="margin-top:10px" data-i18n="footer_disclaimer">Filled examples are for reference only and are not official documents.</p>
+    </div>
+    <div class="footer-nav-group">
+      <div class="footer-col">
+        <h4 data-i18n="footer_docs">Documents</h4>
+        <a href="anmeldung.html">Anmeldung</a>
+        <a href="ummeldung.html">Ummeldung</a>
+        <a href="buergergeld.html">Bürgergeld</a>
+        <a href="kindergeld.html">Kindergeld</a>
+        <a href="wohngeld.html">Wohngeld</a>
+        <a href="aufenthaltstitel.html">Aufenthaltstitel</a>
+        <a href="familienkasse.html">Familienkasse</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_termin">Termin</h4>
+        <a href="termin-berlin.html">Berlin</a>
+        <a href="termin-berlin.html">Hamburg</a>
+        <a href="termin-berlin.html">Frankfurt</a>
+        <a href="termin-berlin.html">Düsseldorf</a>
+        <a href="termin-berlin.html">München</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_legal">Info</h4>
+        <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://t.me/DE_PDF_Assistant_bot">Telegram Bot</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">© 2026 GermanDocAssist. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://t.me/DE_PDF_Assistant_bot">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('nav-mobile-open');
+    navToggle.textContent = mainNav.classList.contains('nav-mobile-open') ? '✕' : '☰';
+  });
+</script>
+</body>
+</html>

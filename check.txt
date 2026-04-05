@@ -1,0 +1,319 @@
+# ============================================================================
+# ПЕРЕВІРКА СИНХРОНІЗАЦІЇ ПОЛІВ МІЖ index.html ТА docs_new.py
+# ============================================================================
+
+## 📋 ПОЛЯ, ЯКІ ВІДПРАВЛЯЄ index_FINAL.html
+
+Функція `submitForm()` в `index_FINAL.html` збирає наступні поля:
+
+### Для документа "anmeldung" (Прописка):
+
+```javascript
+formData = {
+    // PERSONAL SECTION
+    "first_name": "Іван",
+    "last_name": "Петренко",
+    "birth_date": "15.03.1990",
+    "birth_place": "Kyiv",
+    "nationality": "ukrainisch",
+    "marital_status": "single",
+    "religion": "orthodox",
+    
+    // ADDRESS SECTION
+    "street": "Hauptstraße",
+    "house_number": "15a",
+    "postal_code": "12345",
+    "city": "Berlin",
+    "previous_address": "Alte Straße 15, 10117 Berlin",  // Опціональне
+    "move_in_date": "01.01.2024",
+    
+    // HOUSING SECTION
+    "landlord_name": "Max Mustermann",
+    
+    // SIGNATURE SECTION
+    "signature_place": "Berlin",
+    "signature_date": "17.01.2026"
+}
+```
+
+**Загалом:** 15 полів (14 обов'язкових + 1 опціональне)
+
+### Для документа "kindergeld" (Допомога на дітей):
+
+```javascript
+formData = {
+    // PERSONAL SECTION
+    "first_name": "Іван",
+    "last_name": "Петренко",
+    "birth_date": "15.03.1990",
+    "birth_place": "Kyiv",
+    "nationality": "ukrainisch",
+    "marital_status": "single",
+    "religion": "orthodox",
+    
+    // ADDRESS SECTION
+    "street": "Hauptstraße",
+    "house_number": "15a",
+    "postal_code": "12345",
+    "city": "Berlin",
+    // Увага: previous_address та move_in_date НЕ включені для kindergeld
+    
+    // BANK SECTION
+    "iban": "DE89370400440532013000",  // Нормалізовано (без пробілів)
+    "bic": "COBADEFFXXX",              // Нормалізовано (без пробілів)
+    "account_holder": "Max Mustermann",
+    
+    // CHILD SECTION
+    "child_first_name": "Anna",
+    "child_last_name": "Petrova",
+    "child_birth_date": "15.05.2020",
+    "child_birth_place": "Berlin",
+    "child_nationality": "ukrainisch",
+    
+    // SIGNATURE SECTION
+    "signature_place": "Berlin",
+    "signature_date": "17.01.2026"
+}
+```
+
+**Загалом:** 18 полів (всі обов'язкові)
+
+---
+
+## ✅ ВАЖЛИВО: НОРМАЛІЗАЦІЯ ДАНИХ
+
+### IBAN і BIC відправляються БЕЗ пробілів:
+
+**Користувач вводить:**
+```
+IBAN: DE89 3704 0044 0532 0130 00
+BIC: COBA DEFF XXX
+```
+
+**WebApp відправляє (нормалізовано):**
+```javascript
+{
+    "iban": "DE89370400440532013000",
+    "bic": "COBADEFFXXX"
+}
+```
+
+**Функції нормалізації в index.html:**
+```javascript
+function normalizeIBAN(raw) {
+    return (raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    // Видаляє ВСІ пробіли, дефіси, крапки
+}
+
+function normalizeBIC(raw) {
+    return (raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    // Видаляє ВСІ пробіли, дефіси, крапки
+}
+```
+
+---
+
+## 🔧 ЩО ОЧІКУЄ БОТ (docs_new.py)
+
+Функція `handle_webapp_data` очікує наступну структуру:
+
+```python
+{
+    "doc_type": "anmeldung",  # або "kindergeld"
+    "user_answers": {
+        # Тут всі поля з форми
+    },
+    "status": "success"
+}
+```
+
+### Критично важливі моменти:
+
+1. **Ключ `user_answers`** (НЕ `form_data`!)
+2. **Назви полів ТОЧНО збігаються** з тими, що в HTML
+3. **Дані нормалізовані** (IBAN/BIC без пробілів)
+
+---
+
+## 📂 ПЕРЕВІРКА ШЛЯХІВ ДО ШАБЛОНІВ
+
+### Функція `generate_pdf_safe` шукає файли тут:
+
+```
+Поточна директорія: /path/to/GERMAN_DOC_BOT/
+│
+├── templates/
+│   ├── anmeldung_template.docx
+│   └── kindergeld_template.docx
+│
+└── fonts/
+    ├── DejaVuSans.ttf
+    └── DejaVuSans-Bold.ttf
+```
+
+### Перевірка в коді:
+
+```python
+print(f"📂 Checking paths:")
+print(f"   Current dir: {os.getcwd()}")
+print(f"   Templates dir exists: {os.path.exists('templates')}")
+print(f"   Fonts dir exists: {os.path.exists('fonts')}")
+
+if os.path.exists('templates'):
+    print(f"   Templates contents: {os.listdir('templates')}")
+```
+
+**Якщо шляхи неправильні:**
+
+1. Перевірте що бот запущений з правильної директорії
+2. Перевірте що файли шаблонів існують:
+   - `templates/anmeldung_template.docx`
+   - `templates/kindergeld_template.docx`
+3. Перевірте що шрифти існують:
+   - `fonts/DejaVuSans.ttf`
+
+---
+
+## 🔍 ДІАГНОСТИКА: ЩО ПЕРЕВІРЯТИ В ЛОГАХ
+
+### 1. Чи дані дійшли до бота?
+
+Шукайте в консолі:
+```
+🔥🔥🔥 WEBAPP DATA HANDLER CALLED! 🔥🔥🔥
+```
+
+Якщо НЕ бачите → проблема в `tg.sendData()` або реєстрації handler'а.
+
+### 2. Чи правильно розпарсився JSON?
+
+Шукайте:
+```
+📋 ОТРИМАНО ДАНІ (Received keys):
+   Total fields: 15
+   Field names: first_name, last_name, birth_date, ...
+```
+
+Якщо бачите "Total fields: 0" → WebApp відправив порожні дані.
+
+### 3. Чи всі поля на місці?
+
+Перевірте список полів:
+```
+📋 ДЕТАЛЬНІ ЗНАЧЕННЯ (Detailed values):
+      first_name: Іван
+      last_name: Петренко
+      iban: DE89370400440532013000  ← БЕЗ пробілів!
+      ...
+```
+
+### 4. Чи успішно створилося замовлення?
+
+Шукайте:
+```
+✅ Order created successfully
+   Order ID: 12345
+```
+
+Якщо НЕ бачите → проблема в базі даних.
+
+### 5. Де падає генерація PDF?
+
+Якщо бачите:
+```
+❌ PDF GENERATION FAILED!
+   Error: ...
+   Traceback: ...
+```
+
+→ Проблема в генераторі PDF (можливо, шаблон не знайдено або поля не співпадають).
+
+---
+
+## 🚨 ТИПОВІ ПОМИЛКИ ТА РІШЕННЯ
+
+### Помилка 1: "user_answers is empty"
+
+**Причина:** WebApp відправив `form_data` замість `user_answers`
+
+**Рішення:** 
+- Переконайтеся що використовуєте `index_FINAL.html`
+- Рядок ~253 має бути: `user_answers: formData`
+
+### Помилка 2: "PDF generation failed - template not found"
+
+**Причина:** Шаблон не знайдено в папці `templates/`
+
+**Рішення:**
+```bash
+# Перевірте наявність файлів
+ls -la templates/
+# Має бути:
+# anmeldung_template.docx
+# kindergeld_template.docx
+```
+
+### Помилка 3: "KeyError: 'some_field'"
+
+**Причина:** Генератор PDF очікує поле, якого немає в `user_answers`
+
+**Рішення:**
+- Перевірте який саме ключ відсутній
+- Додайте це поле в HTML форму
+- Або зробіть поле опціональним в генераторі PDF
+
+### Помилка 4: IBAN з пробілами в базі даних
+
+**Причина:** Нормалізація не спрацювала
+
+**Рішення:**
+- Переконайтеся що в `index_FINAL.html` є функції `normalizeIBAN()` і `normalizeBIC()`
+- Перевірте що вони викликаються перед відправкою:
+  ```javascript
+  if (el.name === 'iban') v = normalizeIBAN(v);
+  if (el.name === 'bic') v = normalizeBIC(v);
+  ```
+
+---
+
+## ✅ ЧЕКЛИСТ ПЕРЕД ТЕСТУВАННЯМ
+
+- [ ] `index_FINAL.html` встановлено на сервер (порт 4242)
+- [ ] Production сервер доступний (https://termin-assist.de/form)
+- [ ] `WEBAPP_URL` в `.env` вказує на https://termin-assist.de/form
+- [ ] Функція `handle_webapp_data` замінена на нову версію
+- [ ] Бот перезапущений
+- [ ] Папка `templates/` існує і містить шаблони
+- [ ] Папка `fonts/` існує і містить шрифти
+- [ ] Handler зареєстрований з `content_types=['web_app_data']`
+
+---
+
+## 📞 ЯКЩО ВСЕ ЩЕ НЕ ПРАЦЮЄ
+
+Надішліть мені:
+
+1. **Повні логи бота** від моменту натискання "Згенерувати PDF"
+2. **Консоль браузера (F12)** після натискання кнопки
+3. **Відповідь на питання:**
+   - Чи з'являється "🔥🔥🔥 WEBAPP DATA HANDLER CALLED"?
+   - Чи бачите "Total fields: X" (де X > 0)?
+   - Чи бачите "Order created successfully"?
+   - На якому етапі падає (STEP X)?
+
+---
+
+## 🎯 ОЧІКУВАНИЙ РЕЗУЛЬТАТ
+
+При успішній роботі ви маєте побачити:
+
+```
+🔥🔥🔥 WEBAPP DATA HANDLER CALLED! 🔥🔥🔥
+📋 ОТРИМАНО ДАНІ: Total fields: 15
+✅ Order created successfully: Order ID: 12345
+✅ PDF generated: outputs/anmeldung_402229082_20260117.pdf
+✅ Preview sent to user 402229082
+✅✅✅ WEBAPP DATA HANDLER COMPLETED ✅✅✅
+```
+
+І користувач отримує превью PDF з кнопками оплати.

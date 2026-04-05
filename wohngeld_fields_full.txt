@@ -1,0 +1,388 @@
+p1|Button|zur├╝cksetzen|None
+p1|Button|Drucken|None
+p1|Text|Wohngeldnummer bitte eintragen soweit bekannt|None
+p1|CheckBox|Erstantrag_Weiterleistungsantrag_Erh├╢hungsantrag|erst
+p1|CheckBox|Erstantrag_Weiterleistungsantrag_Erh├╢hungsantrag|weiterleistung
+p1|CheckBox|Erstantrag_Weiterleistungsantrag_Erh├╢hungsantrag|erh#F6hung
+p1|CheckBox|Erh├╢hung der Personenzahl|On
+p1|CheckBox|Verringerung des Einkommens|On
+p1|CheckBox|Erh├╢hung der Miete|On
+p1|Text|Anschrift der Wohngeldbeh├╢rde|None
+p1|Text|Name_Antragsteller|None
+p1|Text|Vorname_Antragsteller|None
+p1|CheckBox|Geschlecht1|w
+p1|CheckBox|Geschlecht1|m
+p1|CheckBox|Geschlecht1|u
+p1|CheckBox|Geschlecht1|ka
+p1|Text|ggf Geburtsname_Antragsteller|None
+p1|Text|Geburtsdatum_Antragsteller|None
+p1|Text|Geburtsort_Antragsteller|None
+p1|Text|Staatsangeh├╢rigkeit_Antragsteller|None
+p1|Text|Anschrift Stra├Яe Hausnr ggf Wohnungsnr Postleitzahl Ort|None
+p1|Text|Telefonnummer freiwillige Angabe_Antragsteller|None
+p1|Text|ggf EMailAdresse freiwillige Angabe_Antragsteller|None
+p1|RadioButton|Familienstand|ledig
+p1|RadioButton|Familienstand|verheiratet
+p1|RadioButton|Familienstand|getrennt#20lebend
+p1|RadioButton|Familienstand|geschieden
+p1|RadioButton|Familienstand|verwitwet
+p1|RadioButton|Familienstand|eingetragene#20Lebenspartnerschaft
+p1|RadioButton|Familienstand|nichteheliche#20Lebensgemeinschaft
+p1|RadioButton|T├дtigkeit|Arbeitnehmer
+p1|RadioButton|T├дtigkeit|Selbst#E4ndiger
+p1|RadioButton|T├дtigkeit|Beamter
+p1|RadioButton|T├дtigkeit|Student#20oder#20Auszubildender
+p1|RadioButton|T├дtigkeit|Rentner
+p1|RadioButton|T├дtigkeit|arbeitslos
+p1|RadioButton|T├дtigkeit|aus#20sonstigen#20Gr#FCnden#20nicht#20erwerbst#E4tig
+p1|Text|Derzeit ausge├╝bte T├дtigkeit|None
+p1|CheckBox|janein-2|j
+p1|CheckBox|janein-2|n
+p1|CheckBox|janein-3|j
+p1|CheckBox|janein-3|n
+p1|Text|Wenn ja neue Anschrift Stra├Яe Hausnr ggf Wohnungsnr Postleitzahl Ort|None
+p1|Text|Ab wann|None
+p1|CheckBox|janein-3-1|j
+p1|CheckBox|janein-3-1|n
+p1|Text|Anschrift_Zweitwohnsitz|None
+p1|CheckBox|janein-3-2|j
+p1|CheckBox|janein-3-2|n
+p1|CheckBox|Wohnraum_ anderem Wohnraum|On
+p1|CheckBox|Wohnraum_ anderem Wohnraum|off
+p1|Text|Anschrift_Lebensmittelpunkt|None
+p2|Text|Name Vorname ggf GeburtsnameRow1|None
+p2|Text|GeburtsdatumRow1|None
+p2|Text|GeburtsortRow1|None
+p2|Text|FamilienstandRow1|None
+p2|CheckBox|Geschlecht4-1|w
+p2|CheckBox|Geschlecht4-1|m
+p2|CheckBox|Geschlecht4-1|u
+p2|CheckBox|Geschlecht4-1|ka
+p2|Text|Staatsangeh├╢rigkeitRow1|None
+p2|Text|Verh├дltnis zur antragstellenden PersonRow1|None
+p2|Text|Derzeit ausge├╝bte T├дtigkeitRow1|None
+p2|Text|Name Vorname ggf GeburtsnameRow2|None
+p2|Text|GeburtsdatumRow2|None
+p2|Text|GeburtsortRow2|None
+p2|Text|FamilienstandRow2|None
+p2|CheckBox|Geschlecht4-2|w
+p2|CheckBox|Geschlecht4-2|m
+p2|CheckBox|Geschlecht4-2|u
+p2|CheckBox|Geschlecht4-2|ka
+p2|Text|Staatsangeh├╢rigkeitRow2|None
+p2|Text|Verh├дltnis zur antragstellenden PersonRow2|None
+p2|Text|Derzeit ausge├╝bte T├дtigkeitRow2|None
+p2|Text|Name Vorname ggf GeburtsnameRow3|None
+p2|Text|GeburtsdatumRow3|None
+p2|Text|GeburtsortRow3|None
+p2|Text|FamilienstandRow3|None
+p2|CheckBox|Geschlecht4-3|w
+p2|CheckBox|Geschlecht4-3|m
+p2|CheckBox|Geschlecht4-3|u
+p2|CheckBox|Geschlecht4-3|ka
+p2|Text|Staatsangeh├╢rigkeitRow3|None
+p2|Text|Verh├дltnis zur antragstellenden PersonRow3|None
+p2|Text|Derzeit ausge├╝bte T├дtigkeitRow3|None
+p2|Text|Name Vorname ggf GeburtsnameRow4|None
+p2|Text|GeburtsdatumRow4|None
+p2|Text|GeburtsortRow4|None
+p2|Text|FamilienstandRow4|None
+p2|CheckBox|Geschlecht4-4|w
+p2|CheckBox|Geschlecht4-4|m
+p2|CheckBox|Geschlecht4-4|u
+p2|CheckBox|Geschlecht4-4|ka
+p2|Text|Staatsangeh├╢rigkeitRow4|None
+p2|Text|Verh├дltnis zur antragstellenden PersonRow4|None
+p2|Text|Derzeit ausge├╝bte T├дtigkeitRow4|None
+p2|Text|Name Vorname ggf GeburtsnameRow5|None
+p2|Text|GeburtsdatumRow5|None
+p2|Text|GeburtsortRow5|None
+p2|Text|FamilienstandRow5|None
+p2|CheckBox|Geschlecht4-5|w
+p2|CheckBox|Geschlecht4-5|m
+p2|CheckBox|Geschlecht4-5|u
+p2|CheckBox|Geschlecht4-5|ka
+p2|Text|Staatsangeh├╢rigkeitRow5|None
+p2|Text|Verh├дltnis zur antragstellenden PersonRow5|None
+p2|Text|Derzeit ausge├╝bte T├дtigkeitRow5|None
+p2|CheckBox|janein-5-1|j
+p2|CheckBox|janein-5-1|n
+p2|Text|Wenn ja wann voraussichtlich|None
+p2|Text|Grund f├╝r die ├Дnderung|None
+p2|CheckBox|janein-6|j
+p2|CheckBox|janein-6|n
+p2|Text|Wenn ja wer Name Vorname6|None
+p2|Text|Name und Anschrift des Betreuers6|None
+p2|CheckBox|janein-7|j
+p2|CheckBox|janein-7|n
+p2|Text|Wenn ja wer Name Vorname_7|None
+p2|Text|Wo Anschrift7|None
+p2|CheckBox|janein-7-1|j
+p2|CheckBox|janein-7-1|n
+p2|CheckBox|janein-8|j
+p2|CheckBox|janein-8|n
+p2|Text|Wenn ja wer Name Vorname_8_1|None
+p2|Text|Verh├дltnis zur antragstellenden Person8_1|None
+p2|Text|Wenn ja wer Name Vorname_8_2|None
+p2|Text|Verh├дltnis zur antragstellenden Person_8_2|None
+p2|CheckBox|janein-9|j
+p2|CheckBox|janein-9|n
+p2|Text|Name Vorname Geburtsdatum9_1|None
+p2|Text|Name Vorname Geburtsdatum9_2|None
+p2|Text|Name Vorname Anschrift9_1|None
+p2|Text|Name Vorname Anschrift9_2|None
+p2|Text|Antragsteller(in) welcher Anteil in Prozent_9_1|None
+p2|Text|Anderer Eltern-/Pflegeelternteil_9-1|None
+p2|Text|Antragsteller(in) welcher Anteil in Prozent_9_2|None
+p2|Text|Anderer Eltern-/Pflegeelternteil_9-2|None
+p3|CheckBox|janein-10|j
+p3|CheckBox|janein-10|n
+p3|Text|Wenn ja wer Name Vorname Geburtsdatum10|None
+p3|Text|Wann Sterbedatum|None
+p3|CheckBox|janein-10-1|j
+p3|CheckBox|janein-10-1|n
+p3|CheckBox|janein-10-2|j
+p3|CheckBox|janein-10-2|n
+p3|Text|Wenn ja durch wen Name Vorname10|None
+p3|Text|Wann Einzugsdatum10|None
+p3|CheckBox|janein-10-3|j
+p3|CheckBox|janein-10-3|n
+p3|Text|Wenn ja welche Transferleistung|None
+p3|Text|Von welcher Beh├╢rde110|None
+p3|CheckBox|janein-11|j
+p3|CheckBox|janein-11|n
+p3|CheckBox|B├╝rgergeld|on
+p3|CheckBox|Zuschuss f├╝r Unterkunft an|on
+p3|CheckBox|Kosten der Unterkunft nach|on
+p3|CheckBox|Verletztengeld in H├╢he|on
+p3|CheckBox|Vorschuss auf Leistung|on
+p3|CheckBox|Grundsicherung im Alter oder|on
+p3|CheckBox|Hilfe zum Lebensunterhalt|on
+p3|CheckBox|Erg├дnzende Hilfe zum Lebensunterhalt|on
+p3|CheckBox|Leistungen der Kinder- und Jugendhilfe nach SGB VIII|on
+p3|CheckBox|Asylbewerberleistung|on
+p3|Text|Wenn ja wer Name Vorname11Row1|None
+p3|Text|Genaue Bezeichnung der Leistungsart11Row1|None
+p3|Text|Wenn ja wer Name Vorname11Row2|None
+p3|Text|Genaue Bezeichnung der Leistungsart11Row2|None
+p3|CheckBox|janein-11-1|j
+p3|CheckBox|janein-11-1|n
+p3|CheckBox|janein-11-2|j
+p3|CheckBox|janein-11-2|n
+p3|CheckBox|janein-12|j
+p3|CheckBox|janein-12|n
+p3|CheckBox|Rente|On
+p3|CheckBox|Unterhaltsvorschuss|On
+p3|CheckBox|Kinderzuschlag nach BKGG|On
+p3|CheckBox|Wohngeld|On
+p3|CheckBox|Berufsausbildungsbeihilfe nach SGB III|On
+p3|CheckBox|Leistungen der Ausbildungsf├╢rderung|On
+p3|CheckBox|Ausbildungsgeld SGB III|On
+p3|CheckBox|Leistungen aus dem MobiProEU-Programm|On
+p3|CheckBox|├Ьbergangsgeld nach SGB VI|On
+p3|CheckBox|Verletztengeld nach dem SGB VII*|On
+p3|CheckBox|Leistungen der Kinder- und Jugendhilfe|On
+p3|Text|Wenn ja wer Name VornameRow12_1|None
+p3|Text|Genaue Bezeichnung der LeistungsartRow12_1|None
+p3|Text|Wenn ja wer Name VornameRow12_2|None
+p3|Text|Genaue Bezeichnung der LeistungsartRow12_2|None
+p4|Text|13_1_antragsteller|None
+p4|Text|13-1-1|None
+p4|Text|13-1-2|None
+p4|Text|13-1-3|None
+p4|Text|13-1-4|None
+p4|CheckBox|ja_13-1|ja
+p4|CheckBox|ja_13-1|nein
+p4|CheckBox|ja_13-1-1|ja
+p4|CheckBox|ja_13-1-1|nein
+p4|CheckBox|ja_13-1-1-1|ja
+p4|CheckBox|ja_13-1-1-1|nein
+p4|Text|13-2 Haushaltsmitglied|None
+p4|Text|13-2-1|None
+p4|Text|13-2-2|None
+p4|Text|13-2-3|None
+p4|Text|13-2-4|None
+p4|CheckBox|ja_13-2|ja
+p4|CheckBox|ja_13-2|nein
+p4|CheckBox|ja_13-2-2|ja
+p4|CheckBox|ja_13-2-2|nein
+p4|CheckBox|ja_13-2-2-2|ja
+p4|CheckBox|ja_13-2-2-2|nein
+p4|Text|13-3 Haushaltsmitglied|None
+p4|Text|13-3-1|None
+p4|Text|13-3-2|None
+p4|Text|13-3-3|None
+p4|Text|13-3-4|None
+p4|CheckBox|ja_13-3|ja
+p4|CheckBox|ja_13-3|nein
+p4|CheckBox|ja_13-3-3|ja
+p4|CheckBox|ja_13-3-3|nein
+p4|CheckBox|ja_13-3-3-3|ja
+p4|CheckBox|ja_13-3-3-3|nein
+p4|Text|13-4 Haushaltsmitglied|None
+p4|Text|13-4-1|None
+p4|Text|13-4-2|None
+p4|Text|13-4-3|None
+p4|Text|13-4-4|None
+p4|CheckBox|ja_13-4|ja
+p4|CheckBox|ja_13-4|nein
+p4|CheckBox|ja_13-4-4|ja
+p4|CheckBox|ja_13-4-4|nein
+p4|CheckBox|ja_13-4-4-4|ja
+p4|CheckBox|ja_13-4-4-4|nein
+p4|Text|13-5 Haushaltsmitglied|None
+p4|Text|13-5-1|None
+p4|Text|13-5-2|None
+p4|Text|13-5-3|None
+p4|Text|13-5-4|None
+p4|CheckBox|ja_13-5|ja
+p4|CheckBox|ja_13-5|nein
+p4|CheckBox|ja_13-5-5|ja
+p4|CheckBox|ja_13-5-5|nein
+p4|CheckBox|ja_13-5-5-5|ja
+p4|CheckBox|ja_13-5-5-5|nein
+p4|Text|13-6 Haushaltsmitglied|None
+p4|Text|13-6-1|None
+p4|Text|13-6-2|None
+p4|Text|13-6-3|None
+p4|Text|13-6-4|None
+p4|CheckBox|ja_13-6|ja
+p4|CheckBox|ja_13-6|nein
+p4|CheckBox|ja_13-6-6|ja
+p4|CheckBox|ja_13-6-6|nein
+p4|CheckBox|ja_13-6-6-6|ja
+p4|CheckBox|ja_13-6-6-6|nein
+p4|CheckBox|janein-14|j
+p4|CheckBox|janein-14|n
+p4|Text|Wenn ja wer Name Vorname_14|None
+p4|Text|Welche Leistung14|None
+p4|Text|Wann14|None
+p4|Text|Gesamtbetrag in Euro14|None
+p4|CheckBox|janein-14-1|j
+p4|CheckBox|janein-14-1|n
+p4|CheckBox|janein-15|j
+p4|CheckBox|janein-15|n
+p4|Text|Wenn ja wer Name Vorname_15|None
+p4|Text|Welche Leistung_15|None
+p4|Text|Wann_15|None
+p4|Text|Gesamtbetrag in Euro_15|None
+p5|CheckBox|ja-nein16|ver
+p5|CheckBox|ja-nein16|erh
+p5|CheckBox|ja-nein16|n
+p5|Text|Wenn ja bei wem Name Vorname16|None
+p5|Text|Ab wann_16|None
+p5|Text|Zuk├╝nftiges monatliches Einkommen in Euro16|None
+p5|Text|16Grund der Ver├дnderung der Einnahmen z B Arbeitsaufnahme Antrag auf Rente Arbeitslosengeld Sozialhilfe Ausbildungsf├╢rderung Versicherungsleistung|None
+p5|CheckBox|janein-17|ja
+p5|CheckBox|janein-17|n
+p5|CheckBox|Immobilien_Grundbesitz17|On
+p5|Text|Wertangabe in Euro ca17_1|None
+p5|CheckBox|Geldverm├╢gen Forderungen und sonstige Rechte17|On
+p5|Text|Wertangabe in Euro ca_17_2|None
+p5|CheckBox|Wertgegenst├дnde bewegliche Sachen z B Auto Schmuck17|On
+p5|Text|Wertangabe in Euro ca_17_3|None
+p5|CheckBox|Sonstige Verm├╢genswerte z B Bausparvertrag Lebensversicherung17|On
+p5|Text|Wertangabe in Euro ca_17_4|None
+p5|CheckBox|janein-18|j
+p5|CheckBox|janein-18|n
+p5|Text|Falls ja welcher Unterhaltsanspruch und f├╝r wen18|None
+p5|Text|Monatlicher Gesamtbetrag in Euro ca18|None
+p5|Text|Name Vorname19_1|None
+p5|Text|Schwerbehinderung Grad der BehinderungRow19_1|None
+p5|CheckBox|pflege19-1|h
+p5|CheckBox|pflege19-1|t
+p5|CheckBox|pflege19-1|k
+p5|Text|Pflegestufe19-1|None
+p5|CheckBox|Opfer nationalsozialistischer Verfolgung oder ihnen Gleichgestellte im Sinne des Bundesentsch├дdigungsgesetzes_19-1|on
+p5|Text|Name Vorname19_2|None
+p5|Text|Schwerbehinderung Grad der Behinderung_Row19_2|None
+p5|CheckBox|pflege19-2|h
+p5|CheckBox|pflege19-2|t
+p5|CheckBox|pflege19-2|k
+p5|Text|Pflegestufe_19-2|None
+p5|CheckBox|Opfer nationalsozialistischer Verfolgung oder ihnen Gleichgestellte im Sinne des Bundesentsch├дdigungsgesetzes_19-2|on
+p5|CheckBox|janein-20|j
+p5|CheckBox|janein-20|n
+p5|Text|Wenn ja f├╝r welches Kind Name Vorname20_1|None
+p5|Text|An wen Name Vorname der kindergeldberechtigten Person20_1|None
+p5|Text|Wenn ja f├╝r welches Kind Name Vorname20_2|None
+p5|Text|An wen Name Vorname der kindergeldberechtigten Person20_2|None
+p5|Text|Wenn ja f├╝r welches Kind Name Vorname20_3|None
+p5|Text|An wen Name Vorname der kindergeldberechtigten Person20_3|None
+p5|CheckBox|janein-21|j
+p5|CheckBox|janein-21|n
+p5|Text|Wenn ja wer Name VornameRow21_1|None
+p5|Text|An wen Name Vorname Geburtsdatum AnschriftRow21_1|None
+p5|Text|Verwandtschaftsverh├дltnisRow21_1|None
+p5|Text|Monatlicher Betrag in EuroRow2_1|None
+p5|Text|Wenn ja wer Name VornameRow21_2|None
+p5|Text|An wen Name Vorname Geburtsdatum AnschriftRow21_2|None
+p5|Text|Verwandtschaftsverh├дltnisRow21_2|None
+p5|Text|Monatlicher Betrag in EuroRow21_2|None
+p5|CheckBox|janein-21-1|j
+p5|CheckBox|janein-21-1|n
+p6|CheckBox|Hauptmieterin22|On
+p6|CheckBox|Untermieterin|On
+p6|CheckBox|Heimbewohnerin|On
+p6|CheckBox|Bewohnerin von Wohnraum im eigenen Mehrfamilienhaus Haus mit mehr als zwei Wohnungen|On
+p6|CheckBox|sonstiger Nutzungsberechtigter z B Inhaberin einer Genossenschaftswohnung oder eines miet├дhnlichen Dauerwohnrechts|On
+p6|Text|Name Vorname ggf Geburtsname Anschrift|None
+p6|CheckBox|janein_23|j
+p6|CheckBox|janein_23|n
+p6|Text|Gesamtfl├дche des Wohnraums24|None
+p6|Text|Euro25|None
+p6|CheckBox|Kosten_Heizung_Warmwasser|On
+p6|Text|EuroHeiz|None
+p6|CheckBox|Kosten der eigenst├дndig gewerblichen Lieferung von W├дrme und Warmwasser|On
+p6|Text|Euro_eigenst|None
+p6|CheckBox|Kosten der Haushaltsenergie StromGasverbrauch f├╝r Haushaltsger├дteBeleuchtung|On
+p6|Text|Euro_haushenerg|None
+p6|CheckBox|Garage-Stellplatz-Carport|On
+p6|Text|Euro_garagen|None
+p6|CheckBox|Sonstige-Kosten|On
+p6|Text|Text_Sonstige_Kosten|None
+p6|Text|Euro_Sonstige_Kosten|None
+p6|CheckBox|janein_26|j
+p6|CheckBox|janein_26|n
+p6|Text|Wenn ja f├╝r welchen Zeitraum26|None
+p6|Text|In welcher H├╢he geminderte Kaltmiete in Euro26|None
+p6|CheckBox|ausschlie├Яlich beruflich oder gewerblich genutzt|On
+p6|Text|m2_27_1|None
+p6|CheckBox|anderen Personen entgeltlich bitte Untermietvertrag vorlegen oder unentgeltlich ├╝berlassen|On
+p6|Text|m2_27_2|None
+p6|CheckBox|von anderen Personen entgeltlich bitte Vertrag vorlegen oder unentgeltlich mitbewohnt|On
+p6|Text|m 2_27_3|None
+p6|Text|Monatliches_Entgelt aus Vermietung/Mitbewohnen27|None
+p6|CheckBox|Kosten-HeizenWarmwasser|On
+p6|Text|Kosten_f├╝r_Heizung_Warmwassser_im_Entgelt_enthalten270|None
+p6|CheckBox|Kosten f├╝r Haushaltsenergie StromGasverbrauch f├╝r Haushaltsger├дteBeleuchtung|On
+p6|Text|Kosten_f├╝r_Haushaltsenergie_im_Entgelt_enthalten27|None
+p6|CheckBox|GarageStellplatzCarport27|On
+p6|Text|Kosten_f├╝r_GarageStellplatzCarport27|None
+p6|CheckBox|janein_28|j
+p6|CheckBox|janein_28|n
+p7|CheckBox|janien29|j
+p7|CheckBox|janien29|n
+p7|Text|Wenn ja welche29|None
+p7|Text|Von wem Name Vorname Unternehmen oder Beh├╢rde29|None
+p7|Text|Seit wann29|None
+p7|Text|In welcher H├╢he Angabe in Euro29|None
+p7|CheckBox|janein_30|j
+p7|CheckBox|janein_30|n
+p7|CheckBox|wohnraum30|On
+p7|CheckBox|wohnraum30|off
+p7|Text|Anschrift_30|None
+p7|CheckBox|janein_31|j
+p7|CheckBox|janein_31|n
+p7|Text|Wenn ja wer Name Vorname Anschrift31|None
+p7|Text|F├╝r wen Name Vorname31|None
+p7|Text|Wie hoch sind monatlich die ├╝bernommenen Kosten f├╝r den Wohnraum Angabe in Euro31|None
+p7|CheckBox|michfolgenden PersonLeistungstr├дger Name Vorname Anschrift|mich
+p7|CheckBox|michfolgenden PersonLeistungstr├дger Name Vorname Anschrift|folge
+p7|Text|Wohngeld├╝berweisung32|None
+p7|Text|IBAN|None
+p7|Text|BIC|None
+p8|Text|Ort, Datum, Erkl├дrung|None
+p8|Text|Ort, Datum, ├Дnderung|None
+p8|Text|Ort, Datum, Hinweise|None
+TOTAL:387

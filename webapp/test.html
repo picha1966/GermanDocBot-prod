@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета для документів</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .doc-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Прогрес-бар */
+        .progress-container {
+            padding: 0 40px;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .step {
+            font-size: 12px;
+            color: #6b7280;
+            position: relative;
+        }
+
+        .step.active {
+            color: #059669;
+            font-weight: bold;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 50%;
+        }
+
+        .step.active::before {
+            background: #059669;
+        }
+
+        /* Категорії */
+        .categories {
+            display: flex;
+            gap: 10px;
+            padding: 0 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            background: #f3f4f6;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category:hover {
+            background: #e5e7eb;
+        }
+
+        .category.active {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            color: white;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+            animation: fadeIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .form-section:nth-child(1) { animation-delay: 0.1s; }
+        .form-section:nth-child(2) { animation-delay: 0.2s; }
+        .form-section:nth-child(3) { animation-delay: 0.3s; }
+        .form-section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #4f46e5;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 22px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #374151;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ВАЖЛИВО: Видимість тексту для темної теми Telegram */
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            /* Обов'язкові стилі для видимості */
+            color: #000000 !important;
+            background-color: #ffffff !important;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background: white !important;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .form-group input:hover,
+        .form-group select:hover {
+            border-color: #d1d5db;
+        }
+
+        .required::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        .address-group {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 14px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .address-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories {
+                padding: 0 25px;
+            }
+            
+            .progress-container {
+                padding: 0 25px;
+            }
+        }
+
+        /* Telegram theme colors */
+        .telegram-primary {
+            color: #0088cc;
+        }
+
+        .telegram-bg {
+            background: linear-gradient(135deg, #0088cc, #005580);
+        }
+
+        /* Стилі для перевірки даних */
+        .review-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4f46e5;
+        }
+
+        .review-label {
+            font-weight: 600;
+            color: #4b5563;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .review-value {
+            color: #111827;
+            font-size: 16px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-alt"></i> Анкета для документів</h1>
+            <p>Заповніть форму для подання заяви</p>
+            <div class="doc-badge" id="docTypeBadge">
+                <i class="fas fa-document"></i> Тип документа: Завантаження...
+            </div>
+        </div>
+
+        <!-- Прогрес-бар -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 25%"></div>
+            </div>
+            <div class="progress-steps">
+                <div class="step active">Особисті дані</div>
+                <div class="step">Адреса</div>
+                <div class="step">Додатково</div>
+                <div class="step">Перевірка</div>
+            </div>
+        </div>
+
+        <!-- Категорії -->
+        <div class="categories">
+            <div class="category active" data-category="personal">
+                <i class="fas fa-user"></i> Особисті дані
+            </div>
+            <div class="category" data-category="address">
+                <i class="fas fa-home"></i> Адреса
+            </div>
+            <div class="category" data-category="additional">
+                <i class="fas fa-info-circle"></i> Додатково
+            </div>
+            <div class="category" data-category="review">
+                <i class="fas fa-check-circle"></i> Перевірка
+            </div>
+        </div>
+
+        <div class="form-container">
+            <!-- Повідомлення -->
+            <div class="alert" id="messageAlert"></div>
+
+            <!-- Форма -->
+            <form id="applicationForm">
+                <!-- Особисті дані -->
+                <div class="form-section" id="personalSection">
+                    <div class="section-title">
+                        <i class="fas fa-user-circle"></i> Особиста інформація
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="first_name" class="required">Ім'я</label>
+                            <input type="text" id="first_name" name="first_name" 
+                                   placeholder="Введіть ваше ім'я" 
+                                   required
+                                   autocapitalize="words">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="required">Прізвище</label>
+                            <input type="text" id="last_name" name="last_name" 
+                                   placeholder="Введіть ваше прізвище" 
+                                   required
+                                   autocapitalize="words">
+                        </div>
+                        <div class="form-group">
+                            <label for="birth_date">Дата народження</label>
+                            <input type="date" id="birth_date" name="birth_date">
+                        </div>
+                        <div class="form-group">
+                            <label for="birth_place">Місце народження</label>
+                            <input type="text" id="birth_place" name="birth_place" 
+                                   placeholder="Місто, країна"
+                                   autocapitalize="words">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Адреса -->
+                <div class="form-section" id="addressSection" style="display: none;">
+                    <div class="section-title">
+                        <i class="fas fa-map-marker-alt"></i> Адреса проживання
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="street" class="required">Вулиця</label>
+                            <input type="text" id="street" name="street" 
+                                   placeholder="Назва вулиці" 
+                                   required
+                                   autocapitalize="words">
+                        </div>
+                        <div class="form-group">
+                            <label for="hausnummer" class="required">Номер будинку</label>
+                            <input type="text" id="hausnummer" name="hausnummer" 
+                                   placeholder="Номер" 
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postal_code" class="required">Поштовий індекс (PLZ)</label>
+                            <input type="text" id="postal_code" name="postal_code" 
+                                   placeholder="12345" 
+                                   required 
+                                   pattern="\d{5}"
+                                   inputmode="numeric"
+                                   maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="required">Місто</label>
+                            <input type="text" id="city" name="city" 
+                                   placeholder="Назва міста" 
+                                   required
+                                   autocapitalize="words">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Додаткова інформація -->
+                <div class="form-section" id="additionalSection" style="display: none;">
+                    <div class="section-title">
+                        <i class="fas fa-info-circle"></i> Додаткова інформація
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nationality">Національність</label>
+                            <select id="nationality" name="nationality">
+                                <option value="">Оберіть національність</option>
+                                <option value="ukrainian">Українець/Українка</option>
+                                <option value="german">Німець</option>
+                                <option value="other">Інша</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="marital_status">Сімейний стан</label>
+                            <select id="marital_status" name="marital_status">
+                                <option value="">Оберіть стан</option>
+                                <option value="single">Неодружений/Незаміжня</option>
+                                <option value="married">Одружений/Заміжня</option>
+                                <option value="divorced">Розлучений/Розлучена</option>
+                                <option value="widowed">Удівець/Удовиця</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="religion">Релігія (необов'язково)</label>
+                            <input type="text" id="religion" name="religion" 
+                                   placeholder="Наприклад: православний">
+                        </div>
+                        <div class="form-group">
+                            <label for="move_in_date">Дата заселення</label>
+                            <input type="date" id="move_in_date" name="move_in_date">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Перевірка -->
+                <div class="form-section" id="reviewSection" style="display: none;">
+                    <div class="section-title">
+                        <i class="fas fa-check-circle"></i> Перевірка даних
+                    </div>
+                    <div class="info-summary" id="infoSummary">
+                        <!-- Дані будуть відображені тут -->
+                    </div>
+                </div>
+
+                <!-- Кнопка відправки -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i> Відправити анкету
+                </button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Анкета для документів. Всі права захищені.</p>
+        </div>
+    </div>
+
+    <script>
+        // ІНІЦІАЛІЗАЦІЯ TELEGRAM WEBAPP
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.ready();
+        console.log('Telegram WebApp ініціалізовано, версія:', tg.version);
+
+        // Отримання типу документа з URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const docType = urlParams.get('doc_type') || 'anmeldung';
+        
+        // Назви документів для відображення
+        const docNames = {
+            'anmeldung': 'Реєстрація місця проживання',
+            'abmeldung': 'Зняття з реєстрації',
+            'kindergeld': 'Дитяча допомога',
+            'elterngeld': 'Батьківська допомога',
+            'buergergeld': 'Громадянська допомога',
+            'wohngeld': 'Житлова допомога'
+        };
+
+        // Поточний активний розділ
+        let currentSection = 'personal';
+
+        // Ініціалізація при завантаженні
+        document.addEventListener('DOMContentLoaded', function() {
+            // Відобразити тип документа
+            const displayName = docNames[docType] || docType;
+            document.getElementById('docTypeBadge').textContent = 
+                `Тип документа: ${displayName}`;
+
+            // Ініціалізація категорій
+            initCategories();
+            
+            // Ініціалізація форми
+            initForm();
+            
+            // Автозаповнення для тестування (якщо не в Telegram)
+            if (!window.Telegram.WebApp) {
+                setTimeout(() => {
+                    fillTestData();
+                }, 1000);
+            }
+        });
+
+        // Ініціалізація категорій
+        function initCategories() {
+            const categories = document.querySelectorAll('.category');
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryId = this.dataset.category;
+                    showSection(categoryId);
+                });
+            });
+        }
+
+        // Показ розділу
+        function showSection(sectionId) {
+            // Приховати всі розділи
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Показати обраний розділ
+            document.getElementById(sectionId + 'Section').style.display = 'block';
+            
+            // Оновити активну категорію
+            document.querySelectorAll('.category').forEach(cat => {
+                cat.classList.remove('active');
+            });
+            document.querySelector(`.category[data-category="${sectionId}"]`).classList.add('active');
+            
+            // Оновити прогрес-бар
+            updateProgress(sectionId);
+            
+            // Оновити поточний розділ
+            currentSection = sectionId;
+            
+            // Якщо це розділ перевірки - оновити інформацію
+            if (sectionId === 'review') {
+                updateReviewSection();
+            }
+            
+            // Плавний скрол вгору сторінки
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+
+        // Оновлення прогрес-бару
+        function updateProgress(sectionId) {
+            const progressMap = {
+                'personal': 25,
+                'address': 50,
+                'additional': 75,
+                'review': 100
+            };
+            
+            document.getElementById('progressFill').style.width = progressMap[sectionId] + '%';
+            
+            // Оновити активні кроки
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            const stepIndex = Object.keys(progressMap).indexOf(sectionId);
+            document.querySelectorAll('.step')[stepIndex].classList.add('active');
+        }
+
+        // Ініціалізація форми
+        function initForm() {
+            const form = document.getElementById('applicationForm');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                handleFormSubmit();
+            });
+            
+            // Валідація поштового індексу при введенні
+            document.getElementById('postal_code').addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^\d]/g, '').slice(0, 5);
+            });
+            
+            // Автоматичне переключення розділів при заповненні
+            setupAutoNavigation();
+        }
+
+        // Налаштування автоматичної навігації
+        function setupAutoNavigation() {
+            const personalFields = ['first_name', 'last_name'];
+            const addressFields = ['street', 'hausnummer', 'postal_code', 'city'];
+            
+            personalFields.forEach(fieldId => {
+                document.getElementById(fieldId).addEventListener('blur', function() {
+                    if (allFieldsFilled(personalFields) && currentSection === 'personal') {
+                        setTimeout(() => showSection('address'), 300);
+                    }
+                });
+            });
+            
+            addressFields.forEach(fieldId => {
+                document.getElementById(fieldId).addEventListener('blur', function() {
+                    if (allFieldsFilled(addressFields) && currentSection === 'address') {
+                        setTimeout(() => showSection('additional'), 300);
+                    }
+                });
+            });
+        }
+
+        // Перевірка, чи всі поля заповнені
+        function allFieldsFilled(fieldIds) {
+            return fieldIds.every(id => {
+                const field = document.getElementById(id);
+                return field.value.trim() !== '';
+            });
+        }
+
+        // Обробка відправки форми
+        function handleFormSubmit() {
+            const submitBtn = document.getElementById('submitBtn');
+            const alertBox = document.getElementById('messageAlert');
+            
+            // Відключити кнопку та змінити текст
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-hourglass-half"></i> ⌛ Обробка...';
+            
+            // Збір даних з усіх полів форми
+            const formElements = document.getElementById('applicationForm').elements;
+            const userAnswers = {};
+            
+            for (let element of formElements) {
+                if (element.name && element.type !== 'submit') {
+                    userAnswers[element.name] = element.value.trim();
+                }
+            }
+            
+            // Перевірка обов'язкових полів
+            const requiredFields = ['first_name', 'last_name', 'street', 'hausnummer', 'postal_code', 'city'];
+            const missingFields = requiredFields.filter(field => !userAnswers[field] || userAnswers[field] === '');
+            
+            if (missingFields.length > 0) {
+                showAlert(`Будь ласка, заповніть всі обов'язкові поля`, 'error');
+                
+                // Повернути кнопку в початковий стан
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Відправити анкету';
+                
+                // Перейти до розділу з першим незаповненим полем
+                if (missingFields.some(f => ['first_name', 'last_name'].includes(f))) {
+                    showSection('personal');
+                } else if (missingFields.some(f => ['street', 'hausnummer', 'postal_code', 'city'].includes(f))) {
+                    showSection('address');
+                }
+                return;
+            }
+            
+            // Перевірка формату поштового індексу
+            if (!/^\d{5}$/.test(userAnswers.postal_code)) {
+                showAlert('Поштовий індекс повинен складатися з рівно 5 цифр', 'error');
+                showSection('address');
+                
+                // Повернути кнопку в початковий стан
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Відправити анкету';
+                return;
+            }
+            
+            try {
+                // Створення об'єкта для відправки у вимагаємому форматі
+                const dataToSend = {
+                    "user_answers": userAnswers,
+                    "doc_type": docType
+                };
+                
+                // Конвертація у JSON
+                const jsonPayload = JSON.stringify(dataToSend);
+                
+                console.log('Дані для відправки:', dataToSend);
+                
+                // Показати повідомлення про успіх
+                showAlert('✅ Дані успішно зібрано! Відправляємо в Telegram...', 'success');
+                
+                // Відправка даних через Telegram WebApp API
+                setTimeout(() => {
+                    tg.sendData(jsonPayload);
+                    
+                    // Показати фінальне повідомлення
+                    showAlert('✅ Дані успішно відправлено! Анкета закриється автоматично...', 'success');
+                    
+                    // Закрити WebApp через 2 секунди
+                    setTimeout(() => {
+                        tg.close();
+                    }, 2000);
+                }, 1000);
+                
+            } catch (error) {
+                // Показати помилку
+                showAlert('❌ Помилка при відправці даних: ' + error.message, 'error');
+                console.error('Помилка відправки:', error);
+                
+                // Включити кнопку назад
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Відправити анкету';
+            }
+        }
+
+        // Оновлення розділу перевірки
+        function updateReviewSection() {
+            const summaryDiv = document.getElementById('infoSummary');
+            const formElements = document.getElementById('applicationForm').elements;
+            
+            let html = '';
+            
+            // Групування полів по категоріям
+            const categories = {
+                'Особисті дані': ['first_name', 'last_name', 'birth_date', 'birth_place'],
+                'Адреса': ['street', 'hausnummer', 'postal_code', 'city'],
+                'Додаткова інформація': ['nationality', 'marital_status', 'religion', 'move_in_date']
+            };
+            
+            for (const [categoryName, fields] of Object.entries(categories)) {
+                let categoryHtml = '';
+                let hasData = false;
+                
+                fields.forEach(fieldName => {
+                    const element = document.getElementById(fieldName);
+                    if (element && element.value) {
+                        hasData = true;
+                        categoryHtml += `
+                            <div class="review-item">
+                                <div class="review-label">${getFieldLabel(fieldName)}</div>
+                                <div class="review-value">${element.value}</div>
+                            </div>
+                        `;
+                    }
+                });
+                
+                if (hasData) {
+                    html += `
+                        <div style="margin-bottom: 25px;">
+                            <h3 style="color: #4f46e5; margin-bottom: 15px; font-size: 18px;">
+                                <i class="fas fa-${getCategoryIcon(categoryName)}"></i> ${categoryName}
+                            </h3>
+                            ${categoryHtml}
+                        </div>
+                    `;
+                }
+            }
+            
+            if (!html) {
+                html = '<div style="text-align: center; padding: 30px; color: #6b7280;">Немає даних для перевірки</div>';
+            }
+            
+            summaryDiv.innerHTML = html;
+        }
+
+        // Отримання іконки для категорії
+        function getCategoryIcon(categoryName) {
+            const icons = {
+                'Особисті дані': 'user',
+                'Адреса': 'home',
+                'Додаткова інформація': 'info-circle'
+            };
+            return icons[categoryName] || 'circle';
+        }
+
+        // Отримання читабельної назви поля
+        function getFieldLabel(fieldName) {
+            const labels = {
+                'first_name': 'Ім\'я',
+                'last_name': 'Прізвище',
+                'birth_date': 'Дата народження',
+                'birth_place': 'Місце народження',
+                'street': 'Вулиця',
+                'hausnummer': 'Номер будинку',
+                'postal_code': 'Поштовий індекс',
+                'city': 'Місто',
+                'nationality': 'Національність',
+                'marital_status': 'Сімейний стан',
+                'religion': 'Релігія',
+                'move_in_date': 'Дата заселення'
+            };
+            
+            return labels[fieldName] || fieldName;
+        }
+
+        // Показати сповіщення
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('messageAlert');
+            alertBox.textContent = message;
+            alertBox.className = `alert alert-${type}`;
+            alertBox.style.display = 'block';
+            
+            // Автоматично сховати через 5 секунд
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000);
+        }
+
+        // Заповнення тестовими даними для налагодження
+        function fillTestData() {
+            document.getElementById('first_name').value = 'Іван';
+            document.getElementById('last_name').value = 'Петренко';
+            document.getElementById('birth_date').value = '1990-05-15';
+            document.getElementById('birth_place').value = 'Київ, Україна';
+            document.getElementById('street').value = 'Берлінерштрассе';
+            document.getElementById('hausnummer').value = '123';
+            document.getElementById('postal_code').value = '10115';
+            document.getElementById('city').value = 'Берлін';
+            document.getElementById('nationality').value = 'ukrainian';
+            document.getElementById('marital_status').value = 'married';
+            document.getElementById('religion').value = 'православний';
+            document.getElementById('move_in_date').value = '2024-01-15';
+            
+            showAlert('Режим тестування: форма заповнена тестовими даними', 'success');
+        }
+    </script>
+</body>
+</html>

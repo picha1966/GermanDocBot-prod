@@ -1,0 +1,1188 @@
+{
+  "ui": {
+    "de": {
+      "optional": "Optional",
+      "sec_personal": "1. Persönliche Angaben",
+      "sec_personal_hint": "Bitte geben Sie die Daten der antragstellenden Person ein.",
+      "sec_address": "2. Aktuelle Adresse",
+      "sec_address_hint": "Ihre aktuelle Meldeadresse in Deutschland.",
+      "sec_control": "3. Familiensituation",
+      "sec_control_hint": "Bitte beantworten Sie diese Frage, damit das Formular korrekt ausgefüllt wird.",
+      "sec_partner": "4. Angaben zum Ehe-/Lebenspartner",
+      "sec_partner_hint": "Angaben über Ihren Ehe- oder eingetragenen Lebenspartner.",
+      "sec_child": "5. Angaben zum Kind",
+      "sec_child_hint": "Angaben über das Kind, für das Kindergeld beantragt wird.",
+      "sec_bank": "6. Bankverbindung",
+      "sec_bank_hint": "Das Kindergeld wird auf dieses Konto überwiesen. IBAN ist Pflichtfeld.",
+      "sec_signature": "7. Unterschrift",
+      "ph_last_name": "z. B. Müller",
+      "ph_first_name": "z. B. Anna",
+      "ph_birth_name": "falls abweichend vom Familiennamen",
+      "ph_birth_place": "z. B. Berlin",
+      "ph_nationality": "z. B. ukrainisch",
+      "ph_tax_id": "11-stellige Nummer",
+      "ph_street": "z. B. Hauptstraße",
+      "ph_house_number": "z. B. 12a",
+      "ph_postal_code": "z. B. 10115",
+      "ph_city": "z. B. Berlin",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "z. B. DEUTDEDB",
+      "ph_bank_name": "z. B. Deutsche Bank",
+      "ph_account_holder": "Vor- und Nachname",
+      "gender_f": "weiblich",
+      "gender_m": "männlich",
+      "gender_d": "divers",
+      "fs_ledig": "ledig",
+      "fs_verheiratet": "verheiratet",
+      "fs_eingetragen": "eingetragene Lebenspartnerschaft",
+      "fs_geschieden": "geschieden",
+      "fs_getrennt": "getrennt lebend",
+      "fs_verwitwet": "verwitwet",
+      "opt_ja": "Ja",
+      "opt_nein": "Nein"
+    },
+    "en": {
+      "optional": "Optional",
+      "sec_personal": "1. Personal details",
+      "sec_personal_hint": "Please enter the details of the applicant.",
+      "sec_address": "2. Current address",
+      "sec_address_hint": "Your current registered address in Germany.",
+      "sec_control": "3. Family situation",
+      "sec_control_hint": "Please answer this question so the form can be filled correctly.",
+      "sec_partner": "4. Partner / spouse details",
+      "sec_partner_hint": "Details about your spouse or registered life partner.",
+      "sec_child": "5. Child details",
+      "sec_child_hint": "Details about the child for whom child benefit is being requested.",
+      "sec_bank": "6. Bank details",
+      "sec_bank_hint": "The child benefit will be transferred to this account. IBAN is required.",
+      "sec_signature": "7. Signature",
+      "ph_last_name": "e.g. Smith",
+      "ph_first_name": "e.g. Anna",
+      "ph_birth_name": "if different from family name",
+      "ph_birth_place": "e.g. Berlin",
+      "ph_nationality": "e.g. Ukrainian",
+      "ph_tax_id": "11-digit number",
+      "ph_street": "e.g. Main Street",
+      "ph_house_number": "e.g. 12a",
+      "ph_postal_code": "e.g. 10115",
+      "ph_city": "e.g. Berlin",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "e.g. DEUTDEDB",
+      "ph_bank_name": "e.g. Deutsche Bank",
+      "ph_account_holder": "First and last name",
+      "gender_f": "female",
+      "gender_m": "male",
+      "gender_d": "diverse",
+      "fs_ledig": "single",
+      "fs_verheiratet": "married",
+      "fs_eingetragen": "registered partnership",
+      "fs_geschieden": "divorced",
+      "fs_getrennt": "separated",
+      "fs_verwitwet": "widowed",
+      "opt_ja": "Yes",
+      "opt_nein": "No"
+    },
+    "tr": {
+      "optional": "İsteğe bağlı",
+      "sec_personal": "1. Kişisel bilgiler",
+      "sec_personal_hint": "Lütfen başvuru sahibinin bilgilerini girin.",
+      "sec_address": "2. Güncel adres",
+      "sec_address_hint": "Almanya'daki mevcut kayıtlı adresiniz.",
+      "sec_control": "3. Aile durumu",
+      "sec_control_hint": "Formun doğru doldurulabilmesi için bu soruyu yanıtlayın.",
+      "sec_partner": "4. Eş / partner bilgileri",
+      "sec_partner_hint": "Eşiniz veya kayıtlı hayat partnerinizle ilgili bilgiler.",
+      "sec_child": "5. Çocuk bilgileri",
+      "sec_child_hint": "Çocuk parası talep edilen çocuğun bilgileri.",
+      "sec_bank": "6. Banka bilgileri",
+      "sec_bank_hint": "Çocuk parası bu hesaba transfer edilecektir. IBAN zorunludur.",
+      "sec_signature": "7. İmza",
+      "ph_last_name": "örn. Yılmaz",
+      "ph_first_name": "örn. Ayşe",
+      "ph_birth_name": "soyadından farklıysa",
+      "ph_birth_place": "örn. Berlin",
+      "ph_nationality": "örn. Ukraynalı",
+      "ph_tax_id": "11 haneli numara",
+      "ph_street": "örn. Ana Cadde",
+      "ph_house_number": "örn. 12a",
+      "ph_postal_code": "örn. 10115",
+      "ph_city": "örn. Berlin",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "örn. DEUTDEDB",
+      "ph_bank_name": "örn. Deutsche Bank",
+      "ph_account_holder": "Ad ve Soyad",
+      "gender_f": "Kadın",
+      "gender_m": "Erkek",
+      "gender_d": "Diğer",
+      "fs_ledig": "Bekar",
+      "fs_verheiratet": "Evli",
+      "fs_eingetragen": "Kayıtlı birliktelik",
+      "fs_geschieden": "Boşanmış",
+      "fs_getrennt": "Ayrı yaşıyor",
+      "fs_verwitwet": "Dul",
+      "opt_ja": "Evet",
+      "opt_nein": "Hayır"
+    },
+    "ar": {
+      "optional": "اختياري",
+      "sec_personal": "1. البيانات الشخصية",
+      "sec_personal_hint": "يرجى إدخال بيانات مقدم الطلب.",
+      "sec_address": "2. العنوان الحالي",
+      "sec_address_hint": "عنوانك المسجل الحالي في ألمانيا.",
+      "sec_control": "3. الوضع الأسري",
+      "sec_control_hint": "يرجى الإجابة على هذا السؤال لملء النموذج بشكل صحيح.",
+      "sec_partner": "4. بيانات الشريك / الزوج",
+      "sec_partner_hint": "معلومات عن زوجك أو شريك الحياة المسجل.",
+      "sec_child": "5. بيانات الطفل",
+      "sec_child_hint": "بيانات الطفل الذي يُطلب له علاوة الأطفال.",
+      "sec_bank": "6. تفاصيل البنك",
+      "sec_bank_hint": "سيتم تحويل علاوة الأطفال إلى هذا الحساب. IBAN مطلوب.",
+      "sec_signature": "7. التوقيع",
+      "ph_last_name": "مثال: محمد",
+      "ph_first_name": "مثال: فاطمة",
+      "ph_birth_name": "إذا اختلف عن اسم العائلة",
+      "ph_birth_place": "مثال: برلين",
+      "ph_nationality": "مثال: أوكراني",
+      "ph_tax_id": "رقم مؤلف من 11 خانة",
+      "ph_street": "مثال: الشارع الرئيسي",
+      "ph_house_number": "مثال: 12أ",
+      "ph_postal_code": "مثال: 10115",
+      "ph_city": "مثال: برلين",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "مثال: DEUTDEDB",
+      "ph_bank_name": "مثال: دويتشه بنك",
+      "ph_account_holder": "الاسم الأول واسم العائلة",
+      "gender_f": "أنثى",
+      "gender_m": "ذكر",
+      "gender_d": "آخر",
+      "fs_ledig": "أعزب / عزباء",
+      "fs_verheiratet": "متزوج / متزوجة",
+      "fs_eingetragen": "شراكة مسجلة",
+      "fs_geschieden": "مطلق / مطلقة",
+      "fs_getrennt": "منفصل / منفصلة",
+      "fs_verwitwet": "أرمل / أرملة",
+      "opt_ja": "نعم",
+      "opt_nein": "لا"
+    },
+    "uk": {
+      "optional": "Необов'язково",
+      "sec_personal": "1. Особисті дані",
+      "sec_personal_hint": "Будь ласка, введіть дані заявника.",
+      "sec_address": "2. Поточна адреса",
+      "sec_address_hint": "Ваша поточна адреса реєстрації в Німеччині.",
+      "sec_control": "3. Сімейна ситуація",
+      "sec_control_hint": "Будь ласка, дайте відповідь на це питання, щоб форму було заповнено правильно.",
+      "sec_partner": "4. Дані чоловіка / дружини або партнера",
+      "sec_partner_hint": "Відомості про вашого чоловіка, дружину або зареєстрованого партнера.",
+      "sec_child": "5. Дані дитини",
+      "sec_child_hint": "Відомості про дитину, на яку подається заява на допомогу Kindergeld.",
+      "sec_bank": "6. Банківські реквізити",
+      "sec_bank_hint": "Допомога буде перерахована на цей рахунок. IBAN є обов'язковим полем.",
+      "sec_signature": "7. Підпис",
+      "ph_last_name": "напр. Коваленко",
+      "ph_first_name": "напр. Ганна",
+      "ph_birth_name": "якщо відрізняється від прізвища",
+      "ph_birth_place": "напр. Берлін",
+      "ph_nationality": "напр. українська",
+      "ph_tax_id": "11-значний номер",
+      "ph_street": "напр. Hauptstraße",
+      "ph_house_number": "напр. 12a",
+      "ph_postal_code": "напр. 10115",
+      "ph_city": "напр. Берлін",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "напр. DEUTDEDB",
+      "ph_bank_name": "напр. Deutsche Bank",
+      "ph_account_holder": "Ім'я та прізвище",
+      "gender_f": "жіноча",
+      "gender_m": "чоловіча",
+      "gender_d": "інша",
+      "fs_ledig": "неодружений / незаміжня",
+      "fs_verheiratet": "одружений / заміжня",
+      "fs_eingetragen": "зареєстроване партнерство",
+      "fs_geschieden": "розлучений / розлучена",
+      "fs_getrennt": "роздільне проживання",
+      "fs_verwitwet": "вдівець / вдова",
+      "opt_ja": "Так",
+      "opt_nein": "Ні"
+    },
+    "pl": {
+      "optional": "Opcjonalnie",
+      "sec_personal": "1. Dane osobowe",
+      "sec_personal_hint": "Proszę podać dane osoby składającej wniosek.",
+      "sec_address": "2. Aktualny adres",
+      "sec_address_hint": "Twój aktualny adres zameldowania w Niemczech.",
+      "sec_control": "3. Sytuacja rodzinna",
+      "sec_control_hint": "Proszę odpowiedzieć na to pytanie, aby formularz mógł być poprawnie wypełniony.",
+      "sec_partner": "4. Dane małżonka / partnera",
+      "sec_partner_hint": "Dane Twojego małżonka lub zarejestrowanego partnera życiowego.",
+      "sec_child": "5. Dane dziecka",
+      "sec_child_hint": "Dane dziecka, na które składany jest wniosek o Kindergeld.",
+      "sec_bank": "6. Dane bankowe",
+      "sec_bank_hint": "Kindergeld zostanie przelany na to konto. IBAN jest polem obowiązkowym.",
+      "sec_signature": "7. Podpis",
+      "ph_last_name": "np. Kowalski",
+      "ph_first_name": "np. Anna",
+      "ph_birth_name": "jeśli różni się od nazwiska",
+      "ph_birth_place": "np. Berlin",
+      "ph_nationality": "np. ukraińska",
+      "ph_tax_id": "11-cyfrowy numer",
+      "ph_street": "np. Hauptstraße",
+      "ph_house_number": "np. 12a",
+      "ph_postal_code": "np. 10115",
+      "ph_city": "np. Berlin",
+      "ph_iban": "DE00 0000 0000 0000 0000 00",
+      "ph_bic": "np. DEUTDEDB",
+      "ph_bank_name": "np. Deutsche Bank",
+      "ph_account_holder": "Imię i nazwisko",
+      "gender_f": "kobieta",
+      "gender_m": "mężczyzna",
+      "gender_d": "inna",
+      "fs_ledig": "stanu wolnego",
+      "fs_verheiratet": "żonaty / zamężna",
+      "fs_eingetragen": "zarejestrowany związek partnerski",
+      "fs_geschieden": "rozwiedziony / rozwiedziona",
+      "fs_getrennt": "w separacji",
+      "fs_verwitwet": "wdowiec / wdowa",
+      "opt_ja": "Tak",
+      "opt_nein": "Nie"
+    }
+  },
+  "fields": {
+    "last_name": {
+      "de": {
+        "label": "Familienname",
+        "hint": "Ihr aktueller Nachname, wie im Ausweis angegeben."
+      },
+      "en": {
+        "label": "Last name",
+        "hint": "Your current surname as shown on your ID."
+      },
+      "tr": {
+        "label": "Soyadı",
+        "hint": "Kimliğinizde yazan güncel soyadınız."
+      },
+      "ar": {
+        "label": "اسم العائلة",
+        "hint": "اسم عائلتك الحالي كما هو مدوّن في الهوية."
+      },
+      "uk": {
+        "label": "Прізвище",
+        "hint": "Ваше поточне прізвище, як вказано в документах."
+      },
+      "pl": {
+        "label": "Nazwisko",
+        "hint": "Twoje aktualne nazwisko, jak podano w dokumencie."
+      }
+    },
+    "first_name": {
+      "de": {
+        "label": "Vorname",
+        "hint": "Ihr Vorname, wie im Ausweis angegeben."
+      },
+      "en": {
+        "label": "First name",
+        "hint": "Your first name as shown on your ID."
+      },
+      "tr": {
+        "label": "Ad",
+        "hint": "Kimliğinizde yazan adınız."
+      },
+      "ar": {
+        "label": "الاسم الأول",
+        "hint": "اسمك الأول كما هو مدوّن في الهوية."
+      },
+      "uk": {
+        "label": "Ім'я",
+        "hint": "Ваше ім'я, як вказано в документах."
+      },
+      "pl": {
+        "label": "Imię",
+        "hint": "Twoje imię, jak podano w dokumencie."
+      }
+    },
+    "birth_name": {
+      "de": {
+        "label": "Geburtsname",
+        "hint": "Nur angeben, wenn Ihr Geburtsname vom aktuellen Familiennamen abweicht."
+      },
+      "en": {
+        "label": "Birth name",
+        "hint": "Only enter if your birth name differs from your current family name."
+      },
+      "tr": {
+        "label": "Doğum adı / Kızlık soyadı",
+        "hint": "Yalnızca doğum adınız mevcut soyadınızdan farklıysa doldurun."
+      },
+      "ar": {
+        "label": "اسم الميلاد",
+        "hint": "أدخله فقط إذا كان اسم الميلاد مختلفاً عن اسم العائلة الحالي."
+      },
+      "uk": {
+        "label": "Прізвище при народженні",
+        "hint": "Вказуйте лише якщо прізвище при народженні відрізняється від поточного."
+      },
+      "pl": {
+        "label": "Nazwisko rodowe",
+        "hint": "Podaj tylko jeśli Twoje nazwisko rodowe różni się od aktualnego."
+      }
+    },
+    "birth_date": {
+      "de": {
+        "label": "Geburtsdatum",
+        "hint": "Format: TT.MM.JJJJ – z. B. 01.05.1990"
+      },
+      "en": {
+        "label": "Date of birth",
+        "hint": "Format: DD.MM.YYYY – e.g. 01.05.1990"
+      },
+      "tr": {
+        "label": "Doğum tarihi",
+        "hint": "Format: GG.AA.YYYY – örn. 01.05.1990"
+      },
+      "ar": {
+        "label": "تاريخ الميلاد",
+        "hint": "الصيغة: يوم.شهر.سنة – مثال: 01.05.1990"
+      },
+      "uk": {
+        "label": "Дата народження",
+        "hint": "Формат: ДД.ММ.РРРР – напр. 01.05.1990"
+      },
+      "pl": {
+        "label": "Data urodzenia",
+        "hint": "Format: DD.MM.RRRR – np. 01.05.1990"
+      }
+    },
+    "birth_place": {
+      "de": {
+        "label": "Geburtsort",
+        "hint": "Stadt und Land, in der/dem Sie geboren wurden. z. B. Kyiv, Ukraine"
+      },
+      "en": {
+        "label": "Place of birth",
+        "hint": "City and country where you were born, e.g. Kyiv, Ukraine"
+      },
+      "tr": {
+        "label": "Doğum yeri",
+        "hint": "Doğduğunuz şehir ve ülke, örn. Kyiv, Ukrayna"
+      },
+      "ar": {
+        "label": "مكان الميلاد",
+        "hint": "المدينة والدولة التي وُلدت فيها، مثال: كييف، أوكرانيا"
+      },
+      "uk": {
+        "label": "Місце народження",
+        "hint": "Місто та країна народження, напр. Київ, Україна."
+      },
+      "pl": {
+        "label": "Miejsce urodzenia",
+        "hint": "Miasto i kraj urodzenia, np. Kijów, Ukraina."
+      }
+    },
+    "nationality": {
+      "de": {
+        "label": "Staatsangehörigkeit",
+        "hint": "Ihre Nationalität, z. B. ukrainisch, türkisch."
+      },
+      "en": {
+        "label": "Nationality",
+        "hint": "Your nationality, e.g. Ukrainian, Turkish."
+      },
+      "tr": {
+        "label": "Milliyeti",
+        "hint": "Milliyetiniz, örn. Ukraynalı, Türk."
+      },
+      "ar": {
+        "label": "الجنسية",
+        "hint": "جنسيتك، مثال: أوكراني، تركي."
+      },
+      "uk": {
+        "label": "Громадянство",
+        "hint": "Ваше громадянство, напр. українське, турецьке."
+      },
+      "pl": {
+        "label": "Obywatelstwo",
+        "hint": "Twoje obywatelstwo, np. ukraińskie, tureckie."
+      }
+    },
+    "gender": {
+      "de": {
+        "label": "Geschlecht",
+        "hint": "Bitte wählen Sie Ihr Geschlecht aus."
+      },
+      "en": {
+        "label": "Gender",
+        "hint": "Please select your gender."
+      },
+      "tr": {
+        "label": "Cinsiyet",
+        "hint": "Lütfen cinsiyetinizi seçin."
+      },
+      "ar": {
+        "label": "الجنس",
+        "hint": "يرجى اختيار جنسك."
+      },
+      "uk": {
+        "label": "Стать",
+        "hint": "Будь ласка, оберіть свою стать."
+      },
+      "pl": {
+        "label": "Płeć",
+        "hint": "Proszę wybrać płeć."
+      }
+    },
+    "familienstand": {
+      "de": {
+        "label": "Familienstand",
+        "hint": "Ihr aktueller Familienstand. Dies beeinflusst die Pflichtfelder für den Partner."
+      },
+      "en": {
+        "label": "Marital status",
+        "hint": "Your current marital status. This affects the required partner fields."
+      },
+      "tr": {
+        "label": "Medeni durum",
+        "hint": "Mevcut medeni durumunuz. Bu, partner alanlarının zorunluluğunu etkiler."
+      },
+      "ar": {
+        "label": "الحالة الاجتماعية",
+        "hint": "حالتك الاجتماعية الحالية. يؤثر ذلك على الحقول المطلوبة للشريك."
+      },
+      "uk": {
+        "label": "Сімейний стан",
+        "hint": "Ваш поточний сімейний стан. Це впливає на обов'язкові поля для партнера."
+      },
+      "pl": {
+        "label": "Stan cywilny",
+        "hint": "Twój aktualny stan cywilny. Wpływa na wymagane pola dla partnera."
+      }
+    },
+    "tax_id": {
+      "de": {
+        "label": "Steueridentifikationsnummer",
+        "hint": "Ihre 11-stellige Steuer-ID (auf Ihrem Steuerbescheid oder beim Finanzamt erhältlich)."
+      },
+      "en": {
+        "label": "Tax identification number",
+        "hint": "Your 11-digit tax ID (found on your tax assessment or available from the Finanzamt)."
+      },
+      "tr": {
+        "label": "Vergi kimlik numarası",
+        "hint": "11 haneli vergi kimlik numaranız (vergi değerlendirmenizde veya Finanzamt'tan temin edilebilir)."
+      },
+      "ar": {
+        "label": "رقم التعريف الضريبي",
+        "hint": "رقمك الضريبي المؤلف من 11 خانة (متوفر في قرار الضريبة أو من مكتب الضرائب)."
+      },
+      "uk": {
+        "label": "Ідентифікаційний номер платника податків",
+        "hint": "Ваш 11-значний податковий номер (вказаний у податковому повідомленні або доступний у Finanzamt)."
+      },
+      "pl": {
+        "label": "Numer identyfikacji podatkowej",
+        "hint": "Twój 11-cyfrowy numer podatkowy (podany w decyzji podatkowej lub dostępny w Finanzamt)."
+      }
+    },
+    "street": {
+      "de": {
+        "label": "Straße",
+        "hint": "Straßenname ohne Hausnummer."
+      },
+      "en": {
+        "label": "Street",
+        "hint": "Street name without house number."
+      },
+      "tr": {
+        "label": "Sokak adı",
+        "hint": "Kapı numarası olmadan sokak adı."
+      },
+      "ar": {
+        "label": "اسم الشارع",
+        "hint": "اسم الشارع بدون رقم المنزل."
+      },
+      "uk": {
+        "label": "Вулиця",
+        "hint": "Назва вулиці без номера будинку."
+      },
+      "pl": {
+        "label": "Ulica",
+        "hint": "Nazwa ulicy bez numeru domu."
+      }
+    },
+    "house_number": {
+      "de": {
+        "label": "Hausnummer",
+        "hint": "Hausnummer, ggf. mit Buchstaben, z. B. 12a."
+      },
+      "en": {
+        "label": "House number",
+        "hint": "House number, optionally with letter, e.g. 12a."
+      },
+      "tr": {
+        "label": "Kapı numarası",
+        "hint": "Kapı numarası, varsa harf ile birlikte, örn. 12a."
+      },
+      "ar": {
+        "label": "رقم المنزل",
+        "hint": "رقم المنزل، وإن وجد حرف يُضاف، مثال: 12أ."
+      },
+      "uk": {
+        "label": "Номер будинку",
+        "hint": "Номер будинку, за потреби з літерою, напр. 12a."
+      },
+      "pl": {
+        "label": "Numer domu",
+        "hint": "Numer domu, opcjonalnie z literą, np. 12a."
+      }
+    },
+    "postal_code": {
+      "de": {
+        "label": "Postleitzahl",
+        "hint": "5-stellige Postleitzahl, z. B. 10115."
+      },
+      "en": {
+        "label": "Postal code",
+        "hint": "5-digit postal code, e.g. 10115."
+      },
+      "tr": {
+        "label": "Posta kodu",
+        "hint": "5 haneli posta kodu, örn. 10115."
+      },
+      "ar": {
+        "label": "الرمز البريدي",
+        "hint": "الرمز البريدي المؤلف من 5 أرقام، مثال: 10115."
+      },
+      "uk": {
+        "label": "Поштовий індекс",
+        "hint": "5-значний поштовий індекс, напр. 10115."
+      },
+      "pl": {
+        "label": "Kod pocztowy",
+        "hint": "5-cyfrowy kod pocztowy, np. 10115."
+      }
+    },
+    "city": {
+      "de": {
+        "label": "Ort",
+        "hint": "Stadt Ihrer Meldeadresse."
+      },
+      "en": {
+        "label": "City",
+        "hint": "City of your registered address."
+      },
+      "tr": {
+        "label": "Şehir",
+        "hint": "Kayıtlı adresinizin bulunduğu şehir."
+      },
+      "ar": {
+        "label": "المدينة",
+        "hint": "مدينة عنوانك المسجل."
+      },
+      "uk": {
+        "label": "Місто",
+        "hint": "Місто вашої адреси реєстрації."
+      },
+      "pl": {
+        "label": "Miejscowość",
+        "hint": "Miejscowość Twojego adresu zameldowania."
+      }
+    },
+    "has_partner": {
+      "de": {
+        "label": "Haben Sie einen Ehe- oder Lebenspartner?",
+        "hint": "Wenn ja, müssen Sie die Daten Ihres Partners angeben."
+      },
+      "en": {
+        "label": "Do you have a spouse or life partner?",
+        "hint": "If yes, you must provide your partner's details."
+      },
+      "tr": {
+        "label": "Eşiniz veya hayat partneriniz var mı?",
+        "hint": "Evet ise partnerinizin bilgilerini girmeniz gerekmektedir."
+      },
+      "ar": {
+        "label": "هل لديك زوج أو شريك حياة؟",
+        "hint": "إذا كانت الإجابة نعم، يجب تقديم بيانات الشريك."
+      },
+      "uk": {
+        "label": "Чи є у вас чоловік, дружина або партнер?",
+        "hint": "Якщо так, необхідно вказати дані партнера."
+      },
+      "pl": {
+        "label": "Czy masz małżonka lub partnera życiowego?",
+        "hint": "Jeśli tak, musisz podać dane partnera."
+      }
+    },
+    "partner_last_name": {
+      "de": {
+        "label": "Familienname des Partners",
+        "hint": "Nachname Ihres Ehe- oder Lebenspartners."
+      },
+      "en": {
+        "label": "Partner's last name",
+        "hint": "Surname of your spouse or life partner."
+      },
+      "tr": {
+        "label": "Partnerin soyadı",
+        "hint": "Eşinizin veya hayat partnerinizin soyadı."
+      },
+      "ar": {
+        "label": "اسم عائلة الشريك",
+        "hint": "لقب زوجك أو شريك حياتك."
+      },
+      "uk": {
+        "label": "Прізвище партнера",
+        "hint": "Прізвище вашого чоловіка, дружини або партнера."
+      },
+      "pl": {
+        "label": "Nazwisko partnera",
+        "hint": "Nazwisko Twojego małżonka lub partnera życiowego."
+      }
+    },
+    "partner_first_name": {
+      "de": {
+        "label": "Vorname des Partners",
+        "hint": "Vorname Ihres Ehe- oder Lebenspartners."
+      },
+      "en": {
+        "label": "Partner's first name",
+        "hint": "First name of your spouse or life partner."
+      },
+      "tr": {
+        "label": "Partnerin adı",
+        "hint": "Eşinizin veya hayat partnerinizin adı."
+      },
+      "ar": {
+        "label": "الاسم الأول للشريك",
+        "hint": "الاسم الأول لزوجك أو شريك حياتك."
+      },
+      "uk": {
+        "label": "Ім'я партнера",
+        "hint": "Ім'я вашого чоловіка, дружини або партнера."
+      },
+      "pl": {
+        "label": "Imię partnera",
+        "hint": "Imię Twojego małżonka lub partnera życiowego."
+      }
+    },
+    "partner_birth_date": {
+      "de": {
+        "label": "Geburtsdatum des Partners",
+        "hint": "Format: TT.MM.JJJJ"
+      },
+      "en": {
+        "label": "Partner's date of birth",
+        "hint": "Format: DD.MM.YYYY"
+      },
+      "tr": {
+        "label": "Partnerin doğum tarihi",
+        "hint": "Format: GG.AA.YYYY"
+      },
+      "ar": {
+        "label": "تاريخ ميلاد الشريك",
+        "hint": "الصيغة: يوم.شهر.سنة"
+      },
+      "uk": {
+        "label": "Дата народження партнера",
+        "hint": "Формат: ДД.ММ.РРРР"
+      },
+      "pl": {
+        "label": "Data urodzenia partnera",
+        "hint": "Format: DD.MM.RRRR"
+      }
+    },
+    "partner_nationality": {
+      "de": {
+        "label": "Staatsangehörigkeit des Partners",
+        "hint": "Nationalität Ihres Partners, z. B. ukrainisch."
+      },
+      "en": {
+        "label": "Partner's nationality",
+        "hint": "Your partner's nationality, e.g. Ukrainian."
+      },
+      "tr": {
+        "label": "Partnerin milliyeti",
+        "hint": "Partnerinizin milliyeti, örn. Ukraynalı."
+      },
+      "ar": {
+        "label": "جنسية الشريك",
+        "hint": "جنسية شريكك، مثال: أوكراني."
+      },
+      "uk": {
+        "label": "Громадянство партнера",
+        "hint": "Громадянство вашого партнера, напр. українське."
+      },
+      "pl": {
+        "label": "Obywatelstwo partnera",
+        "hint": "Obywatelstwo Twojego partnera, np. ukraińskie."
+      }
+    },
+    "child_last_name": {
+      "de": {
+        "label": "Familienname des Kindes",
+        "hint": "Nachname des Kindes, für das Kindergeld beantragt wird."
+      },
+      "en": {
+        "label": "Child's last name",
+        "hint": "Surname of the child for whom child benefit is requested."
+      },
+      "tr": {
+        "label": "Çocuğun soyadı",
+        "hint": "Çocuk parası talep edilen çocuğun soyadı."
+      },
+      "ar": {
+        "label": "اسم عائلة الطفل",
+        "hint": "لقب الطفل الذي يُطلب له علاوة الأطفال."
+      },
+      "uk": {
+        "label": "Прізвище дитини",
+        "hint": "Прізвище дитини, на яку подається заява на допомогу."
+      },
+      "pl": {
+        "label": "Nazwisko dziecka",
+        "hint": "Nazwisko dziecka, na które składany jest wniosek."
+      }
+    },
+    "child_first_name": {
+      "de": {
+        "label": "Vorname des Kindes",
+        "hint": "Vorname des Kindes."
+      },
+      "en": {
+        "label": "Child's first name",
+        "hint": "First name of the child."
+      },
+      "tr": {
+        "label": "Çocuğun adı",
+        "hint": "Çocuğun adı."
+      },
+      "ar": {
+        "label": "الاسم الأول للطفل",
+        "hint": "الاسم الأول للطفل."
+      },
+      "uk": {
+        "label": "Ім'я дитини",
+        "hint": "Ім'я дитини."
+      },
+      "pl": {
+        "label": "Imię dziecka",
+        "hint": "Imię dziecka."
+      }
+    },
+    "child_birth_date": {
+      "de": {
+        "label": "Geburtsdatum des Kindes",
+        "hint": "Format: TT.MM.JJJJ"
+      },
+      "en": {
+        "label": "Child's date of birth",
+        "hint": "Format: DD.MM.YYYY"
+      },
+      "tr": {
+        "label": "Çocuğun doğum tarihi",
+        "hint": "Format: GG.AA.YYYY"
+      },
+      "ar": {
+        "label": "تاريخ ميلاد الطفل",
+        "hint": "الصيغة: يوم.شهر.سنة"
+      },
+      "uk": {
+        "label": "Дата народження дитини",
+        "hint": "Формат: ДД.ММ.РРРР"
+      },
+      "pl": {
+        "label": "Data urodzenia dziecka",
+        "hint": "Format: DD.MM.RRRR"
+      }
+    },
+    "child_birth_place": {
+      "de": {
+        "label": "Geburtsort des Kindes",
+        "hint": "Stadt und Land, in der/dem das Kind geboren wurde."
+      },
+      "en": {
+        "label": "Child's place of birth",
+        "hint": "City and country where the child was born."
+      },
+      "tr": {
+        "label": "Çocuğun doğum yeri",
+        "hint": "Çocuğun doğduğu şehir ve ülke."
+      },
+      "ar": {
+        "label": "مكان ميلاد الطفل",
+        "hint": "المدينة والدولة التي وُلد فيها الطفل."
+      },
+      "uk": {
+        "label": "Місце народження дитини",
+        "hint": "Місто та країна, де народилася дитина."
+      },
+      "pl": {
+        "label": "Miejsce urodzenia dziecka",
+        "hint": "Miasto i kraj urodzenia dziecka."
+      }
+    },
+    "child_nationality": {
+      "de": {
+        "label": "Staatsangehörigkeit des Kindes",
+        "hint": "Nationalität des Kindes, z. B. ukrainisch."
+      },
+      "en": {
+        "label": "Child's nationality",
+        "hint": "Nationality of the child, e.g. Ukrainian."
+      },
+      "tr": {
+        "label": "Çocuğun milliyeti",
+        "hint": "Çocuğun milliyeti, örn. Ukraynalı."
+      },
+      "ar": {
+        "label": "جنسية الطفل",
+        "hint": "جنسية الطفل، مثال: أوكراني."
+      },
+      "uk": {
+        "label": "Громадянство дитини",
+        "hint": "Громадянство дитини, напр. українське."
+      },
+      "pl": {
+        "label": "Obywatelstwo dziecka",
+        "hint": "Obywatelstwo dziecka, np. ukraińskie."
+      }
+    },
+    "iban": {
+      "de": {
+        "label": "IBAN",
+        "hint": "Ihre internationale Bankkontonummer, 22 Zeichen für deutsche Konten."
+      },
+      "en": {
+        "label": "IBAN",
+        "hint": "Your international bank account number, 22 characters for German accounts."
+      },
+      "tr": {
+        "label": "IBAN",
+        "hint": "Uluslararası banka hesap numaranız, Alman hesaplar için 22 karakter."
+      },
+      "ar": {
+        "label": "IBAN",
+        "hint": "رقم حسابك البنكي الدولي، 22 حرفاً للحسابات الألمانية."
+      },
+      "uk": {
+        "label": "IBAN",
+        "hint": "Ваш міжнародний номер банківського рахунку, 22 символи для німецьких рахунків."
+      },
+      "pl": {
+        "label": "IBAN",
+        "hint": "Twój międzynarodowy numer rachunku bankowego, 22 znaki dla kont niemieckich."
+      }
+    },
+    "bic": {
+      "de": {
+        "label": "BIC / SWIFT",
+        "hint": "Bank-Identifikationscode Ihrer Bank (8 oder 11 Zeichen)."
+      },
+      "en": {
+        "label": "BIC / SWIFT",
+        "hint": "Bank identification code of your bank (8 or 11 characters)."
+      },
+      "tr": {
+        "label": "BIC / SWIFT",
+        "hint": "Bankanızın kimlik kodu (8 veya 11 karakter)."
+      },
+      "ar": {
+        "label": "BIC / SWIFT",
+        "hint": "رمز تعريف البنك (8 أو 11 حرفاً)."
+      },
+      "uk": {
+        "label": "BIC / SWIFT",
+        "hint": "Ідентифікаційний код банку (8 або 11 символів)."
+      },
+      "pl": {
+        "label": "BIC / SWIFT",
+        "hint": "Kod identyfikacyjny banku (8 lub 11 znaków)."
+      }
+    },
+    "bank_name": {
+      "de": {
+        "label": "Kreditinstitut (Bank)",
+        "hint": "Name Ihrer Bank, z. B. Sparkasse Berlin."
+      },
+      "en": {
+        "label": "Bank name",
+        "hint": "Name of your bank, e.g. Sparkasse Berlin."
+      },
+      "tr": {
+        "label": "Banka adı",
+        "hint": "Bankanızın adı, örn. Sparkasse Berlin."
+      },
+      "ar": {
+        "label": "اسم البنك",
+        "hint": "اسم بنكك، مثال: Sparkasse Berlin."
+      },
+      "uk": {
+        "label": "Назва банку",
+        "hint": "Назва вашого банку, напр. Sparkasse Berlin."
+      },
+      "pl": {
+        "label": "Nazwa banku",
+        "hint": "Nazwa Twojego banku, np. Sparkasse Berlin."
+      }
+    },
+    "account_holder": {
+      "de": {
+        "label": "Kontoinhaber",
+        "hint": "Vollständiger Name des Kontoinhabers (falls abweichend vom Antragsteller)."
+      },
+      "en": {
+        "label": "Account holder",
+        "hint": "Full name of the account holder (if different from applicant)."
+      },
+      "tr": {
+        "label": "Hesap sahibi",
+        "hint": "Hesap sahibinin tam adı (başvuru sahibinden farklıysa)."
+      },
+      "ar": {
+        "label": "صاحب الحساب",
+        "hint": "الاسم الكامل لصاحب الحساب (إذا اختلف عن مقدم الطلب)."
+      },
+      "uk": {
+        "label": "Власник рахунку",
+        "hint": "Повне ім'я власника рахунку (якщо відрізняється від заявника)."
+      },
+      "pl": {
+        "label": "Właściciel konta",
+        "hint": "Pełne imię i nazwisko właściciela konta (jeśli różni się od wnioskodawcy)."
+      }
+    },
+    "signature_place": {
+      "de": {
+        "label": "Ort der Unterschrift",
+        "hint": "Stadt, in der das Formular unterschrieben wird."
+      },
+      "en": {
+        "label": "Place of signature",
+        "hint": "City where the form is being signed."
+      },
+      "tr": {
+        "label": "İmza yeri",
+        "hint": "Formun imzalandığı şehir."
+      },
+      "ar": {
+        "label": "مكان التوقيع",
+        "hint": "المدينة التي يتم فيها التوقيع على النموذج."
+      },
+      "uk": {
+        "label": "Місце підпису",
+        "hint": "Місто, де підписується форма."
+      },
+      "pl": {
+        "label": "Miejsce podpisu",
+        "hint": "Miasto, w którym formularz jest podpisywany."
+      }
+    },
+    "signature_date": {
+      "de": {
+        "label": "Datum der Unterschrift",
+        "hint": "Datum, an dem das Formular unterschrieben wird."
+      },
+      "en": {
+        "label": "Date of signature",
+        "hint": "Date on which the form is signed."
+      },
+      "tr": {
+        "label": "İmza tarihi",
+        "hint": "Formun imzalandığı tarih."
+      },
+      "ar": {
+        "label": "تاريخ التوقيع",
+        "hint": "التاريخ الذي يتم فيه توقيع النموذج."
+      },
+      "uk": {
+        "label": "Дата підпису",
+        "hint": "Дата підписання форми."
+      },
+      "pl": {
+        "label": "Data podpisu",
+        "hint": "Data podpisania formularza."
+      }
+    },
+    "steuer_id_applicant": {
+      "de": {
+        "label": "Steuer-Identifikationsnummer (Antragsteller)",
+        "hint": "Ihre persönliche 11-stellige Steuer-ID. Falls oben bereits unter Steuer-ID eingetragen, muss dieses Feld nicht ausgefüllt werden."
+      },
+      "en": {
+        "label": "Tax Identification Number (Applicant)",
+        "hint": "Your personal 11-digit tax ID. Leave blank if already entered in the Tax ID field above."
+      },
+      "tr": {
+        "label": "Vergi kimlik numarası (başvuru sahibi)",
+        "hint": "Kişisel 11 haneli Steuer-ID'niz. Yukarıdaki Steuer-ID alanına zaten girdiyseniz bu alanı boş bırakın."
+      },
+      "ar": {
+        "label": "رقم التعريف الضريبي (مقدم الطلب)",
+        "hint": "رقم Steuer-ID الشخصي من 11 خانة. اتركه فارغاً إذا أدخلته بالفعل في حقل Steuer-ID أعلاه."
+      },
+      "uk": {
+        "label": "Податковий ідентифікаційний номер (заявник)",
+        "hint": "Ваш особистий 11-значний Steuer-ID. Якщо вже вказано у полі Steuer-ID вище — залиште порожнім."
+      },
+      "pl": {
+        "label": "Numer identyfikacji podatkowej (wnioskodawca)",
+        "hint": "Twój osobisty 11-cyfrowy Steuer-ID. Zostaw puste, jeśli podano już w polu Steuer-ID powyżej."
+      }
+    },
+    "steuer_id_child": {
+      "de": {
+        "label": "Steuer-Identifikationsnummer des Kindes",
+        "hint": "11-stellige Steuer-ID des Kindes. Zu finden auf der Geburtsurkunde oder einem Schreiben des Finanzamts. Kann leer gelassen werden, falls unbekannt."
+      },
+      "en": {
+        "label": "Child's Tax Identification Number",
+        "hint": "The child's 11-digit tax ID. Found on the birth certificate or a letter from the tax office. May be left blank if unknown."
+      },
+      "tr": {
+        "label": "Çocuğun vergi kimlik numarası",
+        "hint": "Çocuğun 11 haneli Steuer-ID'si. Doğum belgesinde veya Finanzamt mektubunda bulunur. Bilinmiyorsa boş bırakılabilir."
+      },
+      "ar": {
+        "label": "رقم التعريف الضريبي للطفل",
+        "hint": "رقم Steuer-ID للطفل من 11 خانة. يوجد في شهادة الميلاد أو رسالة Finanzamt. يمكن تركه فارغاً إن كان غير معروف."
+      },
+      "uk": {
+        "label": "Податковий ідентифікаційний номер дитини",
+        "hint": "11-значний Steuer-ID дитини. Знаходиться у свідоцтві про народження або листі від Finanzamt. Можна залишити порожнім, якщо невідомо."
+      },
+      "pl": {
+        "label": "Numer identyfikacji podatkowej dziecka",
+        "hint": "11-cyfrowy Steuer-ID dziecka. Znajdziesz w akcie urodzenia lub piśmie z Finanzamt. Można zostawić puste, jeśli nieznany."
+      }
+    },
+    "familienstand_seit": {
+      "de": {
+        "label": "Familienstand seit",
+        "hint": "Datum, seit dem dieser Familienstand besteht (z.B. Hochzeitsdatum)."
+      },
+      "en": {
+        "label": "Marital status since",
+        "hint": "Date since this marital status applies (e.g. wedding date)."
+      },
+      "uk": {
+        "label": "Сімейний стан з",
+        "hint": "Дата, з якої діє цей сімейний статус (наприклад, дата весілля)."
+      },
+      "pl": {
+        "label": "Stan cywilny od",
+        "hint": "Data, od której obowiązuje ten stan cywilny (np. data ślubu)."
+      },
+      "tr": {
+        "label": "Medeni durum tarihi",
+        "hint": "Bu medeni durumun başladığı tarih (örn. düğün tarihi)."
+      },
+      "ar": {
+        "label": "الحالة الاجتماعية منذ",
+        "hint": "التاريخ الذي بدأت فيه هذه الحالة الاجتماعية (مثلاً تاريخ الزواج)."
+      }
+    },
+    "partner_gender": {
+      "de": {
+        "label": "Geschlecht (Partner/in)",
+        "hint": "Geschlecht des Ehepartners oder eingetragenen Lebenspartners."
+      },
+      "en": {
+        "label": "Gender (partner)",
+        "hint": "Gender of your spouse or registered partner."
+      },
+      "uk": {
+        "label": "Стать (партнер/ка)",
+        "hint": "Стать чоловіка/дружини або офіційного партнера."
+      },
+      "pl": {
+        "label": "Płeć (partner/ka)",
+        "hint": "Płeć małżonka lub zarejestrowanego partnera."
+      },
+      "tr": {
+        "label": "Cinsiyet (eş)",
+        "hint": "Eşinizin veya kayıtlı partnerinizin cinsiyeti."
+      },
+      "ar": {
+        "label": "الجنس (الشريك/ة)",
+        "hint": "جنس الزوج/الزوجة أو الشريك المسجل."
+      }
+    },
+    "partner_birth_name": {
+      "de": {
+        "label": "Geburtsname (Partner/in)",
+        "hint": "Geburtsname des Partners, falls abweichend vom aktuellen Nachnamen."
+      },
+      "en": {
+        "label": "Birth name (partner)",
+        "hint": "Partner's birth name, if different from current surname."
+      },
+      "uk": {
+        "label": "Прізвище при народженні (партнер/ка)",
+        "hint": "Прізвище при народженні партнера, якщо відрізняється від поточного."
+      },
+      "pl": {
+        "label": "Nazwisko rodowe (partner/ka)",
+        "hint": "Nazwisko rodowe partnera, jeśli różni się od obecnego."
+      },
+      "tr": {
+        "label": "Doğum soyadı (eş)",
+        "hint": "Eşin doğum soyadı, mevcut soyadından farklıysa belirtin."
+      },
+      "ar": {
+        "label": "اسم الميلاد (الشريك/ة)",
+        "hint": "اسم الميلاد للشريك إذا كان مختلفاً عن الاسم الحالي."
+      }
+    },
+    "partner_steuer_id": {
+      "de": {
+        "label": "Steuer-ID (Partner/in)",
+        "hint": "Die 11-stellige Steuer-Identifikationsnummer des Partners."
+      },
+      "en": {
+        "label": "Tax ID (partner)",
+        "hint": "Partner's 11-digit tax identification number."
+      },
+      "uk": {
+        "label": "Steuer-ID (партнер/ка)",
+        "hint": "11-значний податковий ідентифікаційний номер партнера."
+      },
+      "pl": {
+        "label": "Steuer-ID (partner/ka)",
+        "hint": "11-cyfrowy numer identyfikacji podatkowej partnera."
+      },
+      "tr": {
+        "label": "Steuer-ID (eş)",
+        "hint": "Eşin 11 haneli vergi kimlik numarası."
+      },
+      "ar": {
+        "label": "Steuer-ID (الشريك/ة)",
+        "hint": "رقم التعريف الضريبي من 11 خانة للشريك."
+      }
+    },
+    "child_gender": {
+      "de": {
+        "label": "Geschlecht (Kind)",
+        "hint": "Geschlecht des Kindes, für das Kindergeld beantragt wird."
+      },
+      "en": {
+        "label": "Gender (child)",
+        "hint": "Gender of the child for whom child benefit is applied."
+      },
+      "uk": {
+        "label": "Стать (дитина)",
+        "hint": "Стать дитини, на яку подається заява на Kindergeld."
+      },
+      "pl": {
+        "label": "Płeć (dziecko)",
+        "hint": "Płeć dziecka, dla którego składany jest wniosek o zasiłek."
+      },
+      "tr": {
+        "label": "Cinsiyet (çocuk)",
+        "hint": "Çocuk parası başvurusu yapılan çocuğun cinsiyeti."
+      },
+      "ar": {
+        "label": "الجنس (الطفل)",
+        "hint": "جنس الطفل الذي يُقدَّم بشأنه طلب مخصصات الأطفال."
+      }
+    }
+  }
+}

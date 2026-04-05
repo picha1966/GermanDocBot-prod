@@ -1,0 +1,954 @@
+{
+  "anmeldung": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "authority_plz": {
+        "x": 50,
+        "y": 720,
+        "font_size": 9,
+        "max_width": 50
+      },
+      "authority_city": {
+        "x": 110,
+        "y": 720,
+        "font_size": 9,
+        "max_width": 150
+      },
+      "first_name": {
+        "x": 150,
+        "y": 600,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 580,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 560,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "birth_place": {
+        "x": 280,
+        "y": 560,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "nationality": {
+        "x": 150,
+        "y": 540,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 500,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 500,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "move_in_date": {
+        "x": 150,
+        "y": 460,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "previous_address": {
+        "x": 150,
+        "y": 440,
+        "font_size": 10,
+        "max_width": 280
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "kindergeld": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "tax_id": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "child_first_name": {
+        "x": 150,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_last_name": {
+        "x": 150,
+        "y": 460,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_birth_date": {
+        "x": 150,
+        "y": 440,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "iban": {
+        "x": 150,
+        "y": 400,
+        "font_size": 11,
+        "max_width": 250
+      },
+      "bic": {
+        "x": 150,
+        "y": 380,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "buergergeld": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "social_number": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "jobcenter_id": {
+        "x": 150,
+        "y": 510,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "household_size": {
+        "x": 150,
+        "y": 470,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "monthly_income": {
+        "x": 150,
+        "y": 450,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "wohngeld": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "street": {
+        "x": 150,
+        "y": 570,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 570,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "household_size": {
+        "x": 150,
+        "y": 510,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "income_total": {
+        "x": 150,
+        "y": 490,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "rent_cold": {
+        "x": 150,
+        "y": 470,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "rent_warm": {
+        "x": 150,
+        "y": 450,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "abmeldung": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 600,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 580,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 560,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "street": {
+        "x": 150,
+        "y": 520,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 520,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 500,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 500,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "move_out_date": {
+        "x": 150,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "new_address": {
+        "x": 150,
+        "y": 460,
+        "font_size": 10,
+        "max_width": 280
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "elterngeld": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "tax_id": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "child_birth_date": {
+        "x": 150,
+        "y": 490,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "employment_status": {
+        "x": 150,
+        "y": 470,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "monthly_income": {
+        "x": 150,
+        "y": 450,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "iban": {
+        "x": 150,
+        "y": 410,
+        "font_size": 11,
+        "max_width": 250
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "kinderzuschlag": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "tax_id": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "child_first_name": {
+        "x": 150,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_last_name": {
+        "x": 150,
+        "y": 460,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_birth_date": {
+        "x": 150,
+        "y": 440,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "monthly_income": {
+        "x": 150,
+        "y": 400,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "steuerklasse": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "tax_id": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "current_tax_class": {
+        "x": 150,
+        "y": 490,
+        "font_size": 11,
+        "max_width": 80
+      },
+      "new_tax_class": {
+        "x": 150,
+        "y": 470,
+        "font_size": 11,
+        "max_width": 80
+      },
+      "marriage_date": {
+        "x": 150,
+        "y": 450,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "erstausstattung": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "street": {
+        "x": 150,
+        "y": 570,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 570,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "household_size": {
+        "x": 150,
+        "y": 510,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "monthly_income": {
+        "x": 150,
+        "y": 490,
+        "font_size": 11,
+        "max_width": 120
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  },
+  "kinderfreibetrag": {
+    "0": {
+      "authority_name": {
+        "x": 50,
+        "y": 750,
+        "font_size": 10,
+        "max_width": 200
+      },
+      "authority_address": {
+        "x": 50,
+        "y": 735,
+        "font_size": 9,
+        "max_width": 200
+      },
+      "first_name": {
+        "x": 150,
+        "y": 650,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "last_name": {
+        "x": 150,
+        "y": 630,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "birth_date": {
+        "x": 150,
+        "y": 610,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "tax_id": {
+        "x": 150,
+        "y": 590,
+        "font_size": 11,
+        "max_width": 150
+      },
+      "street": {
+        "x": 150,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "house_number": {
+        "x": 370,
+        "y": 550,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "plz": {
+        "x": 150,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 60
+      },
+      "city": {
+        "x": 230,
+        "y": 530,
+        "font_size": 11,
+        "max_width": 200
+      },
+      "child_first_name": {
+        "x": 150,
+        "y": 480,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_last_name": {
+        "x": 150,
+        "y": 460,
+        "font_size": 11,
+        "max_width": 180
+      },
+      "child_birth_date": {
+        "x": 150,
+        "y": 440,
+        "font_size": 11,
+        "max_width": 100
+      },
+      "signature_place": {
+        "x": 70,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 150
+      },
+      "signature_date": {
+        "x": 250,
+        "y": 150,
+        "font_size": 10,
+        "max_width": 100
+      }
+    }
+  }
+}

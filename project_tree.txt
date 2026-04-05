@@ -1,0 +1,328 @@
+.
++-- .claude
+|   +-- settings.json
+|   \-- settings.local.json
++-- .cursor
++-- backend
+|   +-- forms
+|   |   +-- __init__.py
+|   |   +-- beschaeftigungserklaerung_form.py
+|   |   +-- form_engine.py
+|   |   +-- frontend_adapter.py
+|   |   +-- kindergeld_form.py
+|   |   +-- kinderzuschlag_form.py
+|   |   +-- mietbescheinigung_form.py
+|   |   \-- wohngeld_form.py
+|   +-- handlers_old_backup
+|   |   +-- __init__.py
+|   |   \-- menu_handler.py
+|   +-- i18n
+|   |   +-- beschaeftigungserklaerung_translations.json
+|   |   +-- kindergeld_translations.json
+|   |   +-- kinderzuschlag_translations.json
+|   |   +-- mietbescheinigung_translations.json
+|   |   \-- wohngeld_translations.json
+|   +-- schemas
+|   |   \-- universal_mapping.json
+|   +-- templates
+|   |   +-- family
+|   |   |   +-- kg1-anlagekind_ba033765.pdf
+|   |   |   +-- kg1-antrag-kindergeld_ba036550.pdf
+|   |   |   \-- kiz_main.pdf
+|   |   +-- finance
+|   |   |   +-- jobcenter_main_2025.pdf
+|   |   |   \-- wohngeld_main.pdf
+|   |   +-- housing
+|   |   |   +-- abmeldung.pdf
+|   |   |   \-- anmeldung.pdf
+|   |   \-- work
+|   |       \-- Antrag_EBK.pdf
+|   +-- tests
+|   |   +-- test_language_flow.py
+|   |   \-- test_new_modules.py
+|   +-- texts
+|   |   +-- __init__.py
+|   |   +-- ar.py
+|   |   +-- de.py
+|   |   +-- en.py
+|   |   +-- pl.py
+|   |   +-- tr.py
+|   |   \-- uk.py
+|   +-- utils
+|   |   +-- __init__.py
+|   |   +-- font_check.py
+|   |   +-- normalize.py
+|   |   +-- pdf_cleanup.py
+|   |   \-- validate.py
+|   +-- advisor.py
+|   +-- analytics.py
+|   +-- authority_manager.py
+|   +-- buergeramt_addresses.py
+|   +-- calendar_widget.py
+|   +-- data_processor.py
+|   +-- database.py
+|   +-- document_config.py
+|   +-- document_handlers.py
+|   +-- drafts.py
+|   +-- error_reporter.py
+|   +-- export.py
+|   +-- family_profiles.py
+|   +-- form_builder.py
+|   +-- form_validation.py
+|   +-- gdpr_manager.py
+|   +-- gdpr_shredder.py
+|   +-- gdpr.py
+|   +-- geo_helper.py
+|   +-- geo_intelligence.py
+|   +-- german_form_builder.py
+|   +-- logger.py
+|   +-- logic_handler.py
+|   +-- menu_handler.py
+|   +-- next_steps.py
+|   +-- pdf_generator.py
+|   +-- pdf_renderers.py
+|   +-- preview_texts.py
+|   +-- pricing.py
+|   +-- progress_bar.py
+|   +-- rtl_fix.py
+|   +-- rtl_support.py
+|   +-- settings.py
+|   +-- smoke_test_builder.py
+|   +-- stripe_handler.py
+|   +-- termin_db.py
+|   +-- termin_texts.py
+|   +-- translations.py
+|   +-- validation_buergergeld.py
+|   +-- validators.py
+|   \-- what_to_do_config.py
++-- bot_config
+|   +-- __init__.py
+|   +-- menu_structure.py
+|   \-- pricing.py
++-- docs
+|   +-- ACROFORM_ARCHITECTURE.md
+|   +-- anmeldung_extra.pdf
+|   +-- ANMELDUNG_QUESTIONNAIRE_SPEC.md
+|   +-- anmeldung.pdf
+|   +-- Antrag_EBK.pdf
+|   +-- arbeitsagentur_reg.pdf
+|   +-- cancel_apartment_rent.pdf
+|   +-- cancel_job_contract.pdf
+|   +-- cancel_mobile_fax.pdf
+|   +-- cancel_mobile_standard.pdf
+|   +-- citizenship_adult.pdf
+|   +-- citizenship_extra_info.pdf
+|   +-- FEATURE_IDEAS_VALUE_FOR_CLIENTS.md
+|   +-- health_insurance_family.pdf
+|   +-- housing_confirm.pdf
+|   +-- jobcenter_kdu.pdf
+|   +-- jobcenter_main_2025.pdf
+|   +-- jobcenter_main.pdf
+|   +-- jobcenter_partner.pdf
+|   +-- jobcenter_vm.pdf
+|   +-- kindergeld_12345_20260109_153020.pdf
+|   +-- kindergeld_12345_20260111_134608.pdf
+|   +-- kindergeld_99999_20260109_153658.pdf
+|   +-- kindergeld_child.pdf
+|   +-- kindergeld.pdf
+|   +-- kiz_earnings_en.pdf
+|   +-- kiz_main.pdf
+|   +-- kiz_short_en.pdf
+|   +-- legal_aid_consultation.pdf
+|   +-- parking_permit_resident.pdf
+|   +-- passport_consent.pdf
+|   +-- radio_tax_reg.pdf
+|   +-- residence_permit_en_fr_it.pdf
+|   +-- residence_permit_es_pt_ru.pdf
+|   +-- residence_permit_gr_tr_vn.pdf
+|   +-- residence_permit_sr_bs.pdf
+|   +-- school_change.pdf
+|   +-- school_med_exam.pdf
+|   +-- student_job_info.pdf
+|   +-- tax_reduction.pdf
+|   +-- termin_research.md
+|   +-- traffic_fine_reply.pdf
+|   +-- ukraine_housing.pdf
+|   +-- wbs_child_care.pdf
+|   +-- wbs_details.pdf
+|   +-- wbs_employer_cert.pdf
+|   +-- wbs_income.pdf
+|   +-- wbs_main.pdf
+|   +-- wbs_partner_statement.pdf
+|   +-- wohngeld_alt.pdf
+|   \-- wohngeld_main.pdf
++-- fonts
+|   +-- DejaVuSans-Bold.ttf
+|   +-- DejaVuSans.ttf
+|   \-- NotoSansArabic-Regular.ttf
++-- handlers
+|   +-- __init__.py
+|   +-- admin.py
+|   +-- docs_new.py
+|   +-- health.py
+|   +-- payments.py
+|   +-- start.py
+|   +-- stripe_handler.py
+|   +-- support_ai.py
+|   +-- termin.py
+|   +-- ux_helpers.py
+|   \-- what_to_do.py
++-- project_memory
+|   +-- CURRENT_STATUS.md
+|   \-- NEXT_SESSION.md
++-- schemas
++-- seo-site
+|   +-- css
+|   |   \-- styles.css
+|   +-- js
+|   |   \-- lang-switch.js
+|   +-- about.html
+|   +-- anmeldung.html
+|   +-- aufenthaltstitel.html
+|   +-- buergergeld.html
+|   +-- datenschutz.html
+|   +-- familienkasse.html
+|   +-- faq.html
+|   +-- impressum.html
+|   +-- index.html
+|   +-- kindergeld.html
+|   +-- robots.txt
+|   +-- seo-site.zip
+|   +-- sitemap.xml
+|   +-- termin-berlin.html
+|   +-- ummeldung.html
+|   \-- wohngeld.html
++-- supervisor
+|   +-- README.md
+|   \-- webapp.conf
++-- templates
+|   +-- abmeldung
+|   |   +-- berlin.pdf
+|   |   \-- default.pdf
+|   +-- anmeldung
+|   |   \-- default.pdf
+|   +-- aufenthaltserlaubnis_antrag
+|   |   \-- berlin.pdf
+|   +-- aufenthaltstitel
+|   |   \-- default.pdf
+|   +-- bafoeg
+|   |   \-- default.pdf
+|   +-- beschaeftigungserklaerung
+|   |   \-- berlin.pdf
+|   +-- buergergeld
+|   |   \-- default.pdf
+|   +-- elterngeld
+|   |   \-- berlin.pdf
+|   +-- kindergeld
+|   |   \-- default.pdf
+|   +-- kindergeld_anlage
+|   |   \-- default.pdf
+|   +-- kinderzuschlag
+|   |   \-- default.pdf
+|   +-- mietbescheinigung
+|   |   \-- default.pdf
+|   +-- niederlassungserlaubnis
+|   |   \-- berlin.pdf
+|   +-- schulbescheinigung
+|   |   \-- default.pdf
+|   +-- unterhaltsvorschuss
+|   |   \-- berlin.pdf
+|   +-- verlaengerung_aufenthaltstitel
+|   |   \-- berlin.pdf
+|   +-- verpflichtungserklaerung
+|   |   \-- default.pdf
+|   +-- wbs
+|   |   \-- berlin.pdf
+|   +-- wohngeld
+|   |   +-- default_backup.pdf
+|   |   +-- default.pdf
+|   |   \-- overlay_map.json
+|   +-- wohnungsgeberbestaetigung
+|   |   \-- default.pdf
+|   +-- ANMELDUNG_FORM_LAYOUT.md
+|   \-- OFFICIAL_FORMS_LINKS.md
++-- tests
+|   +-- __init__.py
+|   +-- full_pipeline_test.py
+|   +-- pdf_test_runner.py
+|   +-- smoke_familienkasse.py
+|   +-- termin_test.py
+|   +-- test_acroform_mapping_validity.py
+|   +-- test_anmeldung_no_injected_defaults.py
+|   +-- test_backend.py
+|   +-- test_builder_schema_alignment.py
+|   +-- test_document_pipeline_consistency.py
+|   +-- test_form_validation_anmeldung_previous_address.py
+|   +-- test_full_pipeline_normalize_to_pdf.py
+|   +-- test_normalize_fixes.py
+|   +-- test_pdf_smoke_builder_docs.py
+|   +-- test_termin_support_matrix.py
+|   +-- test_v45_modules.py
+|   +-- test_validation_basic.py
+|   \-- universal_document_test.py
++-- tools
+|   +-- acroform_map_wizard.py
+|   +-- autotest_all_docs.py
+|   +-- download_official_templates.py
+|   +-- extract_acroform_fields.py
+|   +-- extract_pdf_fields.py
+|   +-- integration_audit.py
+|   +-- pdf_audit.py
+|   +-- pdf_smoke_test.py
+|   +-- preview_fill.py
+|   +-- register_new_doc.py
+|   +-- test_all_docs.py
+|   +-- test_delivery.py
+|   +-- test_fill_anmeldung.py
+|   \-- test_pipeline.py
++-- utils
+|   +-- __init__.py
+|   +-- email_sender.py
+|   +-- helpers.py
+|   +-- stats.py
+|   +-- support_ai.py
+|   +-- termin_auditor.py
+|   +-- termin_checker.py
+|   +-- termin_monitor.py
+|   +-- termin_redis.py
+|   +-- tevis_scraper.py
+|   \-- time_utils.py
++-- webapp
+|   +-- index.html
+|   \-- test.html
++-- .env
++-- .env.example
++-- .gitignore
++-- ANALYSIS_BUNDESLAND_STATE_SELECTION.md
++-- ANMELDUNG_REFERENCE.md
++-- app.py
++-- authorities_db.py
++-- bot_database.db
++-- bot.log
++-- bot.py
++-- check.txt
++-- config.py
++-- diagnostic_handlers.py
++-- DOCUMENTS_TEMPLATES_AUDIT.md
++-- grid_generator.py
++-- HELP_GUIDE.txt
++-- kindergeld_fields.txt
++-- main.py
++-- menu.py
++-- PROJECT_BRIEF.md
++-- project_file_list.txt
++-- project_source_files.txt
++-- PROJECT_STRUCTURE.md
++-- project_tree.txt
++-- README.md
++-- requirements.txt
++-- server.py
++-- states.py
++-- stripe_webhook.py
++-- termin_assistant.db
++-- termin_stats.json
++-- test_fix.py
++-- test_kindergeld_smoke.py
++-- test_result.md
++-- test_termin_checker.py
+\-- webapp_server.py

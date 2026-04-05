@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main, dev]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        env:
+          # Minimal env so bot.py safety guards don't fire on import
+          TELEGRAM_BOT_TOKEN: "0:test_token_for_ci"
+          STRIPE_API_KEY: "sk_test_ci_placeholder"
+          STRIPE_WEBHOOK_SECRET: "whsec_ci_placeholder"
+          ADMIN_IDS: "0"
+        run: |
+          pytest tests/test_backend.py \
+                 tests/test_normalize_validate.py \
+                 tests/test_stripe_webhook_guard.py \
+                 tests/test_smoke_regression.py \
+                 tests/test_termin_support_matrix.py \
+                 -v --tb=short
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Lint with ruff
+        # E9 = syntax errors, F = pyflakes (undefined names, unused imports)
+        # Treat as errors; style warnings are informational only
+        run: ruff check . --select E9,F --ignore F401,F811 --exclude venv,__pycache__

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python tools/register_new_doc.py --all)",
+      "Bash(python -c \":*)",
+      "Bash(python webapp_server.py)",
+      "Bash(curl -s \"http://localhost:8000/api/form-schema?doc_type=kindergeld&lang=uk&v=1\")",
+      "Bash(curl -sI \"http://localhost:8000/api/form-schema?doc_type=kindergeld&lang=uk&v=1\")",
+      "Bash(curl -sv \"http://localhost:8000/api/form-schema?doc_type=kindergeld&lang=uk&v=1\")",
+      "Bash(curl -s \"http://localhost:8000/api/form-schema?doc_type=kindergeld&lang=uk&v=999\")"
+    ]
+  }
+}
