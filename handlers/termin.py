@@ -592,6 +592,15 @@ _SCAN_STATUS_NOTE = {
         "tr": "✅ Otomatik tarama: aktif",
         "ar": "✅ المسح التلقائي: نشط",
     },
+    "manual_portal": {
+        "ua": "🔗 München: портал-асистент, ручний запис через captcha-захищений портал",
+        "uk": "🔗 München: портал-асистент, ручний запис через captcha-захищений портал",
+        "en": "🔗 München: portal availability assistant, manual booking via captcha-protected portal",
+        "de": "🔗 München: Portal-Verfügbarkeitsassistent, manuelle Buchung im captcha-geschützten Portal",
+        "pl": "🔗 München: asystent dostępności portalu, ręczna rezerwacja w portalu chronionym captcha",
+        "tr": "🔗 München: portal erişilebilirlik asistanı, captcha korumalı portalda manuel rezervasyon",
+        "ar": "🔗 ميونخ: مساعد توفر البوابة، حجز يدوي عبر بوابة محمية بالكابتشا",
+    },
 }
 
 
@@ -602,6 +611,8 @@ def _get_city_scan_note(city_code: str, lang: str) -> str:
     - Any other unknown city: empty string (no note).
     """
     key = (city_code or "").lower().strip()
+    if key in ("muenchen", "münchen", "munich"):
+        return _SCAN_STATUS_NOTE["manual_portal"].get(lang, _SCAN_STATUS_NOTE["manual_portal"]["en"])
     if key in _CITIES_WITH_AUTO_SCAN:
         return _SCAN_STATUS_NOTE["auto"].get(lang, _SCAN_STATUS_NOTE["auto"]["en"])
     return ""
@@ -1105,6 +1116,86 @@ _SETUP_TEXT = {
         "✅ مراقبة تلقائية — من €4.99"
     ),
 }
+_MUENCHEN_PRE_PAYMENT_TEXT = {
+    "uk": (
+        "🔎 <b>München Portal Assistant — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "Для Мюнхена доступний premium portal availability assistant.\n"
+        "Ми підтверджуємо доступність офіційного порталу, даємо посилання та покрокову інструкцію.\n"
+        "Автоматичне виявлення слотів недоступне: бронювання проходить вручну через captcha-захищений портал.\n\n"
+        "💶 <b>Оберіть період доступу:</b>\n"
+        "⭐ <b>Найкраща ціна: 30 днів — €19.99</b>\n"
+        "📅 7 днів — €12.99\n"
+        "⚡ Швидкий старт: 24 год — €4.99"
+    ),
+    "ua": (
+        "🔎 <b>München Portal Assistant — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "Для Мюнхена доступний premium portal availability assistant.\n"
+        "Ми підтверджуємо доступність офіційного порталу, даємо посилання та покрокову інструкцію.\n"
+        "Автоматичне виявлення слотів недоступне: бронювання проходить вручну через captcha-захищений портал.\n\n"
+        "💶 <b>Оберіть період доступу:</b>\n"
+        "⭐ <b>Найкраща ціна: 30 днів — €19.99</b>\n"
+        "📅 7 днів — €12.99\n"
+        "⚡ Швидкий старт: 24 год — €4.99"
+    ),
+    "en": (
+        "🔎 <b>München Portal Assistant — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "For München, this is a premium portal availability assistant.\n"
+        "We confirm the official portal is reachable and provide the official link with step-by-step guidance.\n"
+        "Automatic slot detection is not available: booking is completed manually inside the captcha-protected portal.\n\n"
+        "💶 <b>Choose your access period:</b>\n"
+        "⭐ <b>Best Value: 30 days — €19.99</b>\n"
+        "📅 7 days — €12.99\n"
+        "⚡ Quick start: 24h — €4.99"
+    ),
+    "de": (
+        "🔎 <b>München Portal-Assistent — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "Für München ist dies ein Premium-Assistent für die Portal-Verfügbarkeit.\n"
+        "Wir bestätigen, dass das offizielle Portal erreichbar ist, und liefern Link sowie Schritt-für-Schritt-Anleitung.\n"
+        "Automatische Terminerkennung ist nicht verfügbar: Die Buchung erfolgt manuell im captcha-geschützten Portal.\n\n"
+        "💶 <b>Zugangszeitraum wählen:</b>\n"
+        "⭐ <b>Beste Wahl: 30 Tage — €19,99</b>\n"
+        "📅 7 Tage — €12,99\n"
+        "⚡ Schnellstart: 24 Stunden — €4,99"
+    ),
+    "pl": (
+        "🔎 <b>München Portal Assistant — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "Dla Monachium jest to premium asystent dostępności portalu.\n"
+        "Potwierdzamy dostępność oficjalnego portalu i podajemy oficjalny link oraz instrukcję krok po kroku.\n"
+        "Automatyczne wykrywanie terminów nie jest dostępne: rezerwacja odbywa się ręcznie w portalu chronionym captcha.\n\n"
+        "💶 <b>Wybierz okres dostępu:</b>\n"
+        "⭐ <b>Najlepsza cena: 30 dni — €19,99</b>\n"
+        "📅 7 dni — €12,99\n"
+        "⚡ Szybki start: 24h — €4,99"
+    ),
+    "tr": (
+        "🔎 <b>München Portal Asistanı — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "München için bu premium bir portal erişilebilirlik asistanıdır.\n"
+        "Resmi portalın erişilebilir olduğunu doğrular, resmi bağlantıyı ve adım adım rehberi sağlarız.\n"
+        "Otomatik randevu tespiti mevcut değildir: rezervasyon captcha korumalı portal içinde manuel tamamlanır.\n\n"
+        "💶 <b>Erişim süresini seçin:</b>\n"
+        "⭐ <b>En iyi fiyat: 30 gün — €19,99</b>\n"
+        "📅 7 gün — €12,99\n"
+        "⚡ Hızlı başlangıç: 24 saat — €4,99"
+    ),
+    "ar": (
+        "🔎 <b>مساعد بوابة ميونخ — {city}</b>\n\n"
+        "📄 <b>{service}</b>\n\n"
+        "بالنسبة لميونخ، هذه خدمة مميزة لمساعد توفر البوابة.\n"
+        "نؤكد أن البوابة الرسمية متاحة ونوفر الرابط الرسمي مع إرشادات خطوة بخطوة.\n"
+        "الكشف التلقائي عن المواعيد غير متاح: يتم الحجز يدويًا داخل بوابة محمية بالكابتشا.\n\n"
+        "💶 <b>اختر مدة الوصول:</b>\n"
+        "⭐ <b>أفضل قيمة: 30 يومًا — €19.99</b>\n"
+        "📅 7 أيام — €12.99\n"
+        "⚡ بداية سريعة: 24 ساعة — €4.99"
+    ),
+}
+
 _SETUP_CITY_BTN = {
     "ua": "📍 Вибрати місто", "uk": "📍 Вибрати місто",
     "en": "📍 Choose city", "de": "📍 Stadt wählen",
@@ -1857,7 +1948,8 @@ def _build_termin_menu_text(
                         break
             except Exception:
                 pass
-        text = _lang_text(_PRE_PAYMENT_TEXT, lang).format(
+        _pre_payment_template = _MUENCHEN_PRE_PAYMENT_TEXT if (user_city or "").lower().strip() in ("muenchen", "münchen", "munich") else _PRE_PAYMENT_TEXT
+        text = _lang_text(_pre_payment_template, lang).format(
             city=city_name, service=service_name, price=price,
         )
         # Append city-dependent scan-status footnote (replaces old static Berlin-only warning)
@@ -3169,6 +3261,16 @@ _POLL_START_TEXT = {
     "tr": "🔍 <b>İzleme başlatıldı</b>\n🔄 Randevuları düzenli olarak kontrol ediyoruz. Yer bulunduğunda sizi bilgilendireceğiz.",
     "ar": "🔍 <b>بدأت المراقبة</b>\n🔄 نتحقق بانتظام من المواعيد المتاحة. سنُعلمك فور توفر موعد.",
 }
+_MUENCHEN_POLL_START_TEXT = {
+    "ua": "🔗 <b>Портал-асистент München активний</b>\nМи підтверджуємо доступність офіційного порталу. Запис і captcha-підтвердження виконуються вручну на порталі.",
+    "uk": "🔗 <b>Портал-асистент München активний</b>\nМи підтверджуємо доступність офіційного порталу. Запис і captcha-підтвердження виконуються вручну на порталі.",
+    "en": "🔗 <b>München portal assistant active</b>\nWe confirm official portal availability. Booking and captcha confirmation are completed manually on the portal.",
+    "de": "🔗 <b>München Portal-Assistent aktiv</b>\nWir bestätigen die Verfügbarkeit des offiziellen Portals. Buchung und Captcha-Bestätigung erfolgen manuell im Portal.",
+    "pl": "🔗 <b>Asystent portalu München aktywny</b>\nPotwierdzamy dostępność oficjalnego portalu. Rezerwacja i potwierdzenie captcha odbywają się ręcznie w portalu.",
+    "tr": "🔗 <b>München portal asistanı aktif</b>\nResmi portal erişilebilirliğini doğrularız. Rezervasyon ve captcha onayı portalda manuel tamamlanır.",
+    "ar": "🔗 <b>مساعد بوابة ميونخ نشط</b>\nنؤكد توفر البوابة الرسمية. يتم الحجز وتأكيد الكابتشا يدويًا داخل البوابة.",
+}
+
 _POLL_ALREADY_TEXT = {
     "ua": "⏳ Моніторинг вже активний. Ви отримаєте сповіщення, щойно з\u02bcявиться місце.",
     "uk": "⏳ Моніторинг вже активний. Ви отримаєте сповіщення, щойно з\u02bcявиться місце.",
@@ -4511,8 +4613,9 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
             get_text("btn_back", lang),
             callback_data="termin_menu",
         ))
+        _poll_start_template = _MUENCHEN_POLL_START_TEXT if city in _MUENCHEN_CITIES else _POLL_START_TEXT
         await callback.message.answer(
-            _lang_text(_POLL_START_TEXT, lang),
+            _lang_text(_poll_start_template, lang),
             parse_mode="HTML",
             reply_markup=kb,
         )
@@ -6631,6 +6734,26 @@ async def handle_termin_monitor_pay(callback: types.CallbackQuery, state: FSMCon
         "tr": "İzleme planınızı seçin:",
         "ar": "اختر خطة المراقبة:",
     }.get(lang, "Choose your monitoring plan:")
+
+    if city_code in _MUENCHEN_CITIES:
+        title_line = {
+            "ua": f"🔎 <b>München Portal Assistant — {city_display}</b>",
+            "uk": f"🔎 <b>München Portal Assistant — {city_display}</b>",
+            "en": f"🔎 <b>München Portal Assistant — {city_display}</b>",
+            "de": f"🔎 <b>München Portal-Assistent — {city_display}</b>",
+            "pl": f"🔎 <b>München Portal Assistant — {city_display}</b>",
+            "tr": f"🔎 <b>München Portal Asistanı — {city_display}</b>",
+            "ar": f"🔎 <b>مساعد بوابة ميونخ — {city_display}</b>",
+        }.get(lang, f"🔎 <b>München Portal Assistant — {city_display}</b>")
+        subtitle_line = {
+            "ua": "Оберіть період доступу до портал-асистента:",
+            "uk": "Оберіть період доступу до портал-асистента:",
+            "en": "Choose your portal assistant access period:",
+            "de": "Wählen Sie den Zugangszeitraum für den Portal-Assistenten:",
+            "pl": "Wybierz okres dostępu do asystenta portalu:",
+            "tr": "Portal asistanı erişim süresini seçin:",
+            "ar": "اختر مدة الوصول إلى مساعد البوابة:",
+        }.get(lang, "Choose your portal assistant access period:")
 
     value_prop = {
         "ua": (

@@ -2435,10 +2435,10 @@ async def _poll_loop(session: _PollingSession) -> None:
     lang = session.lang
     _transitioned_to_reserved = False
 
-    # Log manual-only mode immediately when München monitoring starts.
+    # Log manual portal mode immediately when München monitoring starts.
     if session.city in ("muenchen", "münchen", "munich"):
         logger.info(
-            "MUENCHEN_MANUAL_ONLY_MODE | user=%s city=%s authority=%s "
+            "MUENCHEN_MANUAL_PORTAL_MODE | user=%s city=%s authority=%s "
             "mode=portal_assistant automatic_detection=False",
             session.user_id, session.city, session.authority,
         )
@@ -3397,7 +3397,7 @@ def build_status_text(session: "_PollingSession", lang: str,
         except ImportError:
             live_block = f"{pulse} <b>Portal assistant active</b>\n🔗 Check portal manually"
         logger.info(
-            "MUENCHEN_MANUAL_ONLY_MODE | user=%s city=%s authority=%s "
+            "MUENCHEN_MANUAL_PORTAL_MODE | user=%s city=%s authority=%s "
             "status=portal_only_no_auto_detection",
             getattr(session, "user_id", "?"),
             city,
