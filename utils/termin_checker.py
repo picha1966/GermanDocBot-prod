@@ -1512,6 +1512,8 @@ CACHE_TTL_SEC: int = int(os.getenv("TERMIN_CACHE_TTL_SEC", "4"))
 # the browser is not re-launched by a second user arriving 1 s later.
 CACHE_TTL_PLAYWRIGHT_SEC: int = int(os.getenv("TERMIN_CACHE_TTL_PLAYWRIGHT_SEC", "55"))
 
+# Krefeld checker code is intentionally kept for future enablement, but the
+# city remains disabled until DB/UI/health-monitor wiring is complete.
 _PLAYWRIGHT_CITIES = frozenset({
     "berlin", "frankfurt", "duesseldorf", "dusseldorf", "koeln", "cologne", "krefeld",
 })

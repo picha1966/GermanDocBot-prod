@@ -248,7 +248,7 @@ def _ensure_termin_user(user_id: int, lang: str) -> dict:
 _TERMIN_ENTRY_TEXT = {
     "ua": (
         "📅 <b>Моніторинг Termin — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "Ми регулярно перевіряємо наявність слотів\n"
         "і повідомляємо одразу, коли з'являється місце.\n\n"
         "🔔 Telegram + Email миттєво\n\n"
@@ -257,7 +257,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "uk": (
         "📅 <b>Моніторинг Termin — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "Ми регулярно перевіряємо наявність слотів\n"
         "і повідомляємо одразу, коли з'являється місце.\n\n"
         "🔔 Telegram + Email миттєво\n\n"
@@ -266,7 +266,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "en": (
         "📅 <b>Termin Monitoring — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "We regularly check slot availability\n"
         "and notify you instantly when one opens.\n\n"
         "🔔 Telegram + Email instantly\n\n"
@@ -275,7 +275,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "de": (
         "📅 <b>Terminüberwachung — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "Wir prüfen regelmäßig die Verfügbarkeit von Terminen\n"
         "und benachrichtigen Sie sofort, sobald ein Termin frei wird.\n\n"
         "🔔 Telegram + E-Mail sofort\n\n"
@@ -284,7 +284,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "pl": (
         "📅 <b>Monitoring Termin — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "Regularnie sprawdzamy dostępność terminów\n"
         "i powiadamiamy natychmiast, gdy pojawi się wolne miejsce.\n\n"
         "🔔 Telegram + e-mail od razu\n\n"
@@ -293,7 +293,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "tr": (
         "📅 <b>Termin Takibi — 7/24</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "Randevu müsaitliğini düzenli olarak kontrol ediyoruz\n"
         "ve yer açılır açılmaz anında bildirim gönderiyoruz.\n\n"
         "🔔 Telegram + e-posta anında\n\n"
@@ -302,7 +302,7 @@ _TERMIN_ENTRY_TEXT = {
     ),
     "ar": (
         "📅 <b>مراقبة المواعيد — 24/7</b>\n"
-        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf · Krefeld\n\n"
+        "📍 Berlin · München · Frankfurt · Köln · Düsseldorf\n\n"
         "نفحص بانتظام توافر المواعيد\n"
         "ونرسل إشعارًا فور توفر مكان.\n\n"
         "🔔 Telegram + بريد إلكتروني فورًا\n\n"
@@ -574,10 +574,9 @@ _PRE_PAYMENT_TEXT = {
 }
 
 # Cities that have a working real-time checker (Playwright-based real slot scraping).
-# Active menu cities: Berlin, Frankfurt, Düsseldorf, Köln, Krefeld.
+# Active auto-scan cities that are fully wired in DB/UI/monitoring.
 _CITIES_WITH_AUTO_SCAN = frozenset({
     "berlin", "frankfurt", "koeln", "cologne", "duesseldorf", "dusseldorf",
-    "krefeld",
 })
 _CITIES_BETA_SPA: frozenset = frozenset()  # No cities in beta-only mode
 
@@ -599,7 +598,7 @@ _SCAN_STATUS_NOTE = {
 def _get_city_scan_note(city_code: str, lang: str) -> str:
     """Return the scan-status footnote for the pre-payment screen.
 
-    - All active menu cities (Berlin/Frankfurt/Köln/Düsseldorf/Krefeld): positive line.
+    - Fully wired auto-scan cities: positive line.
     - Any other unknown city: empty string (no note).
     """
     key = (city_code or "").lower().strip()
@@ -1066,43 +1065,43 @@ _SETUP_TEXT = {
     "ua": (
         "🔎 <b>Пошук Termin</b>\n\n"
         "Щоб запустити моніторинг, виберіть місто та послугу.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Автоматичний моніторинг — від €4.99"
     ),
     "uk": (
         "🔎 <b>Пошук Termin</b>\n\n"
         "Щоб запустити моніторинг, виберіть місто та послугу.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Автоматичний моніторинг — від €4.99"
     ),
     "en": (
         "🔎 <b>Find an Appointment</b>\n\n"
         "To start monitoring, choose your city and service.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Automatic monitoring — from €4.99"
     ),
     "de": (
         "🔎 <b>Termin finden</b>\n\n"
         "Um die Überwachung zu starten, wählen Sie Stadt und Dienst.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Automatische Überwachung — ab €4.99"
     ),
     "pl": (
         "🔎 <b>Znajdź termin</b>\n\n"
         "Aby uruchomić monitoring, wybierz miasto i usługę.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Automatyczny monitoring — od €4.99"
     ),
     "tr": (
         "🔎 <b>Randevu Bul</b>\n\n"
         "İzlemeyi başlatmak için şehir ve hizmet seçin.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ Otomatik izleme — €4.99'dan"
     ),
     "ar": (
         "🔎 <b>ابحث عن موعد</b>\n\n"
         "لبدء المراقبة، اختر المدينة والخدمة.\n\n"
-        "📍 Berlin · Frankfurt · Düsseldorf · Köln · Krefeld\n"
+        "📍 Berlin · Frankfurt · Düsseldorf · Köln\n"
         "✅ مراقبة تلقائية — من €4.99"
     ),
 }
