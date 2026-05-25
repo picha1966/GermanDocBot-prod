@@ -345,8 +345,9 @@ async def check_dortmund_slots(service_key: str) -> dict:
     expected page title confirms the booking portal is operational.
 
     Returns available=True when the portal is reachable and returning a
-    valid service-selection page.  liveness_only=True is set in the result
-    to indicate that no exact slot date/time is extracted.
+    valid service-selection page.  portal_only=True/liveness_only=True are set
+    to indicate that no exact slot date/time is extracted, so the poll loop
+    must suppress slot-found notifications.
     """
     import httpx
 
@@ -391,6 +392,10 @@ async def check_dortmund_slots(service_key: str) -> dict:
                 "DORTMUND_PORTAL_UP | service=%s — booking portal is operational",
                 svc,
             )
+            logger.info(
+                "DORTMUND_PORTAL_ONLY | service=%s reason=no_verified_slot_payload",
+                svc,
+            )
             return {
                 "available":     True,
                 "city":          "dortmund",
@@ -399,6 +404,7 @@ async def check_dortmund_slots(service_key: str) -> dict:
                 "time":          "",
                 "url":           _DORTMUND_BOOKING_URL,
                 "liveness_only": True,  # portal is UP; user must book manually
+                "portal_only":   True,
             }
 
         logger.info("DORTMUND_NOT_AVAILABLE | service=%s (portal page check failed)", svc)
@@ -1678,6 +1684,19 @@ async def check_termin_availability(
         if city_key == "dortmund":
             slot = await check_dortmund_slots(auth_key)
             if slot.get("available"):
+                has_verified_slot = bool(
+                    (slot.get("date") and slot.get("time"))
+                    or slot.get("appointment_url")
+                    or slot.get("bookable_url")
+                    or slot.get("verified_slot_payload")
+                )
+                if not has_verified_slot:
+                    slot["portal_only"] = True
+                    slot["liveness_only"] = True
+                    logger.info(
+                        "DORTMUND_PORTAL_ONLY | service=%s reason=no_date_time_or_verified_slot_payload",
+                        auth_key,
+                    )
                 _api_fail_logged = False
                 return TerminStatus.AVAILABLE, slot
             return TerminStatus.NOT_AVAILABLE, _no_details
@@ -2515,6 +2534,12 @@ async def _poll_loop(session: _PollingSession) -> None:
                 # Rule: a CTA is only sent when the checker confirms a real appointment
                 # date/time or a reliable slot availability signal (portal_only is False).
                 if slot_details.get("portal_only"):
+                    if (session.city or "").lower() == "dortmund":
+                        logger.info(
+                            "DORTMUND_FALSE_ALERT_SUPPRESSED | user=%s city=%s auth=%s "
+                            "reason=portal_only_no_verified_slot",
+                            session.user_id, session.city, session.authority,
+                        )
                     logger.info(
                         "PORTAL_ONLY_SKIP | user=%s city=%s auth=%s — "
                         "portal is up but no real slot detected; suppressing notification",
