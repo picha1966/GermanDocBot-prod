@@ -2690,10 +2690,52 @@ async def _poll_loop(session: _PollingSession) -> None:
                 # ────────────────────────────────────────────────────────────────
 
                 if session.on_reserved_fn:
-                    # --- Soft-lock: transition to RESERVED ---
-                    # Lock price at reservation time (guard: price immutable after this)
+                    # Deliver the reserved alert first.  RESERVED state, cooldowns,
+                    # and timers are only set after Telegram delivery succeeds.
+                    try:
+                        _reserved_delivered = await session.on_reserved_fn(session.chat_id, session.lang)
+                    except Exception as _cb_exc:
+                        logger.error(
+                            "TERMIN_RESERVED_DELIVERY_FAILED | user=%s city=%s auth=%s err=%s",
+                            session.user_id, session.city, session.authority, _cb_exc,
+                        )
+                        session.status = TerminStatus.NOT_AVAILABLE
+                        _sleep_sec, _reason = _next_poll_delay(
+                            session.city, _interval, _base_interval, reason_hint="error"
+                        )
+                        logger.info(
+                            "TERMIN_RESERVED_RETRY_NEXT_POLL | user=%s city=%s auth=%s delay_sec=%.0f reason=%s",
+                            session.user_id, session.city, session.authority, _sleep_sec, _reason,
+                        )
+                        logger.info(
+                            "TERMIN_NEXT_CHECK | city=%s document=%s delay_sec=%.0f reason=%s",
+                            session.city, session.authority, _sleep_sec, _reason,
+                        )
+                        await asyncio.sleep(_sleep_sec)
+                        continue
+
+                    if not _reserved_delivered:
+                        logger.warning(
+                            "TERMIN_RESERVED_DELIVERY_FAILED | user=%s city=%s auth=%s reason=callback_returned_false",
+                            session.user_id, session.city, session.authority,
+                        )
+                        session.status = TerminStatus.NOT_AVAILABLE
+                        _sleep_sec, _reason = _next_poll_delay(
+                            session.city, _interval, _base_interval, reason_hint="error"
+                        )
+                        logger.info(
+                            "TERMIN_RESERVED_RETRY_NEXT_POLL | user=%s city=%s auth=%s delay_sec=%.0f reason=%s",
+                            session.user_id, session.city, session.authority, _sleep_sec, _reason,
+                        )
+                        logger.info(
+                            "TERMIN_NEXT_CHECK | city=%s document=%s delay_sec=%.0f reason=%s",
+                            session.city, session.authority, _sleep_sec, _reason,
+                        )
+                        await asyncio.sleep(_sleep_sec)
+                        continue
+
+                    # --- Soft-lock: transition to RESERVED only after delivery ---
                     session.locked_price = get_termin_price(session.city, session.authority)
-                    # Shadow-write locked price to Redis (survives restart)
                     try:
                         rset(f"termin:locked_price:{session.user_id}",
                              str(session.locked_price), 1800)
@@ -2702,27 +2744,19 @@ async def _poll_loop(session: _PollingSession) -> None:
                     session.status = TerminStatus.RESERVED
                     session.last_notified_ts = time.time()
                     logger.info(
+                        "TERMIN_NOTIFICATION_SENT | user=%s city=%s auth=%s type=reserved",
+                        session.user_id, session.city, session.authority,
+                    )
+                    logger.info(
                         "SLOT_SENT | city=%s user=%s type=reserved",
                         session.city, session.user_id,
                     )
-                    # ── Protected callback: Telegram API errors must NOT kill the loop ──
-                    # State is already set to RESERVED; reservation timer MUST start
-                    # even if the notification message fails.
-                    try:
-                        await session.on_reserved_fn(session.chat_id, session.lang)
-                        logger.info(
-                            "TERMIN_NOTIFICATION_SENT | user=%s city=%s auth=%s type=reserved",
-                            session.user_id, session.city, session.authority,
-                        )
-                    except Exception as _cb_exc:
-                        logger.error(
-                            "TERMIN_RESERVED_CALLBACK_ERROR | user=%s city=%s err=%s — "
-                            "slot notification failed, reservation timer still starts",
-                            session.user_id, session.city, _cb_exc,
-                        )
-                    # ─────────────────────────────────────────────────────────────────
                     session.reservation_task = asyncio.ensure_future(
                         _reservation_timer(session)
+                    )
+                    logger.info(
+                        "TERMIN_RESERVED_TIMER_STARTED_AFTER_DELIVERY | user=%s city=%s auth=%s",
+                        session.user_id, session.city, session.authority,
                     )
                     _reminder_task = asyncio.create_task(_slot_reminder_task(session))
                     _reminder_task.add_done_callback(

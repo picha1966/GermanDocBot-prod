@@ -4474,25 +4474,10 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
         # Enrich with real scraper slot details (date/time/location/url)
         from utils.termin_checker import get_slot_details as _get_slot_details
         _slot = _get_slot_details(user_id)
-        # Resolve booking URL: Priority A/B from slot data → authority DB → city portal fallback
-        _booking_url = _slot.get("url") or None
-        _BAD_URL_PARTS = ("ajax", "api")
-        if _booking_url and any(x in _booking_url for x in _BAD_URL_PARTS):
-            logger.info("TERMIN_BAD_URL_BLOCKED | user=%s url=%s", user_id, _booking_url)
-            _booking_url = None
-        _booking_url_source = "slot_url" if _booking_url else None
-        if not _booking_url:
-            try:
-                _auth_info = get_authority_info(city, authority)
-                _booking_url = _auth_info.get("booking_url") if _auth_info else None
-                if _booking_url:
-                    _booking_url_source = "authority_db"
-            except Exception:
-                pass
-        if not _booking_url:
-            from utils.termin_links import build_booking_links as _bbl_res
-            _booking_url = _bbl_res(city, authority, _slot).get("primary") or build_best_booking_link(_slot, city)
-            _booking_url_source = "city_portal_fallback"
+        # Resolve booking URL for reserved notification CTA.
+        _booking_url, _booking_url_source, _fallback_url = _resolve_reserved_notification_url(
+            _slot, city, authority,
+        )
         logger.info(
             "BOOKING_URL_SOURCE | user=%s city=%s authority=%s url=%s source=%s",
             user_id, city, authority, _booking_url, _booking_url_source,
@@ -4546,11 +4531,47 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
                     _ln_dt = _ln_dt.replace(tzinfo=timezone.utc)
                 if (_now_utc - _ln_dt).total_seconds() < 60:
                     logger.warning("SLOT_FOUND_DEBOUNCE | user=%s — duplicate suppressed within 60s", cid)
-                    return
+                    return False
         except Exception as _deb_err:
             logger.debug("slot debounce check failed (non-fatal): %s", _deb_err)
 
-        # Write lock to DB BEFORE sending — prevents duplicates if bot restarts mid-send
+        _dyn_portal = _get_portal_type(city)
+        _success_header += "\n\n" + _build_dynamic_instructions(_dyn_portal, authority, rlang)
+        logger.info("TELEGRAM_ALERT_SOUND_ON | user=%s city=%s type=reserved portal=%s auth=%s", cid, city, _dyn_portal, authority)
+        logger.info(
+            "BOOKING_CTA_DEBUG | user=%s city=%s document=%s url=%s source=make_termin_on_reserved_fn/_on_reserved",
+            cid, city, authority, _booking_url,
+        )
+        try:
+            await bot_instance.send_message(
+                cid,
+                _success_header,
+                parse_mode="HTML",
+                reply_markup=_kb_success,
+                disable_notification=False,
+            )
+        except Exception as _send_err:
+            logger.error(
+                "TERMIN_RESERVED_DELIVERY_FAILED | user=%s city=%s auth=%s err=%s",
+                cid, city, authority, _send_err,
+            )
+            asyncio.create_task(
+                _send_termin_slot_email(
+                    user_id=user_id,
+                    city=city,
+                    authority=authority,
+                    lang=rlang,
+                    slot=_slot,
+                    booking_url=_booking_url,
+                    fallback_url=_fallback_url,
+                )
+            )
+            raise
+
+        logger.info(
+            "TERMIN_RESERVED_DELIVERY_OK | user=%s city=%s auth=%s url=%s",
+            cid, city, authority, _booking_url,
+        )
         _slot_found_registry[int(cid)] = _now_utc.isoformat()
         try:
             from backend.termin_db import set_last_slot_found_at as _slsfa
@@ -4563,20 +4584,6 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
             _inc_found()
         except Exception:
             pass
-        _dyn_portal = _get_portal_type(city)
-        _success_header += "\n\n" + _build_dynamic_instructions(_dyn_portal, authority, rlang)
-        logger.info("TELEGRAM_ALERT_SOUND_ON | user=%s city=%s type=reserved portal=%s auth=%s", cid, city, _dyn_portal, authority)
-        logger.info(
-            "BOOKING_CTA_DEBUG | user=%s city=%s document=%s url=%s source=make_termin_on_reserved_fn/_on_reserved",
-            cid, city, authority, _booking_url,
-        )
-        await bot_instance.send_message(
-            cid,
-            _success_header,
-            parse_mode="HTML",
-            reply_markup=_kb_success,
-            disable_notification=False,
-        )
         try:
             from backend.termin_db import mark_termin_found as _mtf
             _mtf(str(cid))
@@ -4584,6 +4591,7 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
             logger.error("mark_termin_found FAILED | user=%s err=%s", cid, _mtf_err)
         # Access is not consumed by slot notification; keep expiry registries intact.
         # No payment offer — user already paid for monitoring.
+        return True
 
     async def _on_slot_found(cid: int, flang: str, slot: dict) -> None:
         """Called by termin_checker when a slot is found without reservation.
@@ -9500,6 +9508,44 @@ def _resolve_booking_url(slot: dict, city: str, authority: str) -> str:
     return _CITY_BOOKING_PORTALS.get(_city_key, "")
 
 
+def _resolve_reserved_notification_url(slot: dict, city: str, authority: str) -> tuple[str, str, str]:
+    """Return primary CTA, source label, and fallback URL for reserved alerts."""
+    candidates = [
+        ("appointment_url", slot.get("appointment_url", "")),
+        ("booking_url", slot.get("booking_url", "")),
+        ("direct_url", slot.get("direct_url", "")),
+        ("slot_url", slot.get("url", "")),
+        ("fallback_url", slot.get("fallback_url", "")),
+    ]
+    for source, url in candidates:
+        if url and not any(p in url for p in _BAD_URL_PARTS):
+            fallback = slot.get("fallback_url", "")
+            if not fallback:
+                try:
+                    from utils.termin_links import build_booking_links as _bbl
+                    fallback = _bbl(city, authority, slot).get("fallback", "")
+                except Exception:
+                    fallback = ""
+            return url, source, fallback
+
+    try:
+        _auth_info = get_authority_info(city, authority)
+        _db_url = _auth_info.get("booking_url") if _auth_info else ""
+        if _db_url and not any(p in _db_url for p in _BAD_URL_PARTS):
+            return _db_url, "authority_db", slot.get("fallback_url", "")
+    except Exception:
+        pass
+
+    try:
+        from utils.termin_links import build_booking_links as _bbl_res
+        _links = _bbl_res(city, authority, slot)
+        _primary = _links.get("primary", "") or build_best_booking_link(slot, city)
+        _fallback = _links.get("fallback", "")
+        return _primary, "city_portal_fallback", _fallback
+    except Exception:
+        return build_best_booking_link(slot, city), "city_portal_fallback", slot.get("fallback_url", "")
+
+
 _TERMIN_EMAIL_KILL_SWITCH_NOTE = {
     "uk": "📧 E-mail сповіщення вимкнено — усі оновлення лише в Telegram.",
     "ua": "📧 E-mail сповіщення вимкнено — усі оновлення лише в Telegram.",
@@ -9695,25 +9741,10 @@ def make_termin_on_reserved_fn(
 
         from utils.termin_checker import get_slot_details as _get_slot_details
         _slot = _get_slot_details(user_id)
-        # Resolve booking URL: Priority A/B from slot data → authority DB → city portal fallback
-        _booking_url = _slot.get("url") or None
-        _BAD_URL_PARTS = ("ajax", "api")
-        if _booking_url and any(x in _booking_url for x in _BAD_URL_PARTS):
-            logger.info("TERMIN_BAD_URL_BLOCKED | user=%s url=%s", user_id, _booking_url)
-            _booking_url = None
-        _booking_url_source = "slot_url" if _booking_url else None
-        if not _booking_url:
-            try:
-                _auth_info = get_authority_info(city, authority)
-                _booking_url = _auth_info.get("booking_url") if _auth_info else None
-                if _booking_url:
-                    _booking_url_source = "authority_db"
-            except Exception:
-                pass
-        if not _booking_url:
-            from utils.termin_links import build_booking_links as _bbl_res
-            _booking_url = _bbl_res(city, authority, _slot).get("primary") or build_best_booking_link(_slot, city)
-            _booking_url_source = "city_portal_fallback"
+        # Resolve booking URL for reserved notification CTA.
+        _booking_url, _booking_url_source, _fallback_url = _resolve_reserved_notification_url(
+            _slot, city, authority,
+        )
         logger.info(
             "BOOKING_URL_SOURCE | user=%s city=%s authority=%s url=%s source=%s",
             user_id, city, authority, _booking_url, _booking_url_source,
@@ -9765,11 +9796,44 @@ def make_termin_on_reserved_fn(
                     _ln_dt2 = _ln_dt2.replace(tzinfo=timezone.utc)
                 if (_now_utc2 - _ln_dt2).total_seconds() < 60:
                     logger.warning("SLOT_FOUND_DEBOUNCE | user=%s — duplicate suppressed within 60s (v2)", cid)
-                    return
+                    return False
         except Exception as _deb_err2:
             logger.debug("slot debounce check failed (non-fatal): %s", _deb_err2)
 
-        # Write lock to DB BEFORE sending — prevents duplicates if bot restarts mid-send
+        _dyn_portal2 = _get_portal_type(city)
+        _success_header += "\n\n" + _build_dynamic_instructions(_dyn_portal2, authority, rlang)
+        logger.info("TELEGRAM_ALERT_SOUND_ON | user=%s city=%s type=reserved portal=%s auth=%s", cid, city, _dyn_portal2, authority)
+        logger.info(
+            "BOOKING_CTA_DEBUG | user=%s city=%s document=%s url=%s source=make_termin_on_reserved_fn/_on_reserved_v2",
+            cid, city, authority, _booking_url,
+        )
+        try:
+            await bot_instance.send_message(
+                cid, _success_header, parse_mode="HTML", reply_markup=_kb_success,
+                disable_notification=False,
+            )
+        except Exception as _send_err:
+            logger.error(
+                "TERMIN_RESERVED_DELIVERY_FAILED | user=%s city=%s auth=%s err=%s",
+                cid, city, authority, _send_err,
+            )
+            asyncio.create_task(
+                _send_termin_slot_email(
+                    user_id=user_id,
+                    city=city,
+                    authority=authority,
+                    lang=rlang,
+                    slot=_slot,
+                    booking_url=_booking_url,
+                    fallback_url=_fallback_url,
+                )
+            )
+            raise
+
+        logger.info(
+            "TERMIN_RESERVED_DELIVERY_OK | user=%s city=%s auth=%s url=%s",
+            cid, city, authority, _booking_url,
+        )
         _slot_found_registry[int(cid)] = _now_utc2.isoformat()
         try:
             from backend.termin_db import set_last_slot_found_at as _slsfa2
@@ -9782,17 +9846,6 @@ def make_termin_on_reserved_fn(
             _inc_found2()
         except Exception:
             pass
-        _dyn_portal2 = _get_portal_type(city)
-        _success_header += "\n\n" + _build_dynamic_instructions(_dyn_portal2, authority, rlang)
-        logger.info("TELEGRAM_ALERT_SOUND_ON | user=%s city=%s type=reserved portal=%s auth=%s", cid, city, _dyn_portal2, authority)
-        logger.info(
-            "BOOKING_CTA_DEBUG | user=%s city=%s document=%s url=%s source=make_termin_on_reserved_fn/_on_reserved_v2",
-            cid, city, authority, _booking_url,
-        )
-        await bot_instance.send_message(
-            cid, _success_header, parse_mode="HTML", reply_markup=_kb_success,
-            disable_notification=False,
-        )
         try:
             from backend.termin_db import mark_termin_found as _mtf2
             _mtf2(str(cid))
@@ -9810,8 +9863,10 @@ def make_termin_on_reserved_fn(
                 lang=rlang,
                 slot=_slot,
                 booking_url=_booking_url,
+                fallback_url=_fallback_url,
             )
         )
+        return True
     return _on_reserved
 
 
