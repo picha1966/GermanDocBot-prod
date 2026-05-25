@@ -1,0 +1,57 @@
+# Production secrets and local environment
+.env
+.env.*
+!.env.example.template
+
+# Python virtualenvs and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Runtime logs
+*.log
+logs/*.log
+logs/
+*.log.*
+
+# Runtime databases and SQLite sidecars
+*.db
+*.db-*
+*.db.*
+*.sqlite
+*.sqlite*
+
+# Generated/runtime artifacts
+generated_pdfs/
+temp/
+temp_pdf/
+temp_pdfs/
+backups/
+output/
+outputs/
+
+# Archives/backups
+*.zip
+*.tar.gz
+*.tgz
+*.tar
+*.bak
+*.backup
+*.save
+
+# Node/Next artifacts if present
+node_modules/
+.next/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.cursor/
+termin_stats.json

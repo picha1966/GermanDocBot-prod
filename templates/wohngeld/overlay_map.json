@@ -1,0 +1,97 @@
+{
+  "last_name": {
+    "page": 0,
+    "x": 65.0,
+    "y": 360.0,
+    "fontsize": 9,
+    "max_width": 248.0
+  },
+  "first_name": {
+    "page": 0,
+    "x": 327.0,
+    "y": 360.0,
+    "fontsize": 9,
+    "max_width": 120.0
+  },
+  "birth_date": {
+    "page": 0,
+    "x": 271.0,
+    "y": 402.0,
+    "fontsize": 9,
+    "max_width": 62.0
+  },
+  "nationality": {
+    "page": 0,
+    "x": 462.0,
+    "y": 402.0,
+    "fontsize": 9,
+    "max_width": 80.0
+  },
+  "wg_anschrift": {
+    "page": 0,
+    "x": 65.0,
+    "y": 437.0,
+    "fontsize": 9,
+    "max_width": 265.0
+  },
+  "living_space_sqm": {
+    "page": 5,
+    "x": 65.0,
+    "y": 230.0,
+    "fontsize": 9,
+    "max_width": 395.0
+  },
+  "monthly_rent": {
+    "page": 5,
+    "x": 440.0,
+    "y": 270.0,
+    "fontsize": 9,
+    "max_width": 75.0
+  },
+  "ort_datum": {
+    "page": 7,
+    "x": 65.0,
+    "y": 501.0,
+    "fontsize": 9,
+    "max_width": 240.0
+  },
+
+  "wg_member_1_name":         {"page": 1, "x": 65.0, "y": 112.0, "fontsize": 8, "max_width": 108.0},
+  "wg_member_1_birth_date":   {"page": 1, "x": 178.0, "y": 112.0, "fontsize": 8, "max_width": 80.0},
+  "wg_member_1_relationship": {"page": 1, "x": 407.0, "y": 112.0, "fontsize": 8, "max_width": 63.0},
+
+  "wg_member_2_name":         {"page": 1, "x": 65.0, "y": 150.0, "fontsize": 8, "max_width": 108.0},
+  "wg_member_2_birth_date":   {"page": 1, "x": 178.0, "y": 150.0, "fontsize": 8, "max_width": 80.0},
+  "wg_member_2_relationship": {"page": 1, "x": 407.0, "y": 150.0, "fontsize": 8, "max_width": 63.0},
+
+  "wg_member_3_name":         {"page": 1, "x": 65.0, "y": 188.0, "fontsize": 8, "max_width": 108.0},
+  "wg_member_3_birth_date":   {"page": 1, "x": 178.0, "y": 188.0, "fontsize": 8, "max_width": 80.0},
+  "wg_member_3_relationship": {"page": 1, "x": 407.0, "y": 188.0, "fontsize": 8, "max_width": 63.0},
+
+  "wg_member_4_name":         {"page": 1, "x": 65.0, "y": 226.0, "fontsize": 8, "max_width": 108.0},
+  "wg_member_4_birth_date":   {"page": 1, "x": 178.0, "y": 226.0, "fontsize": 8, "max_width": 80.0},
+  "wg_member_4_relationship": {"page": 1, "x": 407.0, "y": 226.0, "fontsize": 8, "max_width": 63.0},
+
+  "wg_income_applicant_type":   {"page": 3, "x": 160.0, "y": 271.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_applicant_amount": {"page": 3, "x": 298.0, "y": 271.0, "fontsize": 8, "max_width": 78.0},
+
+  "wg_income_member_1_name":   {"page": 3, "x": 65.0,  "y": 329.0, "fontsize": 8, "max_width": 88.0},
+  "wg_income_member_1_type":   {"page": 3, "x": 160.0, "y": 329.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_member_1_amount": {"page": 3, "x": 298.0, "y": 329.0, "fontsize": 8, "max_width": 78.0},
+
+  "wg_income_member_2_name":   {"page": 3, "x": 65.0,  "y": 387.0, "fontsize": 8, "max_width": 88.0},
+  "wg_income_member_2_type":   {"page": 3, "x": 160.0, "y": 387.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_member_2_amount": {"page": 3, "x": 298.0, "y": 387.0, "fontsize": 8, "max_width": 78.0},
+
+  "wg_income_member_3_name":   {"page": 3, "x": 65.0,  "y": 445.0, "fontsize": 8, "max_width": 88.0},
+  "wg_income_member_3_type":   {"page": 3, "x": 160.0, "y": 445.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_member_3_amount": {"page": 3, "x": 298.0, "y": 445.0, "fontsize": 8, "max_width": 78.0},
+
+  "wg_income_member_4_name":   {"page": 3, "x": 65.0,  "y": 503.0, "fontsize": 8, "max_width": 88.0},
+  "wg_income_member_4_type":   {"page": 3, "x": 160.0, "y": 503.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_member_4_amount": {"page": 3, "x": 298.0, "y": 503.0, "fontsize": 8, "max_width": 78.0},
+
+  "wg_income_member_5_name":   {"page": 3, "x": 65.0,  "y": 561.0, "fontsize": 8, "max_width": 88.0},
+  "wg_income_member_5_type":   {"page": 3, "x": 160.0, "y": 561.0, "fontsize": 8, "max_width": 130.0},
+  "wg_income_member_5_amount": {"page": 3, "x": 298.0, "y": 561.0, "fontsize": 8, "max_width": 78.0}
+}

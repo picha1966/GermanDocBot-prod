@@ -1,0 +1,274 @@
+{
+  "ui": {
+    "de": {
+      "optional": "Optional",
+      "sec_employee": "1. Angaben zur Person (Arbeitnehmer/in)",
+      "sec_employee_hint": "Persönliche Daten der beschäftigten Person.",
+      "sec_address": "2. Wohnanschrift",
+      "sec_address_hint": "Aktuelle Wohnadresse des Arbeitnehmers in Deutschland.",
+      "sec_employer": "3. Angaben zum Arbeitgeber",
+      "sec_employer_hint": "Name, Adresse und Kontaktdaten des Arbeitgebers.",
+      "sec_job": "4. Beschäftigung",
+      "sec_job_hint": "Details zur Art der Beschäftigung, Berufsbezeichnung und Vergütung.",
+      "sec_signature": "5. Unterschrift",
+      "ph_last_name": "z. B. Müller",
+      "ph_first_name": "z. B. Anna",
+      "ph_nationality": "z. B. ukrainisch",
+      "ph_street": "z. B. Hauptstraße",
+      "ph_house_number": "z. B. 12a",
+      "ph_postal_code": "z. B. 10115",
+      "ph_city": "z. B. Berlin",
+      "ph_company": "z. B. Musterfirma GmbH",
+      "ph_contact_person": "z. B. Max Mustermann",
+      "ph_phone": "z. B. +49 30 12345678",
+      "ph_email": "z. B. info@firma.de",
+      "ph_betriebsnummer": "z. B. 12345678",
+      "ph_employment_type": "z. B. Vollzeit-Angestellter",
+      "ph_job_title": "z. B. Softwareentwickler",
+      "ph_degree": "z. B. Informatik (B.Sc.)",
+      "ph_hours": "z. B. 40",
+      "ph_salary": "z. B. 3500",
+      "opt_ja": "Ja",
+      "opt_nein": "Nein"
+    },
+    "en": {
+      "optional": "Optional",
+      "sec_employee": "1. Employee details",
+      "sec_employee_hint": "Personal details of the employed person.",
+      "sec_address": "2. Residential address",
+      "sec_address_hint": "Current residential address of the employee in Germany.",
+      "sec_employer": "3. Employer details",
+      "sec_employer_hint": "Name, address and contact details of the employer.",
+      "sec_job": "4. Employment",
+      "sec_job_hint": "Details about the type of employment, job title and remuneration.",
+      "sec_signature": "5. Signature",
+      "ph_last_name": "e.g. Smith",
+      "ph_first_name": "e.g. Anna",
+      "ph_nationality": "e.g. Ukrainian",
+      "ph_street": "e.g. Main Street",
+      "ph_house_number": "e.g. 12a",
+      "ph_postal_code": "e.g. 10115",
+      "ph_city": "e.g. Berlin",
+      "ph_company": "e.g. Example Company GmbH",
+      "ph_contact_person": "e.g. John Doe",
+      "ph_phone": "e.g. +49 30 12345678",
+      "ph_email": "e.g. info@company.de",
+      "ph_betriebsnummer": "e.g. 12345678",
+      "ph_employment_type": "e.g. Full-time employee",
+      "ph_job_title": "e.g. Software developer",
+      "ph_degree": "e.g. Computer Science (B.Sc.)",
+      "ph_hours": "e.g. 40",
+      "ph_salary": "e.g. 3500",
+      "opt_ja": "Yes",
+      "opt_nein": "No"
+    },
+    "tr": {
+      "optional": "İsteğe bağlı",
+      "sec_employee": "1. Çalışan bilgileri",
+      "sec_employee_hint": "İstihdam edilen kişinin kişisel bilgileri.",
+      "sec_address": "2. İkamet adresi",
+      "sec_address_hint": "Çalışanın Almanya'daki mevcut ikametgah adresi.",
+      "sec_employer": "3. İşveren bilgileri",
+      "sec_employer_hint": "İşverenin adı, adresi ve iletişim bilgileri.",
+      "sec_job": "4. İstihdam",
+      "sec_job_hint": "İstihdam türü, unvan ve ücret hakkında ayrıntılar.",
+      "sec_signature": "5. İmza",
+      "ph_last_name": "örn. Yılmaz",
+      "ph_first_name": "örn. Ayşe",
+      "ph_nationality": "örn. Ukraynalı",
+      "ph_street": "örn. Ana Cadde",
+      "ph_house_number": "örn. 12a",
+      "ph_postal_code": "örn. 10115",
+      "ph_city": "örn. Berlin",
+      "ph_company": "örn. Örnek Şirketi GmbH",
+      "ph_contact_person": "örn. Ali Veli",
+      "ph_phone": "örn. +49 30 12345678",
+      "ph_email": "örn. bilgi@sirket.de",
+      "ph_betriebsnummer": "örn. 12345678",
+      "ph_employment_type": "örn. Tam zamanlı çalışan",
+      "ph_job_title": "örn. Yazılım geliştiricisi",
+      "ph_degree": "örn. Bilgisayar Mühendisliği (B.Sc.)",
+      "ph_hours": "örn. 40",
+      "ph_salary": "örn. 3500",
+      "opt_ja": "Evet",
+      "opt_nein": "Hayır"
+    },
+    "ar": {
+      "optional": "اختياري",
+      "sec_employee": "1. بيانات الموظف",
+      "sec_employee_hint": "البيانات الشخصية للشخص المستخدَم.",
+      "sec_address": "2. عنوان الإقامة",
+      "sec_address_hint": "عنوان إقامة الموظف الحالي في ألمانيا.",
+      "sec_employer": "3. بيانات صاحب العمل",
+      "sec_employer_hint": "اسم وعنوان ومعلومات الاتصال بصاحب العمل.",
+      "sec_job": "4. التوظيف",
+      "sec_job_hint": "تفاصيل حول نوع التوظيف والمسمى الوظيفي والراتب.",
+      "sec_signature": "5. التوقيع",
+      "ph_last_name": "مثال: محمد",
+      "ph_first_name": "مثال: فاطمة",
+      "ph_nationality": "مثال: أوكراني",
+      "ph_street": "مثال: الشارع الرئيسي",
+      "ph_house_number": "مثال: 12أ",
+      "ph_postal_code": "مثال: 10115",
+      "ph_city": "مثال: برلين",
+      "ph_company": "مثال: شركة نموذجية GmbH",
+      "ph_contact_person": "مثال: محمد علي",
+      "ph_phone": "مثال: +49 30 12345678",
+      "ph_email": "مثال: info@company.de",
+      "ph_betriebsnummer": "مثال: 12345678",
+      "ph_employment_type": "مثال: موظف بدوام كامل",
+      "ph_job_title": "مثال: مطوّر برمجيات",
+      "ph_degree": "مثال: علوم الحاسوب (بكالوريوس)",
+      "ph_hours": "مثال: 40",
+      "ph_salary": "مثال: 3500",
+      "opt_ja": "نعم",
+      "opt_nein": "لا"
+    }
+  },
+  "fields": {
+    "last_name": {
+      "de": {"label": "Familienname", "hint": "Nachname des Arbeitnehmers, wie im Ausweis angegeben."},
+      "en": {"label": "Last name", "hint": "Employee's surname as shown on their ID."},
+      "tr": {"label": "Soyadı", "hint": "Çalışanın kimliğinde yazan soyadı."},
+      "ar": {"label": "اسم العائلة", "hint": "لقب الموظف كما هو مدوّن في الهوية."}
+    },
+    "first_name": {
+      "de": {"label": "Vorname", "hint": "Vorname des Arbeitnehmers, wie im Ausweis angegeben."},
+      "en": {"label": "First name", "hint": "Employee's first name as shown on their ID."},
+      "tr": {"label": "Ad", "hint": "Çalışanın kimliğinde yazan adı."},
+      "ar": {"label": "الاسم الأول", "hint": "الاسم الأول للموظف كما هو مدوّن في الهوية."}
+    },
+    "birth_date": {
+      "de": {"label": "Geburtsdatum", "hint": "Format: TT.MM.JJJJ – z. B. 01.05.1990"},
+      "en": {"label": "Date of birth", "hint": "Format: DD.MM.YYYY – e.g. 01.05.1990"},
+      "tr": {"label": "Doğum tarihi", "hint": "Format: GG.AA.YYYY – örn. 01.05.1990"},
+      "ar": {"label": "تاريخ الميلاد", "hint": "الصيغة: يوم.شهر.سنة – مثال: 01.05.1990"}
+    },
+    "nationality": {
+      "de": {"label": "Staatsangehörigkeit", "hint": "Nationalität des Arbeitnehmers, z. B. ukrainisch."},
+      "en": {"label": "Nationality", "hint": "Employee's nationality, e.g. Ukrainian."},
+      "tr": {"label": "Milliyeti", "hint": "Çalışanın milliyeti, örn. Ukraynalı."},
+      "ar": {"label": "الجنسية", "hint": "جنسية الموظف، مثال: أوكراني."}
+    },
+    "street": {
+      "de": {"label": "Straße", "hint": "Straße der Wohnanschrift des Arbeitnehmers."},
+      "en": {"label": "Street", "hint": "Street of the employee's residential address."},
+      "tr": {"label": "Sokak", "hint": "Çalışanın ikametgah adresinin sokağı."},
+      "ar": {"label": "الشارع", "hint": "شارع عنوان إقامة الموظف."}
+    },
+    "house_number": {
+      "de": {"label": "Hausnummer", "hint": "Hausnummer der Wohnanschrift."},
+      "en": {"label": "House number", "hint": "House number of the residential address."},
+      "tr": {"label": "Kapı numarası", "hint": "İkametgah adresinin kapı numarası."},
+      "ar": {"label": "رقم المنزل", "hint": "رقم منزل عنوان الإقامة."}
+    },
+    "postal_code": {
+      "de": {"label": "Postleitzahl", "hint": "5-stellige Postleitzahl der Wohnanschrift."},
+      "en": {"label": "Postal code", "hint": "5-digit postal code of the residential address."},
+      "tr": {"label": "Posta kodu", "hint": "İkametgah adresinin 5 haneli posta kodu."},
+      "ar": {"label": "الرمز البريدي", "hint": "الرمز البريدي المؤلف من 5 أرقام لعنوان الإقامة."}
+    },
+    "city": {
+      "de": {"label": "Ort", "hint": "Stadt der Wohnanschrift."},
+      "en": {"label": "City", "hint": "City of the residential address."},
+      "tr": {"label": "Şehir", "hint": "İkametgah adresinin şehri."},
+      "ar": {"label": "المدينة", "hint": "مدينة عنوان الإقامة."}
+    },
+    "be_firma": {
+      "de": {"label": "Firma / Arbeitgeber", "hint": "Vollständiger Name des Unternehmens oder des Arbeitgebers."},
+      "en": {"label": "Company / employer", "hint": "Full name of the company or employer."},
+      "tr": {"label": "Firma / İşveren", "hint": "Şirketin veya işverenin tam adı."},
+      "ar": {"label": "الشركة / صاحب العمل", "hint": "الاسم الكامل للشركة أو صاحب العمل."}
+    },
+    "be_strasse": {
+      "de": {"label": "Straße des Arbeitgebers", "hint": "Straße der Arbeitgeberadresse."},
+      "en": {"label": "Employer's street", "hint": "Street of the employer's address."},
+      "tr": {"label": "İşverenin sokağı", "hint": "İşverenin adresinin sokağı."},
+      "ar": {"label": "شارع صاحب العمل", "hint": "شارع عنوان صاحب العمل."}
+    },
+    "be_hausnummer": {
+      "de": {"label": "Hausnummer des Arbeitgebers", "hint": "Hausnummer der Arbeitgeberadresse."},
+      "en": {"label": "Employer's house number", "hint": "House number of the employer's address."},
+      "tr": {"label": "İşverenin kapı numarası", "hint": "İşverenin adresinin kapı numarası."},
+      "ar": {"label": "رقم منزل صاحب العمل", "hint": "رقم منزل عنوان صاحب العمل."}
+    },
+    "be_plz": {
+      "de": {"label": "PLZ des Arbeitgebers", "hint": "Postleitzahl der Arbeitgeberadresse."},
+      "en": {"label": "Employer's postal code", "hint": "Postal code of the employer's address."},
+      "tr": {"label": "İşverenin posta kodu", "hint": "İşverenin adresinin posta kodu."},
+      "ar": {"label": "الرمز البريدي لصاحب العمل", "hint": "الرمز البريدي لعنوان صاحب العمل."}
+    },
+    "be_ort": {
+      "de": {"label": "Ort des Arbeitgebers", "hint": "Stadt der Arbeitgeberadresse."},
+      "en": {"label": "Employer's city", "hint": "City of the employer's address."},
+      "tr": {"label": "İşverenin şehri", "hint": "İşverenin adresinin şehri."},
+      "ar": {"label": "مدينة صاحب العمل", "hint": "مدينة عنوان صاحب العمل."}
+    },
+    "be_kontaktperson": {
+      "de": {"label": "Ansprechpartner/in", "hint": "Name der Kontaktperson beim Arbeitgeber (z. B. HR-Mitarbeiter)."},
+      "en": {"label": "Contact person", "hint": "Name of the contact person at the employer (e.g. HR employee)."},
+      "tr": {"label": "İletişim kişisi", "hint": "İşverendeki iletişim kişisinin adı (örn. İK çalışanı)."},
+      "ar": {"label": "شخص الاتصال", "hint": "اسم شخص الاتصال لدى صاحب العمل (مثال: موظف الموارد البشرية)."}
+    },
+    "phone": {
+      "de": {"label": "Telefon des Arbeitgebers", "hint": "Telefonnummer des Arbeitgebers mit Vorwahl."},
+      "en": {"label": "Employer's phone", "hint": "Employer's phone number including area code."},
+      "tr": {"label": "İşverenin telefonu", "hint": "Alan kodu dahil işverenin telefon numarası."},
+      "ar": {"label": "هاتف صاحب العمل", "hint": "رقم هاتف صاحب العمل مع رمز المنطقة."}
+    },
+    "email": {
+      "de": {"label": "E-Mail des Arbeitgebers", "hint": "E-Mail-Adresse des Arbeitgebers."},
+      "en": {"label": "Employer's email", "hint": "Employer's email address."},
+      "tr": {"label": "İşverenin e-postası", "hint": "İşverenin e-posta adresi."},
+      "ar": {"label": "بريد صاحب العمل الإلكتروني", "hint": "عنوان البريد الإلكتروني لصاحب العمل."}
+    },
+    "be_betriebsnummer": {
+      "de": {"label": "Betriebsnummer", "hint": "8-stellige Betriebsnummer der Bundesagentur für Arbeit."},
+      "en": {"label": "Business registration number", "hint": "8-digit company registration number from the Federal Employment Agency."},
+      "tr": {"label": "İşyeri numarası", "hint": "Federal İstihdam Ajansı'nın 8 haneli işyeri numarası."},
+      "ar": {"label": "رقم تسجيل المنشأة", "hint": "رقم تسجيل الشركة المؤلف من 8 أرقام من وكالة التوظيف الفيدرالية."}
+    },
+    "be_beschaeftigung": {
+      "de": {"label": "Art des Beschäftigungsverhältnisses", "hint": "z. B. sozialversicherungspflichtige Beschäftigung, Minijob, Praktikum, Ausbildung."},
+      "en": {"label": "Type of employment", "hint": "e.g. subject to social insurance contributions, minijob, internship, apprenticeship."},
+      "tr": {"label": "İstihdam türü", "hint": "örn. sosyal sigortaya tabi istihdam, mini iş, staj, çıraklık."},
+      "ar": {"label": "نوع علاقة العمل", "hint": "مثال: عمل خاضع للضمان الاجتماعي، عمل مصغر، تدريب، تأهيل مهني."}
+    },
+    "be_berufsbezeichnung": {
+      "de": {"label": "Berufsbezeichnung", "hint": "Genaue Bezeichnung der ausgeübten Tätigkeit, z. B. Softwareentwickler."},
+      "en": {"label": "Job title", "hint": "Exact title of the position, e.g. Software Developer."},
+      "tr": {"label": "Unvan / Meslek", "hint": "Görevin tam unvanı, örn. Yazılım Geliştiricisi."},
+      "ar": {"label": "المسمى الوظيفي", "hint": "العنوان الدقيق للمنصب، مثال: مطوّر برمجيات."}
+    },
+    "be_studiengang": {
+      "de": {"label": "Studiengang (falls zutreffend)", "hint": "Nur ausfüllen bei Werkstudenten oder wenn ein Studiengang relevant ist."},
+      "en": {"label": "Degree programme (if applicable)", "hint": "Only fill in for working students or when a degree programme is relevant."},
+      "tr": {"label": "Bölüm / Program (uygunsa)", "hint": "Yalnızca çalışan öğrenciler için veya ilgili bir program varsa doldurun."},
+      "ar": {"label": "البرنامج الأكاديمي (إن انطبق)", "hint": "يُملأ فقط للطلاب العاملين أو عند الصلة ببرنامج أكاديمي."}
+    },
+    "be_arbeitsstunden": {
+      "de": {"label": "Wöchentliche Arbeitsstunden", "hint": "Vertraglich vereinbarte Wochenstunden, z. B. 40."},
+      "en": {"label": "Weekly working hours", "hint": "Contractually agreed weekly hours, e.g. 40."},
+      "tr": {"label": "Haftalık çalışma saatleri", "hint": "Sözleşmede kararlaştırılan haftalık çalışma saatleri, örn. 40."},
+      "ar": {"label": "ساعات العمل الأسبوعية", "hint": "ساعات العمل الأسبوعية المتفق عليها في العقد، مثال: 40."}
+    },
+    "be_gehalt_monat": {
+      "de": {"label": "Monatliche Vergütung (€)", "hint": "Brutto-Monatsgehalt oder -vergütung in Euro."},
+      "en": {"label": "Monthly remuneration (€)", "hint": "Gross monthly salary or remuneration in Euro."},
+      "tr": {"label": "Aylık ücret (€)", "hint": "Euro cinsinden brüt aylık maaş veya ücret."},
+      "ar": {"label": "الراتب الشهري (€)", "hint": "الراتب الشهري الإجمالي أو المكافأة باليورو."}
+    },
+    "signature_place": {
+      "de": {"label": "Ort", "hint": "Stadt, in der die Erklärung unterzeichnet wird."},
+      "en": {"label": "Place", "hint": "City where the declaration is signed."},
+      "tr": {"label": "Yer", "hint": "Beyannamenin imzalandığı şehir."},
+      "ar": {"label": "المكان", "hint": "المدينة التي يتم فيها توقيع الإقرار."}
+    },
+    "signature_date": {
+      "de": {"label": "Datum", "hint": "Datum der Unterzeichnung."},
+      "en": {"label": "Date", "hint": "Date of signing."},
+      "tr": {"label": "Tarih", "hint": "İmzalanma tarihi."},
+      "ar": {"label": "التاريخ", "hint": "تاريخ التوقيع."}
+    }
+  }
+}
