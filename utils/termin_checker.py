@@ -1039,11 +1039,47 @@ async def check_city_slots(city: str, service: str) -> dict:
         return {"available": False}
 
 
+_TEVIS_DEEPLINK_SAFE_SERVICES: Dict[tuple[str, int], frozenset[str]] = {
+    ("frankfurt", 13): frozenset({
+        "buergeramt", "anmeldung", "ummeldung", "abmeldung", "personalausweis", "reisepass",
+    }),
+    ("frankfurt", 6): frozenset({"fuehrerschein"}),
+    ("duesseldorf", 4): frozenset({
+        "buergeramt", "anmeldung", "ummeldung", "abmeldung", "personalausweis", "reisepass",
+    }),
+    ("duesseldorf", 3): frozenset({"fuehrerschein"}),
+    ("koeln", 1): frozenset({
+        "buergeramt", "anmeldung", "ummeldung", "abmeldung", "personalausweis", "reisepass",
+    }),
+}
+
+
+def _tevis_city_key(city_label: str, base_url: str = "") -> str:
+    raw = (city_label or "").lower().strip()
+    if "duesseldorf" in raw or "düsseldorf" in raw or "duesseldorf" in base_url:
+        return "duesseldorf"
+    if "frankfurt" in raw or "fra/" in base_url:
+        return "frankfurt"
+    if "koeln" in raw or "köln" in raw or "cologne" in raw or "tevisweb190" in base_url:
+        return "koeln"
+    return raw
+
+
+def _safe_tevis_deeplink(base_url: str, md: int, city_label: str, service_key: str) -> str:
+    city_key = _tevis_city_key(city_label, base_url)
+    service = (service_key or "").lower().strip()
+    safe_services = _TEVIS_DEEPLINK_SAFE_SERVICES.get((city_key, md), frozenset())
+    if service not in safe_services:
+        return ""
+    return f"{base_url.rstrip('/')}/select2?md={md}"
+
+
 async def check_tevis_playwright_slots(
     base_url: str,
     md: int,
     booking_url: str,
     city_label: str = "",
+    service_key: str = "",
 ) -> dict:
     """Real slot checker via Playwright for TeVIS cities (Frankfurt, Düsseldorf).
 
@@ -1089,27 +1125,45 @@ async def check_tevis_playwright_slots(
         return {"available": False}
 
     first = slots[0]
-    # Use portal URL from SlotInfo; direct_url (select2?md=N) is internal only.
-    resolved_url = first.url or booking_url
-    _BAD_PATTERNS = ("select2", "ajax", "api")
-    if resolved_url and any(x in resolved_url for x in _BAD_PATTERNS):
-        resolved_url = booking_url
+    fallback_url = booking_url
+    service_deeplink = _safe_tevis_deeplink(base_url, md, city_label, service_key)
+    if service_deeplink:
+        resolved_url = service_deeplink
+        logger.info(
+            "TEVIS_DEEPLINK_PRIMARY | city=%s service=%s md=%d url=%s fallback=%s",
+            city_label or base_url, service_key or "—", md, resolved_url, fallback_url,
+        )
+    else:
+        resolved_url = fallback_url
+        logger.info(
+            "TEVIS_DEEPLINK_FALLBACK_ROOT | city=%s service=%s md=%d root=%s reason=unsafe_or_unknown_md",
+            city_label or base_url, service_key or "—", md, fallback_url,
+        )
+
     logger.info(
-        "TEVIS_PLAYWRIGHT_FOUND | city=%s date=%s time=%s location=%s total_slots=%d url=%s",
+        "TEVIS_PLAYWRIGHT_FOUND | city=%s date=%s time=%s location=%s total_slots=%d url=%s fallback=%s",
         city_label or base_url,
         first.date,
         first.time,
         (first.location or "")[:50],
         len(slots),
         resolved_url,
+        fallback_url,
     )
-    return {
+    payload = {
         "available": True,
+        "city": _tevis_city_key(city_label, base_url),
         "location": first.location or city_label,
         "date": first.date,
         "time": first.time,
         "url": resolved_url,
+        "booking_url": resolved_url,
+        "fallback_url": fallback_url,
     }
+    if service_deeplink:
+        payload["direct_url"] = service_deeplink
+        payload["appointment_url"] = service_deeplink
+    return payload
 
 
 async def check_frankfurt_playwright(service_key: str) -> dict:
@@ -1122,6 +1176,7 @@ async def check_frankfurt_playwright(service_key: str) -> dict:
         md,
         _FRANKFURT_BOOKING_URL,
         "Frankfurt",
+        service_key=svc,
     )
 
 
@@ -1135,6 +1190,7 @@ async def check_duesseldorf_playwright(service_key: str) -> dict:
         md,
         _DUESSELDORF_BOOKING_URL,
         "Duesseldorf",
+        service_key=svc,
     )
 
 
@@ -1446,6 +1502,7 @@ async def check_koeln_playwright(service_key: str) -> dict:
         md,
         _KOELN_KRZN_BOOKING_URL,
         "Koeln",
+        service_key=svc,
     )
 
 
