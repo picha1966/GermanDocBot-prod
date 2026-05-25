@@ -117,25 +117,38 @@ from utils.runtime_bot import set_runtime_bot
 
 set_runtime_bot(bot)
 _REDIS_URL = os.getenv("REDIS_URL", "").strip()
+_DEV_MODE = os.getenv("DEV_MODE", "").strip() == "1"
 if _REDIS_URL:
     try:
         import urllib.parse as _urlparse
+        import socket as _socket
         from aiogram.contrib.fsm_storage.redis import RedisStorage2
         _parsed = _urlparse.urlparse(_REDIS_URL)
+        _redis_host = _parsed.hostname or "127.0.0.1"
+        _redis_port = _parsed.port or 6379
+        with _socket.create_connection((_redis_host, _redis_port), timeout=2):
+            pass
         _storage = RedisStorage2(
-            host=_parsed.hostname or "127.0.0.1",
-            port=_parsed.port or 6379,
+            host=_redis_host,
+            port=_redis_port,
             db=int((_parsed.path or "/0").lstrip("/") or 0),
             password=_parsed.password,
         )
         logger.info("REDIS_ENABLED=True FSM_STORAGE=RedisStorage2 url=%s", _REDIS_URL.split("@")[-1])
     except Exception as _redis_init_err:
-        logger.warning("REDIS_FSM_INIT_FAILED (%s) — falling back to MemoryStorage", _redis_init_err)
-        _storage = MemoryStorage()
-        logger.info("REDIS_ENABLED=False FSM_STORAGE=MemoryStorage (Redis init failed)")
+        logger.critical(
+            "FSM_STORAGE_REDIS_REQUIRED | REDIS_URL is set but Redis FSM init failed: %s",
+            _redis_init_err,
+        )
+        raise RuntimeError("FSM_STORAGE_REDIS_REQUIRED: Redis FSM init failed") from _redis_init_err
 else:
+    if not _DEV_MODE:
+        logger.critical(
+            "FSM_STORAGE_REDIS_REQUIRED | REDIS_URL is not set; MemoryStorage is allowed only with DEV_MODE=1"
+        )
+        raise RuntimeError("FSM_STORAGE_REDIS_REQUIRED: set REDIS_URL or DEV_MODE=1")
     _storage = MemoryStorage()
-    logger.info("REDIS_ENABLED=False FSM_STORAGE=MemoryStorage")
+    logger.warning("FSM_STORAGE_MEMORY_DEV_ONLY | REDIS_ENABLED=False FSM_STORAGE=MemoryStorage")
 dp = Dispatcher(bot, storage=_storage)
 dp.middleware.setup(LoggingMiddleware())
 dp.middleware.setup(ThrottlingMiddleware())

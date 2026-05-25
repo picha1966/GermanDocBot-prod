@@ -4481,9 +4481,7 @@ async def handle_termin_start_poll(callback: types.CallbackQuery, state: FSMCont
             _mtf(str(cid))
         except Exception as _mtf_err:
             logger.error("mark_termin_found FAILED | user=%s err=%s", cid, _mtf_err)
-        # Clean registries so expiry warnings are not sent after slot is consumed
-        _monitor_expiry_registry.pop(int(cid), None)
-        _expiry_warning_sent.discard(str(cid))
+        # Access is not consumed by slot notification; keep expiry registries intact.
         # No payment offer — user already paid for monitoring.
 
     async def _on_slot_found(cid: int, flang: str, slot: dict) -> None:
@@ -4780,6 +4778,12 @@ async def handle_termin_i_booked(callback: types.CallbackQuery, state: FSMContex
         _session.reservation_task = None
         _session.status = TerminStatus.FINALIZED
         logger.info("TERMIN_I_BOOKED_TIMER_CANCELLED | user=%s", user_id)
+
+    try:
+        from backend.termin_db import mark_termin_found as _mark_booked
+        _mark_booked(str(user_id), consume_access=True, reason="user_confirmed_booking")
+    except Exception as _booked_mark_err:
+        logger.error("TERMIN_I_BOOKED_ACCESS_CONSUME_FAILED | user=%s err=%s", user_id, _booked_mark_err)
 
     kb = InlineKeyboardMarkup(row_width=1)
     kb.add(
@@ -9672,9 +9676,7 @@ def make_termin_on_reserved_fn(
             _mtf2(str(cid))
         except Exception as _mtf2_err:
             logger.error("mark_termin_found FAILED | user=%s err=%s", cid, _mtf2_err)
-        # Clean registries so expiry warnings are not sent after slot is consumed
-        _monitor_expiry_registry.pop(int(cid), None)
-        _expiry_warning_sent.discard(str(cid))
+        # Access is not consumed by slot notification; keep expiry registries intact.
         # No second pay message — user already paid for monitoring.
 
         # ── Email notification (backup channel, one-time, non-blocking) ──────

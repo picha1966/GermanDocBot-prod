@@ -1506,14 +1506,22 @@ def is_termin_entitled(user_id: str) -> bool:
         if ent.get("plan") == "7day" and ent.get("paid_until"):
             if _is_expired(ent["paid_until"], "7day"):
                 logger.info("TERMIN_ENTITLEMENT_EXPIRED | user=%s plan=7day", user_id)
+                logger.info("TERMIN_ACCESS_EXPIRED_ONLY | user=%s plan=7day", user_id)
                 return False
         if ent.get("plan") == "single" and ent.get("paid_until"):
             if _is_expired(ent["paid_until"], "single"):
                 logger.info("TERMIN_ENTITLEMENT_EXPIRED | user=%s plan=24h", user_id)
+                logger.info("TERMIN_ACCESS_EXPIRED_ONLY | user=%s plan=24h", user_id)
+                return False
+        if ent.get("plan") == "14day" and ent.get("paid_until"):
+            if _is_expired(ent["paid_until"], "14day"):
+                logger.info("TERMIN_ENTITLEMENT_EXPIRED | user=%s plan=14day", user_id)
+                logger.info("TERMIN_ACCESS_EXPIRED_ONLY | user=%s plan=14day", user_id)
                 return False
         if ent.get("plan") == "30day" and ent.get("paid_until"):
             if _is_expired(ent["paid_until"], "30day"):
                 logger.info("TERMIN_ENTITLEMENT_EXPIRED | user=%s plan=30day", user_id)
+                logger.info("TERMIN_ACCESS_EXPIRED_ONLY | user=%s plan=30day", user_id)
                 return False
         return True
     except Exception as e:
@@ -1551,12 +1559,20 @@ def is_termin_active(user_id: str, city: str = None, authority: str = None) -> b
         return False
 
 
-def mark_termin_found(user_id: str) -> bool:
+def mark_termin_found(user_id: str, consume_access: bool = False, reason: str = "slot_notification") -> bool:
+    """Record a found Termin without consuming paid monitoring by default.
+
+    Slot notifications must not close 7/14/30-day access. Access is consumed
+    only for explicit user actions such as "I booked" / stop monitoring, or by
+    paid_until expiry checks.
     """
-    Close current entitlement after first found slot.
-    Also resets has_paid_termin=0 and disables reminders so the UI correctly
-    shows the unpaid/pre-payment state until the user pays again.
-    """
+    if not consume_access:
+        logger.info(
+            "TERMIN_SLOT_FOUND_NO_ACCESS_RESET | user=%s reason=%s",
+            user_id, reason,
+        )
+        return False
+
     try:
         with get_connection() as conn:
             cursor = conn.cursor()
@@ -1573,9 +1589,7 @@ def mark_termin_found(user_id: str) -> bool:
                 (str(user_id), str(user_id)),
             )
             changed = cursor.rowcount > 0
-            # Atomically reset both stale flags in users table so the UI shows the
-            # pre-payment screen and startup resume does not re-launch monitoring.
-            # Doing this in one statement avoids a half-reset state on crash.
+            # Explicit user confirmation closes access and clears stale UI flags.
             cursor.execute(
                 """
                 UPDATE users
@@ -1587,9 +1601,9 @@ def mark_termin_found(user_id: str) -> bool:
             )
             conn.commit()
         logger.info(
-            "TERMIN_ENTITLEMENT_CONSUMED | user=%s changed=%s "
+            "TERMIN_ENTITLEMENT_CONSUMED | user=%s changed=%s reason=%s "
             "has_paid_termin=0 reminder_active=0",
-            user_id, changed,
+            user_id, changed, reason,
         )
         return changed
     except Exception as e:
